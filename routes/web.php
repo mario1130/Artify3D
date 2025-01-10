@@ -23,9 +23,9 @@ use App\Http\Controllers\SeccionController;
 //EJEMPLOS
 
 //LLamada de controladores
-Route::get('/', HomeController::class);
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/seccion', [SeccionController::class, 'index']);
+Route::get('/seccion', [SeccionController::class, 'seccion']);
 
 Route::get('/seccion/{seccion}', [SeccionController::class, 'show']);
 

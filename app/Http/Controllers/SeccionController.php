@@ -9,10 +9,11 @@ class SeccionController extends Controller
     //Creacion de las categorias 
 
     //llamando a la ruta de la vista
+    /*
     public function index(){
         return view('seccion.index');
 
-    }
+    }*/
 
     public function create(){
         return "Estas en formulario para añadir subsecciones";

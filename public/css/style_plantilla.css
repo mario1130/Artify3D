@@ -1,0 +1,239 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+/*cabecera*/
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 20rem;
+    position: static;
+}
+
+.cabecera {
+    margin-right: auto;
+    
+}
+
+.cabecera a {
+color: #fff; /* Color del texto */
+text-decoration: underline; /* Esto subraya el texto */
+margin-left: 0.2rem; /* Espacio entre los enlaces */
+}
+
+.cabecera2 {
+    display: flex;
+    justify-content: flex-end; /* Alinea los íconos a la derecha */
+    align-items: center;
+    margin-left: auto; /* Asegura que los íconos estén a la derecha */
+    margin-right: 20rem;
+}
+
+
+
+/*Carousel*/
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%; /* Ajusta el ancho relativo */
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    height: 300px; /* Altura para pantallas más pequeñas */
+    margin: 2rem auto; /* Centra el carrusel */
+    background-color: #222;
+}
+
+.carousel img {
+    width: 50%; /* La imagen ocupará todo el ancho disponible */
+    height: auto; /* Mantiene la proporción */
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.carousel-dots span {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #555;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.carousel-dots span.active {
+    background-color: #fff;
+}
+
+/* Media queries para dispositivos más pequeños */
+@media (max-width: 768px) {
+    .carousel {
+        height: 200px; /* Reduce la altura del carrusel */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        height: 150px; /* Reduce aún más la altura en pantallas pequeñas */
+    }
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Productos*/
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Las columnas se ajustan automáticamente */
+    padding: 0 1rem;
+    margin-top: 5rem;
+    width: 90%; /* Asegura que ocupe el 90% del ancho disponible */
+    max-width: 1800px; /* Evita que sea demasiado grande en pantallas grandes */
+    margin: 0 auto; /* Centra los productos en la página */
+    gap: 1rem; /* Espaciado uniforme entre productos */
+    grid-gap: 5rem;/*cambiar la anchura*/
+    row-gap: 5rem;/*cambiar la altura*/
+    margin-bottom: 2rem;
+}
+
+.product {
+    background-color: #222;
+    padding: 0.5rem; /* Reduce el padding para tarjetas más pequeñas */
+    text-align: center;
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Añade un efecto visual al pasar el ratón */
+}
+
+.product:hover {
+    transform: scale(1.05); /* Pequeño zoom al pasar el ratón */
+}
+
+.product h3 {
+    color: #fff;
+    font-size: 0.9rem; /* Texto más pequeño */
+    margin: 0.5rem 0;
+}
+
+.product p {
+    color: #0f0;
+    font-size: 0.8rem; /* Texto más pequeño */
+}
+
+.product img {
+    width: 100%; /* Hace que la imagen ocupe el ancho disponible */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 5px;
+}
+
+
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
+        gap: 1rem; /* Reduce el espacio entre tarjetas */
+        margin-bottom: 2rem;
+    }
+
+    .product h3 {
+        font-size: 0.8rem; /* Texto más pequeño en tablets */
+    }
+
+    .product p {
+        font-size: 0.7rem; /* Precio más pequeño */
+    }
+}
+
+@media (max-width: 480px) {
+    .products {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        gap: 1rem; /* Espaciado más compacto */
+        margin-bottom: 2rem;
+    }
+
+    .product {
+        padding: 0.5rem; /* Menos padding en móviles */
+    }
+
+    .product h3 {
+        font-size: 0.7rem; /* Texto más pequeño en móviles */
+    }
+
+    .product p {
+        font-size: 0.6rem; /* Precio más pequeño */
+    }
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+/*Footer*/
+footer {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos a los extremos */
+    align-items: center; /* Alinea los elementos verticalmente */
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.9rem;
+    margin-top: auto; /* Empuja el footer hacia abajo si hay poco contenido */
+
+   
+}
+
+footer a {
+    color: #0f0;
+    text-decoration: none;
+}
+
+.politics{
+text-align: left;
+padding: 1rem 2rem;
+
+}
+
+.payment-methods {
+    display: inline-flex; /* Hace que las imágenes se alineen en línea */
+    align-items: center; /* Alinea verticalmente las imágenes */
+    justify-content: center;
+    gap: 10px;
+}
+
+.payment-methods img {
+    height: 20px;
+}
