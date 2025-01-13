@@ -13,13 +13,14 @@
     
     @include('layouts.cabecera')
 
+    @include('layouts.carousel')
     
     @yield('context')
 
-    
     @include('layouts.footer')
     
 
     <script src="{{ asset('js/menu_lateral.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
 </body>
 </html>

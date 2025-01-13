@@ -1,13 +1,3 @@
-
-<div class="carousel">
-    <img src="https://via.placeholder.com/1200x500" alt="Carrusel Imagen 1">
-</div>
-<div class="carousel-dots">
-    <span class="active"></span>
-    <span></span>
-    <span></span>
-</div>
-
 <section class="products">
     <div class="product">
         <img src="https://via.placeholder.com/300x200" alt="Producto 1">

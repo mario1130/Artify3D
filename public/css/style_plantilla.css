@@ -240,65 +240,83 @@ header a {
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
+/* Carousel */
 
-
-
-
-/*Carousel*/
 .carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     width: 90%;
-    /* Ajusta el ancho relativo */
-    max-width: 1200px;
-    /* Ancho máximo para pantallas grandes */
-    height: 300px;
-    /* Altura para pantallas más pequeñas */
+    max-width: 1050px;
+    height: 400px;
     margin: 2rem auto;
-    /* Centra el carrusel */
-    background-color: #222;
+    overflow: hidden;
+    border-radius: 10px;
+    padding-bottom: 8rem;
+    /* para mantener la relación de aspecto */
+    /*transform: scale(0.8); */
 }
 
 .carousel img {
-    width: 50%;
-    /* La imagen ocupará todo el ancho disponible */
-    height: auto;
-    /* Mantiene la proporción */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: left 0.5s ease;
 }
 
-.carousel-dots {
+.carousel img.active {
+    left: 0;
+}
+
+.carousel img.prev {
+    right: 100%;
+}
+
+.carousel img.next {
+    left: 100%;
+}
+
+.carousel-bottons {
     display: flex;
     justify-content: center;
     margin-top: 0.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
+
 }
 
-.carousel-dots span {
-    width: 10px;
-    height: 10px;
+.carousel-bottons span {
+    width: 12px;
+    height: 12px;
     margin: 0 5px;
     background-color: #555;
     border-radius: 50%;
     display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    /* Tiempo de animaciion */
+
 }
 
-.carousel-dots span.active {
+.carousel-bottons span:hover {
+    transform: scale(1.50);
+    /* Pequeño zoom al pasar el ratón */
+}
+
+.carousel-bottons span.active {
     background-color: #fff;
+
 }
 
-/* Media queries para dispositivos más pequeños */
 @media (max-width: 768px) {
     .carousel {
-        height: 200px;
-        /* Reduce la altura del carrusel */
+        aspect-ratio: 16 / 9;
     }
 }
 
 @media (max-width: 480px) {
     .carousel {
-        height: 150px;
-        /* Reduce aún más la altura en pantallas pequeñas */
+        aspect-ratio: 16 / 9;
     }
 }
 
