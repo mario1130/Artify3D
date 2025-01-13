@@ -29,6 +29,9 @@ header a {
 
 
 
+
+
+
 /*cabecera*/
 
 .logo {
@@ -40,22 +43,204 @@ header a {
 
 .cabecera {
     margin-right: auto;
-    
+
 }
 
 .cabecera a {
-color: #fff; /* Color del texto */
-text-decoration: underline; /* Esto subraya el texto */
-margin-left: 0.2rem; /* Espacio entre los enlaces */
+    color: #fff;
+    /* Color del texto */
+    text-decoration: underline;
+    /* Esto subraya el texto */
+    margin-left: 0.2rem;
+    /* Espacio entre los enlaces */
 }
 
 .cabecera2 {
     display: flex;
-    justify-content: flex-end; /* Alinea los íconos a la derecha */
+    justify-content: flex-end;
+    /* Alinea los íconos a la derecha */
     align-items: center;
-    margin-left: auto; /* Asegura que los íconos estén a la derecha */
+    margin-left: auto;
+    /* Asegura que los íconos estén a la derecha */
     margin-right: 20rem;
 }
+
+/* Menú lateral izquierdo */
+
+.menu-title {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.separator {
+    border: none;
+    border-top: 2px solid #444;
+    margin: 4.2rem 0;
+    width: 295px;
+    position: absolute;
+    /*Psicionar el separado justo en el medio*/
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.separator2 {
+    border: none;
+    border-top: 2px solid #444;
+    margin: 0rem 0;
+    width: 295px;
+    position: absolute;
+    /*Psicionar el separado justo en el medio*/
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -450px;
+    /* Oculto inicialmente */
+    width: 350px;
+    height: 100%;
+    background-color: #222;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    /* Animación */
+    z-index: 2000;
+    padding: 1rem;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 1;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+}
+
+.side-menu ul li {
+    margin: 1rem 0;
+}
+
+.side-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+/* Botón de cerrar */
+.close-btn {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Fondo oscuro del overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    /* Oculto inicialmente */
+    z-index: 1500;
+}
+
+
+
+
+
+
+/*  Menú lateral Derecho */
+
+.side-menu-right p {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: 150px;
+
+}
+
+.side-menu-right {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    /* Oculto inicialmente */
+    width: 350px;
+    height: 100%;
+    background-color: #222;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    /* Animación */
+    z-index: 2000;
+    padding: 1rem;
+}
+
+.side-menu-right ul {
+    list-style: none;
+    padding: 1;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+}
+
+.side-menu-right ul li {
+    margin: 1rem 0;
+}
+
+.side-menu-right ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+/* Botón de cerrar */
+.close-btn-right {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-session {
+    list-style: none;
+    padding: 1;
+    margin-top: 35rem;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.session {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
 
 
 
@@ -64,16 +249,22 @@ margin-left: 0.2rem; /* Espacio entre los enlaces */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%; /* Ajusta el ancho relativo */
-    max-width: 1200px; /* Ancho máximo para pantallas grandes */
-    height: 300px; /* Altura para pantallas más pequeñas */
-    margin: 2rem auto; /* Centra el carrusel */
+    width: 90%;
+    /* Ajusta el ancho relativo */
+    max-width: 1200px;
+    /* Ancho máximo para pantallas grandes */
+    height: 300px;
+    /* Altura para pantallas más pequeñas */
+    margin: 2rem auto;
+    /* Centra el carrusel */
     background-color: #222;
 }
 
 .carousel img {
-    width: 50%; /* La imagen ocupará todo el ancho disponible */
-    height: auto; /* Mantiene la proporción */
+    width: 50%;
+    /* La imagen ocupará todo el ancho disponible */
+    height: auto;
+    /* Mantiene la proporción */
 }
 
 .carousel-dots {
@@ -99,13 +290,15 @@ margin-left: 0.2rem; /* Espacio entre los enlaces */
 /* Media queries para dispositivos más pequeños */
 @media (max-width: 768px) {
     .carousel {
-        height: 200px; /* Reduce la altura del carrusel */
+        height: 200px;
+        /* Reduce la altura del carrusel */
     }
 }
 
 @media (max-width: 480px) {
     .carousel {
-        height: 150px; /* Reduce aún más la altura en pantallas pequeñas */
+        height: 150px;
+        /* Reduce aún más la altura en pantallas pequeñas */
     }
 }
 
@@ -116,44 +309,58 @@ margin-left: 0.2rem; /* Espacio entre los enlaces */
 /*Productos*/
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Las columnas se ajustan automáticamente */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Las columnas se ajustan automáticamente */
     padding: 0 1rem;
     margin-top: 5rem;
-    width: 90%; /* Asegura que ocupe el 90% del ancho disponible */
-    max-width: 1800px; /* Evita que sea demasiado grande en pantallas grandes */
-    margin: 0 auto; /* Centra los productos en la página */
-    gap: 1rem; /* Espaciado uniforme entre productos */
-    grid-gap: 5rem;/*cambiar la anchura*/
-    row-gap: 5rem;/*cambiar la altura*/
+    width: 90%;
+    /* Asegura que ocupe el 90% del ancho disponible */
+    max-width: 1800px;
+    /* Evita que sea demasiado grande en pantallas grandes */
+    margin: 0 auto;
+    /* Centra los productos en la página */
+    gap: 1rem;
+    /* Espaciado uniforme entre productos */
+    grid-gap: 5rem;
+    /*cambiar la anchura*/
+    row-gap: 5rem;
+    /*cambiar la altura*/
     margin-bottom: 2rem;
 }
 
 .product {
     background-color: #222;
-    padding: 0.5rem; /* Reduce el padding para tarjetas más pequeñas */
+    padding: 0.5rem;
+    /* Reduce el padding para tarjetas más pequeñas */
     text-align: center;
     border-radius: 5px;
-    transition: transform 0.3s ease; /* Añade un efecto visual al pasar el ratón */
+    transition: transform 0.3s ease;
+    /* Añade un efecto visual al pasar el ratón */
 }
 
 .product:hover {
-    transform: scale(1.05); /* Pequeño zoom al pasar el ratón */
+    transform: scale(1.05);
+    /* Pequeño zoom al pasar el ratón */
 }
 
 .product h3 {
     color: #fff;
-    font-size: 0.9rem; /* Texto más pequeño */
+    font-size: 0.9rem;
+    /* Texto más pequeño */
     margin: 0.5rem 0;
 }
 
 .product p {
     color: #0f0;
-    font-size: 0.8rem; /* Texto más pequeño */
+    font-size: 0.8rem;
+    /* Texto más pequeño */
 }
 
 .product img {
-    width: 100%; /* Hace que la imagen ocupe el ancho disponible */
-    height: auto; /* Mantiene la proporción */
+    width: 100%;
+    /* Hace que la imagen ocupe el ancho disponible */
+    height: auto;
+    /* Mantiene la proporción */
     border-radius: 5px;
 }
 
@@ -162,37 +369,46 @@ margin-left: 0.2rem; /* Espacio entre los enlaces */
 /* Media queries para pantallas más pequeñas */
 @media (max-width: 768px) {
     .products {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
-        gap: 1rem; /* Reduce el espacio entre tarjetas */
+        grid-template-columns: repeat(2, 1fr);
+        /* Dos columnas en tablets */
+        gap: 1rem;
+        /* Reduce el espacio entre tarjetas */
         margin-bottom: 2rem;
     }
 
     .product h3 {
-        font-size: 0.8rem; /* Texto más pequeño en tablets */
+        font-size: 0.8rem;
+        /* Texto más pequeño en tablets */
     }
 
     .product p {
-        font-size: 0.7rem; /* Precio más pequeño */
+        font-size: 0.7rem;
+        /* Precio más pequeño */
     }
 }
 
 @media (max-width: 480px) {
     .products {
-        grid-template-columns: 1fr; /* Una columna en móviles */
-        gap: 1rem; /* Espaciado más compacto */
+        grid-template-columns: 1fr;
+        /* Una columna en móviles */
+        gap: 1rem;
+        /* Espaciado más compacto */
         margin-bottom: 2rem;
     }
 
     .product {
-        padding: 0.5rem; /* Menos padding en móviles */
+        padding: 0.5rem;
+        /* Menos padding en móviles */
     }
 
     .product h3 {
-        font-size: 0.7rem; /* Texto más pequeño en móviles */
+        font-size: 0.7rem;
+        /* Texto más pequeño en móviles */
     }
 
     .product p {
-        font-size: 0.6rem; /* Precio más pequeño */
+        font-size: 0.6rem;
+        /* Precio más pequeño */
     }
 }
 
@@ -205,15 +421,18 @@ margin-left: 0.2rem; /* Espacio entre los enlaces */
 /*Footer*/
 footer {
     display: flex;
-    justify-content: space-between; /* Alinea los elementos a los extremos */
-    align-items: center; /* Alinea los elementos verticalmente */
+    justify-content: space-between;
+    /* Alinea los elementos a los extremos */
+    align-items: center;
+    /* Alinea los elementos verticalmente */
     padding: 1rem 2rem;
     background-color: #000;
     color: #fff;
     font-size: 0.9rem;
-    margin-top: auto; /* Empuja el footer hacia abajo si hay poco contenido */
+    margin-top: auto;
+    /* Empuja el footer hacia abajo si hay poco contenido */
 
-   
+
 }
 
 footer a {
@@ -221,15 +440,17 @@ footer a {
     text-decoration: none;
 }
 
-.politics{
-text-align: left;
-padding: 1rem 2rem;
+.politics {
+    text-align: left;
+    padding: 1rem 2rem;
 
 }
 
 .payment-methods {
-    display: inline-flex; /* Hace que las imágenes se alineen en línea */
-    align-items: center; /* Alinea verticalmente las imágenes */
+    display: inline-flex;
+    /* Hace que las imágenes se alineen en línea */
+    align-items: center;
+    /* Alinea verticalmente las imágenes */
     justify-content: center;
     gap: 10px;
 }

@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('css/style_plantilla.css') }}">
-    
+    <link rel="stylesheet" href="{{ asset('css/style_plantilla.css') }}?v={{ time() }}">
+    <link rel="icon"  sizes="516x516" href="{{ asset('favicon_artify.ico') }}" type="image/x-icon">
+
 </head>
 <body>
     
-    <header>
     @include('layouts.cabecera')
-    </header>
 
+    
     @yield('context')
 
-    <footer>
+    
     @include('layouts.footer')
-    </footer>
+    
 
+    <script src="{{ asset('js/menu_lateral.js') }}"></script>
 </body>
 </html>

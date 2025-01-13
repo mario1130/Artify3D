@@ -1,4 +1,5 @@
-     <div class="politics">
+<footer>
+    <div class="politics">
         &copy; 2024, Artly3D - Tienda oficial Tecnología de Shopify
         <a href="#">Política de privacidad</a> -
         <a href="#">Información de contacto</a> -
@@ -12,3 +13,4 @@
             <img src="https://via.placeholder.com/20x20" alt="Visa">
             <img src="https://via.placeholder.com/20x20" alt="Shopify">
         </div>
+</footer>

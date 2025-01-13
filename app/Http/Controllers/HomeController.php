@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    //Para invoacar la funcion de la vista
+    //Para invocar la funcion de la vista
     
     public function index(){
         return view('seccion.index');
