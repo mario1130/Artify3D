@@ -1,7 +1,7 @@
 <div class="carousel">
-    <img src="img/1.jpg" alt="Carrusel Imagen 1" class="active">
-    <img src="img/2.jpg" alt="Carrusel Imagen 2">
-    <img src="img/3.jpg" alt="Carrusel Imagen 3">
+    <img src="@yield('1')" alt="Carrusel Imagen 1" class="active">
+    <img src="@yield('2')" alt="Carrusel Imagen 2">
+    <img src="@yield('3')" alt="Carrusel Imagen 3">
 </div>
 <div class="carousel-bottons">
     <span class="active"></span>
