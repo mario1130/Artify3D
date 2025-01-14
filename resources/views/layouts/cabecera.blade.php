@@ -1,8 +1,8 @@
     <header>
-        <div class="logo">Artly3D</div>
 
         <nav class="cabecera">
         <ul>
+            <a class="logo" href="#">Artly3D</a>
             <a href="#">Inicio</a>
             <a href="#" id="categoriesLink">Categorías</a>
         

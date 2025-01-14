@@ -25,6 +25,18 @@ header a {
     margin: 0 1rem;
 }
 
+
+@media (max-width: 480px) {
+    header {
+        flex-wrap: wrap; /* Permite que los elementos se adapten */
+        justify-content: center;
+        flex-direction: column; /* Cambia la distribución vertical */
+        align-items: center; /* Centra el contenido en móviles */
+    }
+
+    
+}
+
 /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -37,12 +49,22 @@ header a {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-left: 20rem;
-    position: static;
+    text-decoration: none !important; /* Forzar eliminación del subrayado */
+    top: 3px;
+    position: relative;
 }
 
 .cabecera {
     margin-right: auto;
+    flex: 1;
+    justify-content: flex-start;
+    display: flex;
+    /* Alinea los íconos a la derecha */
+    align-items: center;
+    /* Asegura que los íconos estén a la derecha */
+    flex: 1;
+    gap: 1rem;
+    
 
 }
 
@@ -62,8 +84,18 @@ header a {
     align-items: center;
     margin-left: auto;
     /* Asegura que los íconos estén a la derecha */
-    margin-right: 20rem;
+    flex: 1;
+    gap: 1rem;
 }
+
+.cabecera, .cabecera2, .logo {
+    justify-content: center; /* Centra los elementos en móviles */
+    margin-top: 0.5rem;
+}
+
+
+
+
 
 /* Menú lateral izquierdo */
 
@@ -238,6 +270,7 @@ header a {
 
 
 
+
 /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* Carousel */
@@ -308,17 +341,7 @@ header a {
 
 }
 
-@media (max-width: 768px) {
-    .carousel {
-        aspect-ratio: 16 / 9;
-    }
-}
 
-@media (max-width: 480px) {
-    .carousel {
-        aspect-ratio: 16 / 9;
-    }
-}
 
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -449,7 +472,7 @@ footer {
     font-size: 0.9rem;
     margin-top: auto;
     /* Empuja el footer hacia abajo si hay poco contenido */
-
+    flex-wrap: wrap;
 
 }
 
@@ -471,6 +494,7 @@ footer a {
     /* Alinea verticalmente las imágenes */
     justify-content: center;
     gap: 10px;
+    
 }
 
 .payment-methods img {
