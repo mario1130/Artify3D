@@ -68,7 +68,7 @@
     
     <div class="menu-session">
         <hr class="separator2">
-        <a class="session">Iniciar Sesión</a>
+        <a class="session" href="/session">Iniciar Sesión</a>
     </div>
 
 
