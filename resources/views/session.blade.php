@@ -48,7 +48,6 @@
                     <span>¿Eres nuevo?</span>
                 </div>
 
-                <p>¿Eres nuevo? <a href="/register">Crear Cuenta</a></p>
                 <button class="button-register" type="button"  onclick="window.location.href='/register'" >Crear Cuenta</button>
 
             </form>

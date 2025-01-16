@@ -1,6 +1,6 @@
 <footer>
     <div class="politics">
-        &copy; 2024, Artly3D - Tienda oficial Tecnología de Shopify
+        &copy; 2024, Artify3D - Tienda oficial
         <a href="#">Política de privacidad</a> -
         <a href="#">Información de contacto</a> -
         <a href="#">Política de reembolso</a>

@@ -9,7 +9,7 @@ class HomeController extends Controller
     //Para invocar la funcion de la vista
     
     public function index(){
-        return view('seccion.index');
+        return view('index');
 
     }
 
