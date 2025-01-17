@@ -8,3 +8,5 @@
     <span></span>
     <span></span>
 </div>
+
+<script src="{{ asset('js/carousel.js') }}"></script>

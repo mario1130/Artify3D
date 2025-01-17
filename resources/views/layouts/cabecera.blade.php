@@ -2,17 +2,17 @@
 
         <nav class="cabecera">
         <ul>
-            <a class="logo" href="#">Artly3D</a>
-            <a href="#">Inicio</a>
+            <a class="logo" href="/"><img src="img/Logo.png" alt=""></a>
+            <a href="/">Inicio</a>
             <a href="#" id="categoriesLink">Categorías</a>
         
         </ul>
         </nav>
 
         <div class="cabecera2">
-            <a href="#"><span>&#128269;</span></a>
-            <a href="#" id="userLink"><span>&#128100;</span></a>
-            <a href="#"><span>&#128722;</span></a>
+            <a href="#" id="searchLink"><img src="img/lupa.png" alt="lupa"></a>
+            <a href="#" id="userLink"><img src="img/user.png" alt="user"></a>
+            <a href="/shoppingcart"><img src="img/shopping.png" alt="shopping"></a>
         </div>
     </header>
 
@@ -74,6 +74,24 @@
 
 </div>
 
+
+<!-- Menú up -->
+<div class="side-menu-up" id="sideMenuup">
+    
+    <div class="search">
+        <input type="text" id="searchInput" placeholder="Búsqueda" />
+        <button class="search-button" id="searchButton"><img src="img/lupa.png" alt="lupa"></button>
+        <button class="close-btn-up" id="closeMenuup">&times;</button>
+    </div>
+
+
+</div>
+
+
+
+
 <!-- Overlay -->
 <div class="overlay" id="menuOverlay"></div>
+<div class="overlayup" id="menuOverlayup"></div>
 
+<script src="{{ asset('js/menu_lateral.js') }}"></script>

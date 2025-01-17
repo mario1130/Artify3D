@@ -38,7 +38,7 @@ body {
     background-color: #333;
 }
 .logo img {
-    max-width: 80px;
+    max-width: 100px;
     margin-bottom: 20px;
 }
 .features {
@@ -96,6 +96,7 @@ form button {
     background-color: #121212;
     border: 1px solid #fff;
     cursor: pointer;
+    margin-top: 2rem;
 }
 
 form p {
@@ -111,7 +112,7 @@ form p a {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 3rem;
     position: relative;
 }
 .second-line-with-text::before,

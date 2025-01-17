@@ -26,11 +26,12 @@
                 </div>
             </div>
         </div>
+        <div class="logo">
+            <a href="/"><img src="img/Logo.png" alt="Logo"></a>
+        </div>
         <div class="divider"></div>
         <div class="right-section">
-            <div class="logo">
-                <img src="logo.png" alt="Logo">
-            </div>
+            
             <h1>Crear cuenta</h1>
             <form>
                 <label for="name">Nombre</label>

@@ -10,9 +10,7 @@
 <body>
     <div class="container">
         <div class="left-section">
-            <div class="logo">
-                <img src="logo.png" alt="Logo">
-            </div>
+            
             <div class="features">
                 <div class="feature">
                     <div class="icon">📦</div>
@@ -31,6 +29,9 @@
             </div>
         </div>
 
+        <div class="logo">
+            <a href="/"><img src="img/Logo.png" alt="Logo"></a>
+        </div>
         <div class="divider"></div>
 
         <div class="right-section">

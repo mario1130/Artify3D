@@ -6,6 +6,7 @@
 @section('3', 'img/3.jpg')
 
 @section('context')
-    @include('layouts.principal') <!-- Incluye el footer como una parcial -->
+    @include('layouts.carousel')
+    @include('layouts.principal') 
 @endsection
 

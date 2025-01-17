@@ -6,21 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/style_plantilla.css') }}?v={{ time() }}">
-    <link rel="icon" href="{{ asset('img/artify2.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('img/favicon_artify.png') }}" type="image/x-icon">
 
 </head>
 <body>
     
     @include('layouts.cabecera')
-
-    @include('layouts.carousel')
     
     @yield('context')
 
     @include('layouts.footer')
     
 
-    <script src="{{ asset('js/menu_lateral.js') }}"></script>
-    <script src="{{ asset('js/carousel.js') }}"></script>
 </body>
 </html>

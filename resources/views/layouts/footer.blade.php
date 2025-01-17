@@ -11,6 +11,5 @@
             <img src="https://via.placeholder.com/20x20" alt="Google Pay">
             <img src="https://via.placeholder.com/20x20" alt="MasterCard">
             <img src="https://via.placeholder.com/20x20" alt="Visa">
-            <img src="https://via.placeholder.com/20x20" alt="Shopify">
         </div>
 </footer>

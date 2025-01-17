@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SeccionController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ShoppingcartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,11 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/session', [SessionController::class, 'session']);
 
 Route::get('/register', [RegisterController::class, 'register']);
+
+Route::get('/shoppingcart', [ShoppingcartController::class, 'shoppingcart']);
+
+
+
 
 Route::get('/seccion', [SeccionController::class, 'seccion']);
 
