@@ -54,7 +54,7 @@
         <li><a href="#">Comentarios</a></li>
         <li><a href="#">Lista de Deseos</a></li>
         <li><a href="#">Notificaciones</a></li>
-        <li><a href="#">Mis productos</a></li>
+        <li><a href="/my_products">Mis productos</a></li>
     </ul>
     <hr class="separator2">
     <ul>

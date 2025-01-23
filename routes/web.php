@@ -7,6 +7,7 @@ use App\Http\Controllers\SeccionController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ShoppingcartController;
+use App\Http\Controllers\My_productsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,7 @@ Route::get('/register', [RegisterController::class, 'register']);
 
 Route::get('/shoppingcart', [ShoppingcartController::class, 'shoppingcart']);
 
-
+Route::get('/my_products', [My_productsController::class, 'my_products']);
 
 
 Route::get('/seccion', [SeccionController::class, 'seccion']);

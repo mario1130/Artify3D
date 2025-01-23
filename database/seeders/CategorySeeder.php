@@ -30,18 +30,10 @@ class CategorySeeder extends Seeder
         $category5 = new Category();
         $category5->name = 'sketchup';
 
-        $category6 = new Category();
-        $category6->name = 'populars';
-
-        $category6 = new Category();
-        $category6->name = 'best_rated';
-
 
         $category->save();
         $category2->save();
         $category3->save();
         $category4->save();
-        $category5->save();
-        $category6->save();
     }
 }

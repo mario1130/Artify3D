@@ -19,10 +19,13 @@ class Products extends Migration
             $table->string('description');
             $table->decimal('precio',8,2);
             $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('imagen')->nullable();
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 
