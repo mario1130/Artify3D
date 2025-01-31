@@ -1,7 +1,7 @@
     body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background-color: #121212;
+        background-color: #121416;
         color: #fff;
         display: flex;
         height: 100vh;
@@ -14,7 +14,7 @@
 
     .sidebar {
         width: 20%;
-        background-color: #1b1b1b;
+        background-color: #121416;
         padding: 20px;
         display: flex;
         flex-direction: column;

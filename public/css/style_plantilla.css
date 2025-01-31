@@ -47,7 +47,7 @@ header a {
 /*cabecera*/
 
 .logo img{
-    max-width: 60px; 
+    max-width: 50px; 
     height: auto; 
     vertical-align: middle; 
     margin-right: 20px;
@@ -74,7 +74,7 @@ header a {
 }
 
 .cabecera2 img {
-    max-width: 40px; /* Tamaño reducido para las imágenes en cabecera2 */
+    max-width: 30px; /* Tamaño reducido para las imágenes en cabecera2 */
     height: auto;
     vertical-align: middle;
 }

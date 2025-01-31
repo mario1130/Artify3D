@@ -2,8 +2,8 @@
 
         <nav class="cabecera">
         <ul>
-            <a class="logo" href="/"><img src="img/Logo.png" alt=""></a>
-            <a href="/">Inicio</a>
+            <a class="logo" href="{{ route('index') }}"><img src="img/Logo.png" alt=""></a>
+            <a href="{{ route('index') }}">Inicio</a>
             <a href="#" id="categoriesLink">Categorías</a>
         
         </ul>
@@ -11,8 +11,9 @@
 
         <div class="cabecera2">
             <a href="#" id="searchLink"><img src="img/lupa.png" alt="lupa"></a>
+            <a href="{{ route('shoppingcart') }}"><img src="img/shopping.png" alt="shopping"></a>
             <a href="#" id="userLink"><img src="img/user.png" alt="user"></a>
-            <a href="/shoppingcart"><img src="img/shopping.png" alt="shopping"></a>
+            
         </div>
     </header>
 
@@ -47,14 +48,14 @@
     <button class="close-btn-right" id="closeMenuright">&times;</button>
 
     <hr class="separator">
-    <p>Mi Cuenta</p>
+    <p>Mi cuenta</p>
     <ul>
         <a class="menu-title">Mi Cuenta</a>
         <li><a href="#">Mis datos</a></li>
         <li><a href="#">Comentarios</a></li>
         <li><a href="#">Lista de Deseos</a></li>
         <li><a href="#">Notificaciones</a></li>
-        <li><a href="/my_products">Mis productos</a></li>
+        <li><a href="{{ route('my_products.index') }}">Mis productos</a></li>
     </ul>
     <hr class="separator2">
     <ul>
@@ -68,7 +69,7 @@
     
     <div class="menu-session">
         <hr class="separator2">
-        <a class="session" href="/session">Iniciar Sesión</a>
+        <a class="session" href="{{ route('login.show') }}">Iniciar Sesión</a>
     </div>
 
 

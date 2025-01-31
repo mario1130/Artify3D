@@ -4,10 +4,15 @@ use Illuminate\Support\Facades\Route;
 //Añadir las routas de los controladores que vamos a utilizar
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SeccionController;
-use App\Http\Controllers\SessionController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ShoppingcartController;
 use App\Http\Controllers\My_productsController;
+use App\Http\Controllers\Add_productsController;
+use App\Http\Controllers\ContactoController;
+
+use App\Mail\ContactoMailable;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,20 +32,50 @@ use App\Http\Controllers\My_productsController;
 //EJEMPLOS
 
 //LLamada de controladores
-Route::get('/', [HomeController::class, 'index']);
-
-Route::get('/session', [SessionController::class, 'session']);
-
-Route::get('/register', [RegisterController::class, 'register']);
-
-Route::get('/shoppingcart', [ShoppingcartController::class, 'shoppingcart']);
-
-Route::get('/my_products', [My_productsController::class, 'my_products']);
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 
-Route::get('/seccion', [SeccionController::class, 'seccion']);
+Route::get('/login', [LoginController::class, 'show'])->name('login.show');
 
-Route::get('/seccion/{seccion}', [SeccionController::class, 'show']);
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+
+
+Route::get('/register', [RegisterController::class, 'show'])->name('register.show');
+
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
+
+
+
+Route::get('/shoppingcart', [ShoppingcartController::class, 'shoppingcart'])->name('shoppingcart');
+
+
+
+
+Route::get('/my_products/add', [My_productsController::class, 'add_show'])->name('add_products.add_show');
+
+Route::post('/my_products/add', [My_productsController::class, 'add'])->name('add_products');
+
+Route::get('/my_products/{product}', [My_productsController::class, 'product_show'])->name('products.product_show');
+
+Route::get('/my_products', [My_productsController::class, 'index'])->name('my_products.index');
+
+
+
+//Mail
+Route::get('contacto',[ContactoController::class,'index'])->name('contacto.index');
+
+Route::post('contacto',[ContactoController::class,'store'])->name('contacto.store');
+
+
+
+
+
+
+
+ // Route::get('/seccion', [SeccionController::class, 'seccion']);
+
+ // Route::get('/seccion/{seccion}', [SeccionController::class, 'show']);
 
 
 

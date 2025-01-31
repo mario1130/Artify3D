@@ -2,14 +2,13 @@
 
 @section('title', 'Mis Productos')
 
-
 <link rel="stylesheet" href="{{ asset('css/style_myproducts.css') }}?v={{ time() }}">
 
 @section('context')
 <div class="container">
-    <main class="main-content">
+    <div class="main-content">
         <h1>Mis Productos</h1>
-        <button class="add-product">Añadir Producto</button>
+        <button class="add-product"> <a href="{{ route('add_products.add_show') }}">Añadir Producto</a></button>
         <div class="product-list">
             <div class="product-item">
                 <div class="product-image"></div>
@@ -28,7 +27,7 @@
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 </div>
 @endsection
     

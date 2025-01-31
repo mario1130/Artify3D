@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión</title>
-    <link rel="stylesheet" href="{{ asset('css/style_session.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/style_login.css') }}?v={{ time() }}">
     <link rel="icon" href="{{ asset('img/artify2.png') }}" type="image/x-icon">
 </head>
 <body>
@@ -36,12 +36,14 @@
 
         <div class="right-section">
             <h1>Iniciar sesión</h1>
-            <form>
+            <form action="{{route('login')}}" method="POST">
+
+                @csrf
                 <div class="first-line-with-text">
                     <span></span>
                 </div>
-                <input type="email" placeholder="E-mail" required>
-                <input type="password" placeholder="Contraseña" required>
+                <input type="email" id="email" name="email" placeholder="E-mail" required>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
                 <a href="#">¿Has olvidado la contraseña?</a>
                 <button type="submit">Iniciar Sesión</button>
 
@@ -49,7 +51,7 @@
                     <span>¿Eres nuevo?</span>
                 </div>
 
-                <button class="button-register" type="button"  onclick="window.location.href='/register'" >Crear Cuenta</button>
+                <button class="button-register" type="button"  onclick="window.location.href='{{route('register')}}'" >Crear Cuenta</button>
 
             </form>
         </div>
