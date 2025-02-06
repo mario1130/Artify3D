@@ -51,7 +51,6 @@ Route::get('/shoppingcart', [ShoppingcartController::class, 'shoppingcart'])->na
 
 
 
-
 Route::get('/my_products/add', [My_productsController::class, 'add_show'])->name('add_products.add_show');
 
 Route::post('/my_products/add', [My_productsController::class, 'add'])->name('add_products');
@@ -88,11 +87,21 @@ Route::get('/seccion', function () {
 
 
 //Controladores con categoria opcional e inicializada null
-
+/*
 Route::get('/seccion/{seccion}/{categoria?}', function ($seccion, $categoria=null) {
     if($categoria)
     return "Bienvenidos a la categoria:  $categoria de la seccion $seccion";
     else
     return "Bienvenido a la seccion $seccion";
 
+});*/
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
