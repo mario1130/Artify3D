@@ -10,7 +10,6 @@
 <body>
     <div class="container">
         <div class="left-section">
-            
             <div class="features">
                 <div class="feature">
                     <div class="icon">📦</div>
@@ -36,8 +35,15 @@
 
         <div class="right-section">
             <h1>Iniciar sesión</h1>
-            <form action="{{route('login')}}" method="POST">
 
+            <!-- Mostrar mensaje de error si existe -->
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    <p>{{ session('error') }}</p>
+                </div>
+            @endif
+
+            <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="first-line-with-text">
                     <span></span>
@@ -51,8 +57,7 @@
                     <span>¿Eres nuevo?</span>
                 </div>
 
-                <button class="button-register" type="button"  onclick="window.location.href='{{route('register')}}'" >Crear Cuenta</button>
-
+                <button class="button-register" type="button" onclick="window.location.href='{{ route('register') }}'">Crear Cuenta</button>
             </form>
         </div>
     </div>

@@ -46,7 +46,7 @@
         <div class="right-section">
             
             <h1>Crear cuenta</h1>
-            <form action="{{route('register')}}" method="POST">
+            <form action="{{route('register')}}" method="POST" onsubmit="return validateForm()">
 
             
                 @csrf
@@ -56,14 +56,14 @@
                 <input type="email" id="email" name="email" placeholder="E-mail" required>
                 <label for="password">Contraseña</label>
                 <input type="password" id="password" name="password" placeholder="Contraseña" required>
-                <label for="confirm-password">Repetir Contraseña</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Repetir Contraseña" required> 
+                <label for="password_confirmation">Repetir Contraseña</label>
+                <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Repetir Contraseña" required> 
                 <div id="password-error" class="error-message">Las contraseñas no coinciden.</div>
 
 
 
                 <div class="checkbox-group">
-                    <input type="checkbox" id="privacy-policy" required>
+                    <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
                     <label for="privacy-policy">He leído y acepto la <a href="#">política de privacidad</a></label>
                 </div>
                 <div class="checkbox-group">
@@ -72,7 +72,7 @@
                 </div>
                
                 
-                <button type="submit">Crear Cuenta</button>
+                <button type="submit" id="register-button">Crear Cuenta</button>
                 <div class="secondary-action">
                     <a href="/login">Iniciar Sesión</a>
                 </div>
@@ -82,7 +82,7 @@
 
     <script>
         const passwordInput = document.getElementById('password');
-        const confirmPasswordInput = document.getElementById('confirm-password');
+        const confirmPasswordInput = document.getElementById('password_confirmation');
         const passwordError = document.getElementById('password-error');
         const registerButton = document.getElementById('register-button');
         const privacyPolicyCheckbox = document.getElementById('privacy-policy');

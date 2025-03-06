@@ -46,11 +46,16 @@ header a {
 
 /*cabecera*/
 
+img {
+    all: unset; /* Resetea estilos heredados */
+}
+
 .logo img{
     max-width: 50px; 
     height: auto; 
     vertical-align: middle; 
     margin-right: 20px;
+    padding: 1rem 0rem;
 }
 
 .cabecera2 .img{
