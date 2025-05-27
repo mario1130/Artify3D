@@ -6,6 +6,7 @@
     <title>Inicio de Sesión</title>
     <link rel="stylesheet" href="{{ asset('css/style_login.css') }}?v={{ time() }}">
     <link rel="icon" href="{{ asset('img/artify2.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('img/favicon_artify.png') }}" type="image/x-icon">
 </head>
 <body>
     <div class="container">

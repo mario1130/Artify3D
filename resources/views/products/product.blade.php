@@ -1,5 +1,4 @@
 
-
 <?php
 @foreach ($products as $product)
 ?>

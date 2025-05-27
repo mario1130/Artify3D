@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="{{ asset('css/style_plantilla.css') }}?v={{ time() }}">
 
 </head>
-<body>
+<body class="@yield('body-class', 'default-body')">
 
 
     @include('layouts.cabecera')
     
-    @yield('context')
+    <main>
+        @yield('context')
+    </main>
 
     @include('layouts.footer')
     

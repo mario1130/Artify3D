@@ -100,19 +100,27 @@ form button {
 form button:hover {
     background-color: #008000;
 }
-.secondary-action {
-    margin-top: 15px;
-    text-align: center;
-}
-.secondary-action a {
+.button-register{
+    padding: 10px;
+    font-size: 16px;
     color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    padding: 5px 20px;
+    background-color: #121212;
     border: 1px solid #fff;
-    display: inline-block;
-    margin-top: 10px;
+    cursor: pointer;
+    margin-top: 2rem;
 }
-.secondary-action a:hover {
-    background-color: #333;
+
+/*Control de errores*/
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    display: none; /* Ocultar inicialmente */
+}
+.error-message.visible {
+    display: block; /* Mostrar cuando sea necesario */
+}
+button:disabled {
+    background-color: #ccc; /* Estilo para botón deshabilitado */
+    cursor: not-allowed;
 }

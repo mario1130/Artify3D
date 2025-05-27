@@ -6,6 +6,7 @@
     <title>Registro</title>
     <link rel="stylesheet" href="{{ asset('css/style_register.css') }}?v={{ time() }}">
     <link rel="icon" href="{{ asset('img/artify2.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('img/favicon_artify.png') }}" type="image/x-icon">
     <style>
         .error-message {
             color: red;
@@ -59,6 +60,7 @@
                 <label for="password_confirmation">Repetir Contraseña</label>
                 <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Repetir Contraseña" required> 
                 <div id="password-error" class="error-message">Las contraseñas no coinciden.</div>
+                <p id="password-length-error" class="error-message">La contraseña debe tener al menos 8 caracteres.</p>
 
 
 
@@ -73,66 +75,14 @@
                
                 
                 <button type="submit" id="register-button">Crear Cuenta</button>
-                <div class="secondary-action">
-                    <a href="/login">Iniciar Sesión</a>
-                </div>
+
+                <button class="button-register" type="button" onclick="window.location.href='{{ route('login') }}'">Iniciar Sesion</button>
+                
             </form>
         </div>
     </div>
 
-    <script>
-        const passwordInput = document.getElementById('password');
-        const confirmPasswordInput = document.getElementById('password_confirmation');
-        const passwordError = document.getElementById('password-error');
-        const registerButton = document.getElementById('register-button');
-        const privacyPolicyCheckbox = document.getElementById('privacy-policy');
+    <script src="{{ asset('js/register.js') }}"></script>
 
-        // Función para validar si las contraseñas coinciden
-        function validatePasswords() {
-            const password = passwordInput.value;
-            const confirmPassword = confirmPasswordInput.value;
-
-            // Mostrar el mensaje de error solo si el campo de confirmación no está vacío
-            if (confirmPassword !== '' && password !== confirmPassword) {
-                passwordError.classList.add('visible'); // Mostrar mensaje de error
-                return false; // Las contraseñas no coinciden
-            } else {
-                passwordError.classList.remove('visible'); // Ocultar mensaje de error
-                return true; // Las contraseñas coinciden o el campo está vacío
-            }
-        }
-
-        // Función para actualizar el estado del botón de registro
-        function updateRegisterButton() {
-            const passwordsMatch = validatePasswords();
-            const privacyPolicyAccepted = privacyPolicyCheckbox.checked;
-
-            // Habilitar el botón solo si las contraseñas coinciden y la política está aceptada
-            registerButton.disabled = !(passwordsMatch && privacyPolicyAccepted);
-        }
-
-        // Función para validar el formulario antes de enviarlo
-        function validateForm() {
-            const passwordsMatch = validatePasswords();
-            const privacyPolicyAccepted = privacyPolicyCheckbox.checked;
-
-            if (!passwordsMatch) {
-                alert('Las contraseñas no coinciden. Por favor, corrígelas.');
-                return false; // Detener el envío del formulario
-            }
-
-            if (!privacyPolicyAccepted) {
-                alert('Debes aceptar la política de privacidad.');
-                return false; // Detener el envío del formulario
-            }
-
-            return true; // Permitir el envío del formulario
-        }
-
-        // Eventos para validar en tiempo real
-        confirmPasswordInput.addEventListener('input', updateRegisterButton);
-        passwordInput.addEventListener('input', updateRegisterButton);
-        privacyPolicyCheckbox.addEventListener('change', updateRegisterButton);
-    </script>
 </body>
 </html>

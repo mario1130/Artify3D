@@ -10,9 +10,22 @@
     </nav>
 
     <div class="cabecera2">
-        <a href="#" id="searchLink"><img src="img/lupa.png" alt="lupa"></a>
-        <a href="#" id="userLink"><img src="img/user.png" alt="user"></a>
-        <a href="{{ route('shoppingcart') }}"><img src="img/shopping.png" alt="shopping"></a>
+        <a href="#" id="searchLink"><img src="{{ asset('img/lupa.png') }}" alt="lupa"></a>
+        <a href="{{ route('shoppingcart') }}"><img class="shopping" src="{{ asset('img/shopping.png') }}" alt="shopping"></a>
+    
+        @auth
+            @if (Auth::user()->profile_photo)
+            <a href="#" id="userLink">
+                <img src="{{ Auth::user()->profile_photo }}" alt="user">
+            </a>
+            @else
+            <a href="#" id="userLink">
+                <img class="user-avatar" src="data:image/png;base64,{{ \App\Helpers\ImageHelper::generateInitialAvatar(Auth::user()->name) }}" alt="user">
+            </a>
+            @endif
+        @else
+            <a href="{{ route('login.show') }}" id="userLink"><img src="img/user.png" alt="user"></a>
+        @endauth
     </div>
 </header>
 
@@ -63,7 +76,10 @@
     <!-- Iniciar sesión -->
     <div class="menu-session">
         <hr class="separator2">
-        <a class="session" href="{{ route('login.show') }}">Iniciar Sesión</a>
+        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+            @csrf
+            <button class="Cerrar-Session" type="submit">Cerrar Sesión</button>
+        </form>
     </div>
 </div>
 

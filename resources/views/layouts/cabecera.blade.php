@@ -2,27 +2,27 @@
 
         <nav class="cabecera">
         <ul>
-            <a class="logo" href="{{ route('index') }}"><img src="img/Logo.png" alt=""></a>
+            <a class="logo" href="{{ route('index') }}"><img src="{{ asset('img/Logo.png') }}" alt=""></a>
             <a href="{{ route('index') }}">Inicio</a>
             <a href="#" id="categoriesLink">Categorías</a>
         </ul>
         </nav>
 
-        <!--<div class="cabecera2">
-            <a href="#" id="searchLink"><img src="img/lupa.png" alt="lupa"></a>
-            <a href="{{ route('shoppingcart') }}"><img src="img/shopping.png" alt="shopping"></a>
-            <a href="#" id="userLink"><img src="img/user.png" alt="user"></a>
-            
-        </div>-->
+        
         <div class="cabecera2">
-            <a href="#" id="searchLink"><img src="img/lupa.png" alt="lupa"></a>
-            <a href="{{ route('shoppingcart') }}"><img src="img/shopping.png" alt="shopping"></a>
+            <a href="#" id="searchLink"><img src="{{ asset('img/lupa.png') }}" alt="lupa"></a>
+            <a href="{{ route('shoppingcart') }}"><img class="shopping" src="{{ asset('img/shopping.png') }}" alt="shopping"></a>
         
             @auth
+                @if (Auth::user()->profile_photo)
                 <a href="#" id="userLink">
                     <img src="{{ Auth::user()->profile_photo }}" alt="user">
                 </a>
-            
+                @else
+                <a href="#" id="userLink">
+                    <img class="user-avatar" src="data:image/png;base64,{{ \App\Helpers\ImageHelper::generateInitialAvatar(Auth::user()->name) }}" alt="user">
+                </a>
+                @endif
             @else
                 <a href="{{ route('login.show') }}" id="userLink"><img src="img/user.png" alt="user"></a>
             @endauth
@@ -38,11 +38,8 @@
         <hr class="separator">
         <ul>
             <a class="menu-title">Categorías</a>
-            <li><a href="#">Renders</a></li>
-            <li><a href="#">Tutoriales</a></li>
-            <li><a href="#">Blender</a></li>
-            <li><a href="#">Maya</a></li>
-            <li><a href="#">SketchUp</a></li>
+            @foreach ($categories as $category)
+            <li><a href="{{ route('products.byCategory', $category->slug) }}">{{ $category->name }}</a></li>            @endforeach
         </ul>
         <hr class="separator2">
         <ul>
@@ -54,16 +51,17 @@
 </div>
 
 
+
+
 <!-- Menú lateral derecho -->
-<div class="side-menu-right" id="sideMenuright">
+<div class="side-menu-right" id="sideMenuright" data-logged-in="{{ auth()->check() ? 'true' : 'false' }}">
     <button class="close-btn-right" id="closeMenuright">&times;</button>
 
-    @auth
+    
         <hr class="separator">
-        <p>Mi cuenta</p>
         <ul>
             <a class="menu-title">Mi Cuenta</a>
-            <li><a href="#">Mis datos</a></li>
+            <li><a href="{{ route('profile.index') }}" id="userLink">Mis Datos</a></li>
             <li><a href="#">Comentarios</a></li>
             <li><a href="#">Lista de Deseos</a></li>
             <li><a href="#">Notificaciones</a></li>
@@ -75,29 +73,23 @@
             <li><a href="#">Pedidos</a></li>
             <li><a href="#">Pedidos Cancelados</a></li>
             <li><a href="#">Historial de Compras</a></li>
+            
         </ul>
-        
+        <hr class="separator3">
         <!-- Formulario de cierre de sesión -->
         <form action="{{ route('logout') }}" method="POST" style="display: inline;">
             @csrf
-            <button type="submit">Cerrar Sesión</button>
+            <button class="Cerrar-Session" type="submit">Cerrar Sesión</button>
         </form>
-    @else
-        <!-- Si el usuario no está autenticado, mostrar el botón de "Iniciar Sesión" -->
-        <div class="flex justify-center items-center h-full">
-            <a class="session bg-blue-600 text-white px-4 py-2 rounded-lg" href="{{ route('login.show') }}">
-                Iniciar Sesión
-            </a>
-        </div>
-    @endauth
+    
 </div>
 
-<!-- Popup de inicio de sesión -->
-<div class="login-popup" id="loginPopup" style="display:none;">
-    <div class="popup-content">
-        <p>¡Debes iniciar sesión para acceder a esta sección!</p>
-        <a href="{{ route('login.show') }}" class="session bg-blue-600 text-white px-4 py-2 rounded-lg">Iniciar Sesión</a>
-        <button id="closePopup" class="close-popup">Cerrar</button>
+<!-- Modal de Login -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <p>Debes iniciar sesión para acceder a esta sección.</p>
+        <button id="goToLogin">Ir a Iniciar Sesión</button>
+        <button id="closeModal">Cerrar</button>
     </div>
 </div>
 
@@ -106,15 +98,14 @@
 <div class="side-menu-up" id="sideMenuup">
     
     <div class="search">
-        <input type="text" id="searchInput" placeholder="Búsqueda" />
-        <button class="search-button" id="searchButton"><img src="img/lupa.png" alt="lupa"></button>
+        <form action="{{ route('search') }}" method="GET">
+            <input type="text" name="query" id="searchInput" placeholder="Búsqueda" />
+            <button type="submit" class="search-button" id="searchButton"><img src="img/lupa.png" alt="lupa"></button> 
+            
+        </form>
         <button class="close-btn-up" id="closeMenuup">&times;</button>
     </div>
-
-
 </div>
-
-
 
 
 <!-- Overlay -->

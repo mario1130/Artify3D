@@ -3,13 +3,9 @@
 use Illuminate\Support\Facades\Route;
 //Añadir las routas de los controladores que vamos a utilizar
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SeccionController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ShoppingcartController;
-use App\Http\Controllers\My_productsController;
-use App\Http\Controllers\Add_productsController;
-use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
 
 use App\Mail\ContactoMailable;
 use Illuminate\Support\Facades\Mail;
@@ -25,50 +21,35 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
-//EJEMPLOS
-
-//LLamada de controladores
+// Main route
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
 
-Route::get('/login', [LoginController::class, 'show'])->name('login.show');
-Route::post('/login', [LoginController::class, 'login'])->name('login');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout'); 
+//Rutas de la aplicacion
+require __DIR__ . '/auth.php';
+require __DIR__ . '/products.php';
+require __DIR__ . '/admin.php';
+require __DIR__ . '/contact.php';
 
 
-Route::get('/register', [RegisterController::class, 'show'])->name('register.show');
-Route::post('/register', [RegisterController::class, 'register'])->name('register');
+//buscador
+Route::get('/search', [SearchController::class, 'search'])->name('search');
+
+//Perfil
+Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile.index');
+
+//Shoppingcart
+Route::get('/shoppingcart', [ShoppingcartController::class, 'shoppingcart'])->middleware('auth')->name('shoppingcart');
+Route::post('/shoppingcart/add', [ShoppingcartController::class, 'add'])->name('shoppingcart.add');
 
 
-
-Route::get('/shoppingcart', [ShoppingcartController::class, 'shoppingcart'])->name('shoppingcart');
-
-
-
-Route::get('/my_products/add', [My_productsController::class, 'add_show'])->name('add_products.add_show');
-
-Route::post('/my_products/add', [My_productsController::class, 'add'])->name('add_products');
-
-Route::get('/my_products/{product}', [My_productsController::class, 'product_show'])->name('products.product_show');
-
-Route::get('/my_products', [My_productsController::class, 'index'])->name('my_products.index');
+//Error
+Route::fallback(function () {
+    return view('error.404', ['user' => auth()->user()]); // Carga la vista resources/views/404.blade.php
+});
 
 
-
-//Mail
-Route::get('contacto',[ContactoController::class,'index'])->name('contacto.index');
-
-Route::post('contacto',[ContactoController::class,'store'])->name('contacto.store');
-
-
-
-
-
-
+// Ruta Administradr
 
  // Route::get('/seccion', [SeccionController::class, 'seccion']);
 
@@ -94,12 +75,3 @@ Route::get('/seccion/{seccion}/{categoria?}', function ($seccion, $categoria=nul
 
 });*/
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});

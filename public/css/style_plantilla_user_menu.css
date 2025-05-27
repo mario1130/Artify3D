@@ -47,18 +47,12 @@ header a {
 /*cabecera*/
 
 .logo img{
-    max-width: 60px; 
+    max-width: 45px; 
     height: auto; 
     vertical-align: middle; 
     margin-right: 20px;
 }
 
-.cabecera2 .img{
-    max-width: 80px; 
-    height: auto; 
-    vertical-align: middle; 
-
-}
 
 .cabecera {
     margin-right: auto;
@@ -74,7 +68,7 @@ header a {
 }
 
 .cabecera2 img {
-    max-width: 40px; /* Tamaño reducido para las imágenes en cabecera2 */
+    max-width: 33px; /* Tamaño reducido para las imágenes en cabecera2 */
     height: auto;
     vertical-align: middle;
 }
@@ -138,7 +132,7 @@ header a {
     /*Psicionar el separado justo en el medio*/
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 1rem;
+    margin-top: -1rem;
 
 }
 
@@ -211,7 +205,7 @@ header a {
     position: fixed;
     top: 60px; /* Comienza justo debajo de la cabecera */
     right: 0;
-    width: 450px; /* Ancho del menú */
+    width: 35vh; /* Ancho del menú */
     height: calc(100% - 90px); /* Ocupa toda la altura menos la cabecera */
     background-color: #222; /* Fondo oscuro */
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra sutil */

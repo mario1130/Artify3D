@@ -1,3 +1,4 @@
+
 <footer>
     <div class="politics">
         &copy; 2024, Artify3D - Tienda oficial
@@ -7,9 +8,6 @@
         </div>
 
         <div class="payment-methods">
-            <img src="https://via.placeholder.com/20x20" alt="PayPal">
-            <img src="https://via.placeholder.com/20x20" alt="Google Pay">
-            <img src="https://via.placeholder.com/20x20" alt="MasterCard">
-            <img src="https://via.placeholder.com/20x20" alt="Visa">
+            <img src="{{ asset('img/Tarj.png') }}" alt="PayPal">
         </div>
 </footer>
