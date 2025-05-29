@@ -32,6 +32,9 @@ class AppServiceProvider extends ServiceProvider
         // Compartir $categories con todas las vistas que usen layouts/cabecera.blade.php
         View::composer('layouts.cabecera', function ($view) {
         $view->with('categories', Category::all());
-    });
+        });
+        View::composer('layouts.cabecera_user_menu', function ($view) {
+        $view->with('categories', Category::all());
+        });
     }
 }

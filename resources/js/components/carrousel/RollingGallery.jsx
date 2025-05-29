@@ -15,15 +15,16 @@ const IMGS = [
   "https://images.unsplash.com/photo-1585970480901-90d6bb2a48b5?q=80&w=3774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ];
 
+
 const RollingGallery = ({ autoplay = false, pauseOnHover = false, images = [] }) => {
   images = IMGS;
   const [isScreenSizeSm, setIsScreenSizeSm] = useState(window.innerWidth <= 640);
 
   const cylinderWidth = isScreenSizeSm ? 1100 : 1800;
   const faceCount = images.length;
-  const faceWidth = (cylinderWidth / faceCount) * 1.5; // Increased width for items
-  const dragFactor = 0.05;
-  const radius = cylinderWidth / (2 * Math.PI);
+  const faceWidth = (cylinderWidth / faceCount) * 1.5;
+  const dragFactor = 0.02; // Reduced drag factor for smoother dragging
+  const radius = cylinderWidth / (1.5 * Math.PI);
 
   const rotation = useMotionValue(0);
   const controls = useAnimation();
@@ -36,7 +37,7 @@ const RollingGallery = ({ autoplay = false, pauseOnHover = false, images = [] })
   const handleDragEnd = (_, info) => {
     controls.start({
       rotateY: rotation.get() + info.velocity.x * dragFactor,
-      transition: { type: "spring", stiffness: 60, damping: 20, mass: 0.1, ease: "easeOut" },
+      transition: { type: "spring", stiffness: 40, damping: 15, mass: 0.1, ease: "easeOut" }, // Softer spring animation
     });
   };
 
@@ -44,19 +45,24 @@ const RollingGallery = ({ autoplay = false, pauseOnHover = false, images = [] })
     return `rotate3d(0, 1, 0, ${value}deg)`;
   });
 
-  // Autoplay effect with adjusted timing
+  // Optimized autoplay using requestAnimationFrame
   useEffect(() => {
-    if (autoplay) {
-      autoplayRef.current = setInterval(() => {
-        controls.start({
-          rotateY: rotation.get() - (360 / faceCount),
-          transition: { duration: 2, ease: "linear" },
-        });
-        rotation.set(rotation.get() - (360 / faceCount));
-      }, 2000);
+    let animationFrameId;
 
-      return () => clearInterval(autoplayRef.current);
+    const autoplayAnimation = () => {
+      controls.start({
+        rotateY: rotation.get() - (0.5 / faceCount),
+        transition: { duration: 2.5, ease: "linear" }, // Slightly slower and smoother
+      });
+      rotation.set(rotation.get() - (0.5 / faceCount));
+      animationFrameId = requestAnimationFrame(autoplayAnimation);
+    };
+
+    if (autoplay) {
+      autoplayAnimation();
     }
+
+    return () => cancelAnimationFrame(animationFrameId);
   }, [autoplay, rotation, controls, faceCount]);
 
   useEffect(() => {
@@ -68,29 +74,22 @@ const RollingGallery = ({ autoplay = false, pauseOnHover = false, images = [] })
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Pause on hover with smooth transition
   const handleMouseEnter = () => {
     if (autoplay && pauseOnHover) {
-      clearInterval(autoplayRef.current);
-      controls.stop(); // Stop the animation smoothly
+      cancelAnimationFrame(autoplayRef.current);
+      controls.stop();
     }
   };
 
   const handleMouseLeave = () => {
     if (autoplay && pauseOnHover) {
-      controls.start({
-        rotateY: rotation.get() - (360 / faceCount),
-        transition: { duration: 2, ease: "linear" },
-      });
-      rotation.set(rotation.get() - (360 / faceCount));
-
-      autoplayRef.current = setInterval(() => {
+      autoplayRef.current = requestAnimationFrame(() => {
         controls.start({
-          rotateY: rotation.get() - (360 / faceCount),
-          transition: { duration: 2, ease: "linear" },
+          rotateY: rotation.get() - (0.5 / faceCount),
+          transition: { duration: 1, ease: "linear" },
         });
-        rotation.set(rotation.get() - (360 / faceCount));
-      }, 2000);
+        rotation.set(rotation.get() - (0.5 / faceCount));
+      });
     }
   };
 
@@ -102,7 +101,8 @@ const RollingGallery = ({ autoplay = false, pauseOnHover = false, images = [] })
         <motion.div
           drag="x"
           className="gallery-track"
-          onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           style={{
             transform: transform,
             rotateY: rotation,

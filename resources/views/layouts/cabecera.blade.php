@@ -62,17 +62,17 @@
         <ul>
             <a class="menu-title">Mi Cuenta</a>
             <li><a href="{{ route('profile.index') }}" id="userLink">Mis Datos</a></li>
-            <li><a href="#">Comentarios</a></li>
-            <li><a href="#">Lista de Deseos</a></li>
-            <li><a href="#">Notificaciones</a></li>
+            <li><a href="{{ route('comments.index') }}">Comentarios</a></li>
+            <li><a href="{{ route('wishlists.index') }}">Lista de Deseos</a></li>
+            <li><a href="{{ route('notifications.index') }}">Notificaciones</a></li>
             <li><a href="{{ route('my_products.index') }}">Mis productos</a></li>
         </ul>
         <hr class="separator2">
         <ul>
             <a class="menu-title">Compras</a>
-            <li><a href="#">Pedidos</a></li>
-            <li><a href="#">Pedidos Cancelados</a></li>
-            <li><a href="#">Historial de Compras</a></li>
+            <li><a href="{{ route('pedidos.index') }}">Pedidos</a></li>
+            <li><a href="{{ route('pedidoscancelados.index') }}">Pedidos Cancelados</a></li>
+            <li><a href="{{ route('purchasehistory.index') }}">Historial de Compras</a></li>
             
         </ul>
         <hr class="separator3">

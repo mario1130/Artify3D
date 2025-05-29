@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 //Añadir las routas de los controladores que vamos a utilizar
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShoppingcartController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\profile\ProfileController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\profile\ComentariosControler;
 
 use App\Mail\ContactoMailable;
 use Illuminate\Support\Facades\Mail;
@@ -30,13 +31,13 @@ require __DIR__ . '/auth.php';
 require __DIR__ . '/products.php';
 require __DIR__ . '/admin.php';
 require __DIR__ . '/contact.php';
+require __DIR__ . '/profile.php';
 
 
 //buscador
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
-//Perfil
-Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile.index');
+
 
 //Shoppingcart
 Route::get('/shoppingcart', [ShoppingcartController::class, 'shoppingcart'])->middleware('auth')->name('shoppingcart');

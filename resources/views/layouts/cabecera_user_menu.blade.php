@@ -2,7 +2,7 @@
 
     <nav class="cabecera">
     <ul>
-        <a class="logo" href="{{ route('index') }}"><img src="img/Logo.png" alt=""></a>
+        <a class="logo" href="{{ route('index') }}"><img src="{{ asset('img/Logo.png') }}" alt=""></a>
         <a href="{{ route('index') }}">Inicio</a>
         <a href="#" id="categoriesLink">Categorías</a>
     
@@ -32,25 +32,22 @@
 
 <!-- Menú lateral izquierdo -->
 <div class="side-menu" id="sideMenu">
-<button class="close-btn" id="closeMenu">&times;</button>
-
-<hr class="separator">
-<ul>
-    <a class="menu-title">Categorías</a>
-    <li><a href="#">Renders</a></li>
-    <li><a href="#">Tutoriales</a></li>
-    <li><a href="#">Blender</a></li>
-    <li><a href="#">Maya</a></li>
-    <li><a href="#">SketchUp</a></li>
-</ul>
-<hr class="separator2">
-<ul>
-    <a class="menu-title">Trending</a>
-    <li><a href="#">Populars</a></li>
-    <li><a href="#">Best Rated</a></li>
-</ul>
+    <button class="close-btn" id="closeMenu">&times;</button>
 
 
+        <hr class="separator">
+        <ul>
+            <a class="menu-title">Categorías</a>
+            @foreach ($categories as $category)
+            <li><a href="{{ route('products.byCategory', $category->slug) }}">{{ $category->name }}</a></li>            @endforeach
+        </ul>
+        <hr class="separator2">
+        <ul>
+            <a class="menu-title">Trending</a>
+            <li><a href="#">Populars</a></li>
+            <li><a href="#">Best Rated</a></li>
+        </ul>
+       
 </div>
 
 
@@ -59,18 +56,18 @@
 <div class="side-menu-right" id="sideMenuright">
     <ul>
         <a class="menu-title">Mi Cuenta</a>
-        <li><a href="#">Mis datos</a></li>
-        <li><a href="#">Comentarios</a></li>
-        <li><a href="#">Lista de Deseos</a></li>
-        <li><a href="#">Notificaciones</a></li>
+        <li><a href="{{ route('profile.index') }}" id="userLink">Mis Datos</a></li>
+        <li><a href="{{ route('comments.index') }}">Comentarios</a></li>
+        <li><a href="{{ route('wishlists.index') }}">Lista de Deseos</a></li>
+        <li><a href="{{ route('notifications.index') }}">Notificaciones</a></li>
         <li><a href="{{ route('my_products.index') }}">Mis productos</a></li>
     </ul>
     <hr class="separator2">
-    <ul>
+    <ul class="menu-purchases">
         <a class="menu-title">Compras</a>
-        <li><a href="#">Pedidos</a></li>
-        <li><a href="#">Pedidos Cancelados</a></li>
-        <li><a href="#">Historial de Compras</a></li>
+        <li><a href="{{ route('pedidos.index') }}">Pedidos</a></li>
+        <li><a href="{{ route('pedidoscancelados.index') }}">Pedidos Cancelados</a></li>
+        <li><a href="{{ route('purchasehistory.index') }}">Historial de Compras</a></li>
     </ul>
 
     <!-- Iniciar sesión -->
@@ -86,14 +83,15 @@
 
 <!-- Menú up -->
 <div class="side-menu-up" id="sideMenuup">
-
-<div class="search">
-    <input type="text" id="searchInput" placeholder="Búsqueda" />
-    <button class="search-button" id="searchButton"><img src="img/lupa.png" alt="lupa"></button>
-    <button class="close-btn-up" id="closeMenuup">&times;</button>
-</div>
-
-
+    
+    <div class="search">
+        <form action="{{ route('search') }}" method="GET">
+            <input type="text" name="query" id="searchInput" placeholder="Búsqueda" />
+            <button type="submit" class="search-button" id="searchButton"><img src="img/lupa.png" alt="lupa"></button> 
+            
+        </form>
+        <button class="close-btn-up" id="closeMenuup">&times;</button>
+    </div>
 </div>
 
 

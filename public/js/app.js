@@ -18,7 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".gallery-container {\n  position: relative;\n  height: 500px;\n  width: 100%;\n  overflow: hidden;\n}\n\n.gallery-gradient {\n  position: absolute;\n  top: 0;\n  height: 100%;\n  width: 48px;\n  z-index: 10;\n}\n\n.gallery-gradient-left {\n  left: 0;\n  background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, #060606 100%);\n}\n\n.gallery-gradient-right {\n  right: 0;\n  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #060606 100%);\n}\n\n.gallery-content {\n  display: flex;\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n  perspective: 1000px;\n  transform-style: preserve-3d;\n}\n\n.gallery-track {\n  display: flex;\n  height: auto;\n  min-height: 200px;\n  justify-content: center;\n  align-items: center;\n  cursor: grab;\n  transform-style: preserve-3d;\n  width: 100%;\n}\n\n.gallery-item {\n  position: absolute;\n  display: flex;\n  height: -moz-fit-content;\n  height: fit-content;\n  align-items: center;\n  justify-content: center;\n  padding: 8%;\n  backface-visibility: hidden;\n}\n\n.gallery-img {\n  pointer-events: none;\n  height: 120px;\n  width: 300px;\n  border-radius: 15px;\n  border: 3px solid #fff;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: 0.3s ease;\n}\n\n.gallery-item:hover .gallery-img {\n  transform: scale(1.05);\n  transition: 0.3s ease;\n}\n\n@media (max-width: 768px) {\n  .gallery-item {\n    padding: 6%;\n  }\n  .gallery-img {\n    height: 100px;\n    width: 220px;\n  }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".gallery-container {\n  position: relative;\n  height: 500px;\n  width: 100%;\n  overflow: hidden;\n}\n\n.gallery-gradient {\n  position: absolute;\n  top: 0;\n  height: 100%;\n  width: 48px;\n  z-index: 10;\n}\n\n.gallery-gradient-left {\n  left: 0;\n  /* background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, #060606 100%); */\n}\n\n.gallery-gradient-right {\n  right: 0;\n  /* background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #060606 100%); */\n}\n\n.gallery-content {\n  display: flex;\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n  perspective: 1000px;\n  transform-style: preserve-3d;\n  margin-top: 2rem;\n}\n\n.gallery-track {\n  display: flex;\n  height: auto;\n  min-height: 200px;\n  justify-content: center;\n  align-items: center;\n  cursor: grab;\n  transform-style: preserve-3d;\n  width: 100%;\n}\n\n.gallery-item {\n  position: absolute;\n  display: flex;\n  height: -moz-fit-content;\n  height: fit-content;\n  align-items: center;\n  justify-content: center;\n  padding: 8%;\n  backface-visibility: hidden;\n}\n\n.gallery-img {\n  pointer-events: none;\n  height: 120px;\n  width: 300px;\n  border-radius: 0px;\n  border: 1px solid #fff;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smoother transitions */\n}\n\n.gallery-item:hover .gallery-img {\n  transform: scale(1.50);\n  transition: 0.3s ease;\n}\n\n@media (max-width: 768px) {\n  .gallery-item {\n    padding: 6%;\n  }\n  .gallery-img {\n    height: 100px;\n    width: 220px;\n  }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -43922,6 +43922,48 @@ module.exports = function (list, options) {
 
 /***/ }),
 
+/***/ "./resources/css/app.scss":
+/*!********************************!*\
+  !*** ./resources/css/app.scss ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/js/app.jsx":
+/*!******************************!*\
+  !*** ./resources/js/app.jsx ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _components_carrousel_RollingGallery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/carrousel/RollingGallery */ "./resources/js/components/carrousel/RollingGallery.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var root = document.getElementById('app');
+if (root) {
+  react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(root).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_carrousel_RollingGallery__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      autoplay: true,
+      pauseOnHover: true
+    })
+  }));
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/carrousel/RollingGallery.css":
 /*!**************************************************************!*\
   !*** ./resources/js/components/carrousel/RollingGallery.css ***!
@@ -43996,9 +44038,9 @@ var RollingGallery = function RollingGallery(_ref) {
     setIsScreenSizeSm = _useState2[1];
   var cylinderWidth = isScreenSizeSm ? 1100 : 1800;
   var faceCount = images.length;
-  var faceWidth = cylinderWidth / faceCount * 1.5; // Increased width for items
-  var dragFactor = 0.05;
-  var radius = cylinderWidth / (2 * Math.PI);
+  var faceWidth = cylinderWidth / faceCount * 1.5;
+  var dragFactor = 0.02; // Reduced drag factor for smoother dragging
+  var radius = cylinderWidth / (1.5 * Math.PI);
   var rotation = (0,framer_motion__WEBPACK_IMPORTED_MODULE_3__.useMotionValue)(0);
   var controls = (0,framer_motion__WEBPACK_IMPORTED_MODULE_4__.useAnimation)();
   var autoplayRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
@@ -44010,34 +44052,37 @@ var RollingGallery = function RollingGallery(_ref) {
       rotateY: rotation.get() + info.velocity.x * dragFactor,
       transition: {
         type: "spring",
-        stiffness: 60,
-        damping: 20,
+        stiffness: 40,
+        damping: 15,
         mass: 0.1,
         ease: "easeOut"
-      }
+      } // Softer spring animation
     });
   };
   var transform = (0,framer_motion__WEBPACK_IMPORTED_MODULE_5__.useTransform)(rotation, function (value) {
     return "rotate3d(0, 1, 0, ".concat(value, "deg)");
   });
 
-  // Autoplay effect with adjusted timing
+  // Optimized autoplay using requestAnimationFrame
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var animationFrameId;
+    var _autoplayAnimation = function autoplayAnimation() {
+      controls.start({
+        rotateY: rotation.get() - 0.5 / faceCount,
+        transition: {
+          duration: 2.5,
+          ease: "linear"
+        } // Slightly slower and smoother
+      });
+      rotation.set(rotation.get() - 0.5 / faceCount);
+      animationFrameId = requestAnimationFrame(_autoplayAnimation);
+    };
     if (autoplay) {
-      autoplayRef.current = setInterval(function () {
-        controls.start({
-          rotateY: rotation.get() - 360 / faceCount,
-          transition: {
-            duration: 2,
-            ease: "linear"
-          }
-        });
-        rotation.set(rotation.get() - 360 / faceCount);
-      }, 2000);
-      return function () {
-        return clearInterval(autoplayRef.current);
-      };
+      _autoplayAnimation();
     }
+    return function () {
+      return cancelAnimationFrame(animationFrameId);
+    };
   }, [autoplay, rotation, controls, faceCount]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var handleResize = function handleResize() {
@@ -44048,34 +44093,24 @@ var RollingGallery = function RollingGallery(_ref) {
       return window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  // Pause on hover with smooth transition
   var handleMouseEnter = function handleMouseEnter() {
     if (autoplay && pauseOnHover) {
-      clearInterval(autoplayRef.current);
-      controls.stop(); // Stop the animation smoothly
+      cancelAnimationFrame(autoplayRef.current);
+      controls.stop();
     }
   };
   var handleMouseLeave = function handleMouseLeave() {
     if (autoplay && pauseOnHover) {
-      controls.start({
-        rotateY: rotation.get() - 360 / faceCount,
-        transition: {
-          duration: 2,
-          ease: "linear"
-        }
-      });
-      rotation.set(rotation.get() - 360 / faceCount);
-      autoplayRef.current = setInterval(function () {
+      autoplayRef.current = requestAnimationFrame(function () {
         controls.start({
-          rotateY: rotation.get() - 360 / faceCount,
+          rotateY: rotation.get() - 0.5 / faceCount,
           transition: {
-            duration: 2,
+            duration: 1,
             ease: "linear"
           }
         });
-        rotation.set(rotation.get() - 360 / faceCount);
-      }, 2000);
+        rotation.set(rotation.get() - 0.5 / faceCount);
+      });
     }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -44151,7 +44186,42 @@ var RollingGallery = function RollingGallery(_ref) {
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -44201,39 +44271,73 @@ var RollingGallery = function RollingGallery(_ref) {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"/js/app": 0,
+/******/ 			"css/app": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
-(() => {
-"use strict";
-/*!******************************!*\
-  !*** ./resources/js/app.jsx ***!
-  \******************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _components_carrousel_RollingGallery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/carrousel/RollingGallery */ "./resources/js/components/carrousel/RollingGallery.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-var root = document.getElementById('app');
-if (root) {
-  react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(root).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_carrousel_RollingGallery__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      autoplay: true,
-      pauseOnHover: true
-    })
-  }));
-}
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.jsx")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.scss")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
 /******/ })()
 ;

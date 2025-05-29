@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\My_productsController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\products\My_productsController;
+use App\Http\Controllers\products\ProductController;
 
 // Product routes
 Route::get('/my_products/add', [My_productsController::class, 'add_show'])->name('add_products.add_show');

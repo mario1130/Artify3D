@@ -40,29 +40,28 @@
 
         
         <ul>
-            <a class="menu-title">C</a>
-            <a class="menu-title">C</a>
+            <li><a href="{{ route('profile.index') }}" >C</a></li>
+            <li><a href="{{ route('profile.index') }}" >C</a></li>
         </ul>
         <hr class="separator">
         <ul>
-            <a class="menu-title">C</a>
-            <a class="menu-title">C</a>
-            <a class="menu-title">C</a>
-            <a class="menu-title">C</a>
-            <a class="menu-title">C</a>
-            <a class="menu-title">C</a>
-            <a class="menu-title">C</a>
+            <li><a href="{{ route('profile.index') }}" >C</a></li>
+            <li><a href="{{ route('profile.index') }}" >C</a></li>
+            <li><a href="{{ route('profile.index') }}" >C</a></li>
+            <li><a href="{{ route('profile.index') }}" >C</a></li>
+            <li><a href="{{ route('profile.index') }}" >C</a></li>
+            <li><a href="{{ route('profile.index') }}" >C</a></li>
         </ul>
         <hr class="separator">
         <ul>
-            <a class="menu-title">C</a>
-            <a class="menu-title">C</a>
-            <a class="menu-title">C</a>
+            <li><a href="{{ route('profile.index') }}" >C</a></li>
+            <li><a href="{{ route('profile.index') }}" >C</a></li>
+            <li><a href="{{ route('profile.index') }}" >C</a></li>
         </ul>
         <hr class="separator">
         <ul>
-            <a class="menu-title">C</a>
-            <a class="menu-title">C</a>
+            <li><a href="{{ route('profile.index') }}" >C</a></li>
+            <li><a href="{{ route('profile.index') }}" >C</a></li>
         </ul>
 </div>
 

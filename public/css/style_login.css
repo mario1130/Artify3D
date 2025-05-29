@@ -44,7 +44,7 @@ body {
 }
 .divider {
     position: absolute;
-    top: 20%;
+    top: 14rem;;
     bottom: 20%;
     left: 50%;
     width: 2px;
@@ -161,51 +161,111 @@ form p a {
     border-top: 1px solid #333;
 }
 
+.container {
+    display: flex;
+    width: 80%;
+    height: 80%;
+}
+
+.left-section {
+    text-align: right;
+    padding-right: 50px;
+}
+.right-section {
+    text-align: left;
+    padding-left: 50px;
+}
+
 @media (max-width: 1024px) {
-    .container {
+    /* .container {
         flex-direction: column;
         padding: 20px;
     }
     .left-section, .right-section {
-        padding: 20px;
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+}
+    .right-section {
+        text-align: left;
+        padding-left: 50px;
+    }
+    .left-section {
+        text-align: right;
+    padding-right: 50px;
     }
     .divider {
         display: none;
     }
+    div.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+} */
+
 }
 
-@media (max-width: 768px) {
+@media (max-width: 899px) {
     .container {
-        width: 100%;
-        height: 100%;
+        flex: 0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
     }
-    .left-section, .right-section {
+    .right-section {
         padding: 20px;
+        align-items: center;
     }
+
     .logo img {
-        max-width: 60px;
+        max-width: 90px;
         margin-bottom: 20px;
+    }
+    .left-section {
+        display: none;
     }
     h1 {
         font-size: 24px;
     }
     form input {
-        font-size: 14px;
+        font-size: 22px;
     }
     form button {
         font-size: 14px;
     }
+    div.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0rem;
+    }
+    .divider {
+            display: none;
+        }
 }
 
 @media (max-width: 480px) {
-    .left-section, .right-section {
-        padding: 15px;
-    }
+    
     .right-section {
         text-align: center;
+        padding: 15px;
+        align-items: center;
+    }
+    .left-section {
+        display: none;
+    }
+    div .logo{
+        margin-bottom: -3rem;
+
     }
     .logo img {
-        max-width: 50px;
+        max-width: 70px;
     }
     h1 {
         font-size: 22px;
@@ -221,4 +281,9 @@ form p a {
         font-size: 14px;
         padding: 8px;
     }
+    div.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 }

@@ -1,19 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\products;
 
-use  App\Models\Product;
+use App\Models\Product;
 use App\Models\Category;
 use App\Models\ProductPhoto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
 
 class My_productsController extends Controller
 {
     //
     public function index(){
-    $products = Product::where('user_id', auth()->id())->paginate(4); 
-    return view('products.my_products', compact('products'));
+        $products = Product::where('user_id', auth()->id())->paginate(4); 
+        return view('products.my_products', compact('products'));
+        
+
     }
 
     public function add_show(){
