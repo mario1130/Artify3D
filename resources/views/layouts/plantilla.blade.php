@@ -8,7 +8,7 @@
     <link rel="icon" href="{{ asset('img/favicon_artify.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style_plantilla.css') }}?v={{ time() }}">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body class="@yield('body-class', 'default-body')">
 

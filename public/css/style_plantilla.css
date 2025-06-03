@@ -681,5 +681,37 @@
         max-width: 400px;  
     }
 
+    /* Notificaciones */
+    .user-link {
+        position: relative;
+        display: inline-block;
+    }
 
+    .notification-bell {
+        position: relative;
+        display: inline-block;
+        right: 0px;
+        left: -14px;
+        top: -8px;
+    }
+    .notification-bell .fa-bell {
+        font-size: 1.2em;
+        color: #ff070787;
+    }
+    .notification-count {
+        position: absolute;
+        top: 1px;
+        right: 0.5px;     
+        /* background: #e11d4899; */
+        color: #fff;
+        border-radius: 50%;
+        padding: 0px 5px;   
+        font-size: 0.70em;  
+        font-weight: bold;
+        min-width: 16px;    
+        height: 16px;       
+        line-height: 16px;  
+        text-align: center;
+        box-sizing: border-box;
+    }
 

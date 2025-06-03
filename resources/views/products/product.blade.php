@@ -1,18 +1,21 @@
+@extends('layouts.plantilla_user_menu')
 
-<?php
-@foreach ($products as $product)
-?>
+@section('title', 'Productos')
 
+@section('context')
 <section class="products">
-    <div class="product">
-        <a href="{{route('products.show',$product->id)}}"><img src="https://via.placeholder.com/300x200" alt="Producto 1"></a>
-        <h3>{{$product->titular}}</h3>
-        <p>20€</p>
-    </div>
+    @foreach ($products as $product)
+        <div class="product">
+            <a href="{{ route('products.show', $product->id) }}">
+                <img src="https://via.placeholder.com/300x200" alt="{{ $product->titular }}">
+            </a>
+            <h3>{{ $product->titular }}</h3>
+            <p>{{ $product->precio }}€</p>
+        </div>
+    @endforeach
 </section>
 
-<?php
-@endforeach
-
-{{$products->links()}}
-?>
+<div class="pagination">
+    {{ $products->links() }}
+</div>
+@endsection

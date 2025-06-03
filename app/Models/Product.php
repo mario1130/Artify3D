@@ -15,6 +15,10 @@ class Product extends Model
         'secondary_images' => 'array',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id'); // Asegúrate de que 'user_id' sea la columna correcta
+    }
     public function photos()
     {
         return $this->hasMany(ProductPhoto::class);
@@ -33,4 +37,8 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    public function comments()
+{
+    return $this->hasMany(Comment::class);
+}
 }

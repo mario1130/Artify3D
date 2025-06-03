@@ -141,11 +141,24 @@ return [
     |
     */
 
-    'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
-        ],
+'custom' => [
+    'card_number' => [
+        'required_if' => 'El número de tarjeta es obligatorio.',
     ],
+    'card_expiry' => [
+        'required_if' => 'La fecha de expiración es obligatoria.',
+    ],
+    'card_cvc' => [
+        'required_if' => 'El CVC es obligatorio.',
+    ],
+    'card_name' => [
+        'required_if' => 'El nombre del titular es obligatorio.',
+    ],
+    'paypal_email' => [
+        'required_if' => 'El correo de PayPal es obligatorio.',
+        'email' => 'El correo de PayPal debe ser una dirección válida.',
+    ],
+],
 
     /*
     |--------------------------------------------------------------------------
@@ -159,5 +172,6 @@ return [
     */
 
     'attributes' => [],
+    
 
 ];

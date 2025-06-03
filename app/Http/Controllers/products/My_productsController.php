@@ -18,6 +18,10 @@ class My_productsController extends Controller
         
 
     }
+    public function All_product_show($id){
+    $product = Product::findOrFail($id);
+    return view('products.show_product', compact('product'));
+    }
 
     public function add_show(){
         $categories = Category::all();
@@ -89,6 +93,7 @@ class My_productsController extends Controller
 
     return redirect()->route('my_products.index')->with('success', 'Producto añadido correctamente.');
 }
+
     
     public function destroy($id)
     {
@@ -176,4 +181,7 @@ if ($request->hasFile('secondary_images')) {
     return redirect()->route('my_products.index')->with('success', 'Producto actualizado correctamente.');
 }
 
+
+
 }
+

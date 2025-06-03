@@ -14,19 +14,34 @@
             <a href="{{ route('shoppingcart') }}"><img class="shopping" src="{{ asset('img/shopping.png') }}" alt="shopping"></a>
         
             @auth
-                @if (Auth::user()->profile_photo)
-                <a href="#" id="userLink">
-                    <img src="{{ Auth::user()->profile_photo }}" alt="user">
-                </a>
+                @if (Auth::user()->avatar)
+                    <a href="#" id="userLink" class="user-link">
+                        <img class="user-avatar" src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="user">
+                        @if (auth()->user()->unreadNotifications->count() > 0)
+                            <div class="notification-bell">
+                                <i class="fa fa-bell"></i>
+                                <span class="notification-count">{{ auth()->user()->unreadNotifications->count() }}</span>
+                            </div>
+                        @endif
+                    </a>
                 @else
-                <a href="#" id="userLink">
-                    <img class="user-avatar" src="data:image/png;base64,{{ \App\Helpers\ImageHelper::generateInitialAvatar(Auth::user()->name) }}" alt="user">
-                </a>
+                    <a href="#" id="userLink" class="user-link">
+                        <img class="user-avatar" src="data:image/png;base64,{{ \App\Helpers\ImageHelper::generateInitialAvatar(Auth::user()->name) }}" alt="user">
+                        @if (auth()->user()->unreadNotifications->count() > 0)
+                            <div class="notification-bell">
+                                <i class="fa fa-bell"></i>
+                                <span class="notification-count">{{ auth()->user()->unreadNotifications->count() }}</span>
+                            </div>
+                        @endif
+                    </a>
                 @endif
             @else
-                <a href="{{ route('login.show') }}" id="userLink"><img src="img/user.png" alt="user"></a>
+                <a href="{{ route('login.show') }}" id="userLink" class="user-link">
+                    <img src="img/user.png" alt="user">
+                </a>
             @endauth
         </div>
+        
     </header>
 
 
@@ -63,7 +78,7 @@
             <a class="menu-title">Mi Cuenta</a>
             <li><a href="{{ route('profile.index') }}" id="userLink">Mis Datos</a></li>
             <li><a href="{{ route('comments.index') }}">Comentarios</a></li>
-            <li><a href="{{ route('wishlists.index') }}">Lista de Deseos</a></li>
+            <li><a href="{{ route('wishlist.groups') }}">Lista de Deseos</a></li>
             <li><a href="{{ route('notifications.index') }}">Notificaciones</a></li>
             <li><a href="{{ route('my_products.index') }}">Mis productos</a></li>
         </ul>

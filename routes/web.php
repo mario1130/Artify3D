@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 //Añadir las routas de los controladores que vamos a utilizar
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ShoppingcartController;
 use App\Http\Controllers\profile\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\profile\ComentariosControler;
@@ -32,16 +31,11 @@ require __DIR__ . '/products.php';
 require __DIR__ . '/admin.php';
 require __DIR__ . '/contact.php';
 require __DIR__ . '/profile.php';
+require __DIR__ . '/shop.php';
 
 
 //buscador
 Route::get('/search', [SearchController::class, 'search'])->name('search');
-
-
-
-//Shoppingcart
-Route::get('/shoppingcart', [ShoppingcartController::class, 'shoppingcart'])->middleware('auth')->name('shoppingcart');
-Route::post('/shoppingcart/add', [ShoppingcartController::class, 'add'])->name('shoppingcart.add');
 
 
 //Error
@@ -50,29 +44,4 @@ Route::fallback(function () {
 });
 
 
-// Ruta Administradr
-
- // Route::get('/seccion', [SeccionController::class, 'seccion']);
-
- // Route::get('/seccion/{seccion}', [SeccionController::class, 'show']);
-
-
-
-//llamar directamente al php
-/*
-Route::get('/seccion', function () {
-    return view('seccion');
-});*/
-
-
-
-//Controladores con categoria opcional e inicializada null
-/*
-Route::get('/seccion/{seccion}/{categoria?}', function ($seccion, $categoria=null) {
-    if($categoria)
-    return "Bienvenidos a la categoria:  $categoria de la seccion $seccion";
-    else
-    return "Bienvenido a la seccion $seccion";
-
-});*/
 
