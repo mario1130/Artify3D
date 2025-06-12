@@ -8,6 +8,8 @@ use App\Models\Category;
 use App\Models\ShoppingCart;
 use \App\Models\Order;
 use \App\Models\Order_items;
+use App\Notifications\ProductSold;
+use App\Models\Product;
 
 class PagoController extends Controller
 {
@@ -27,7 +29,6 @@ public function confirmar(Request $request)
         'card_cvc' => 'required_if:payment,tarjeta',
         'card_name' => 'required_if:payment,tarjeta',
         'paypal_email' => 'required_if:payment,paypal|email',
-
     ]);
 
     $user = auth()->user();
@@ -45,14 +46,24 @@ public function confirmar(Request $request)
         'total' => $total,
     ]);
 
-    // Guarda los productos del pedido
+    // Guarda los productos del pedido y notifica a los vendedores
     foreach ($cartItems as $item) {
         Order_items::create([
             'order_id' => $order->id,
+            'product_id' => $item->product_id,
             'product_name' => $item->product_name,
             'product_price' => $item->product_price,
             'quantity' => $item->quantity,
         ]);
+
+        // Notificar al vendedor si no es el mismo usuario
+        $product = Product::find($item->product_id);
+        if ($product && $product->user_id != $user->id) {
+            $seller = $product->user;
+            if ($seller) {
+                $seller->notify(new ProductSold($product, $order, $user));
+            }
+        }
     }
 
     // Borra el carrito

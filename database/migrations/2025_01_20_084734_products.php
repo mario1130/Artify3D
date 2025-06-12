@@ -18,6 +18,7 @@ class Products extends Migration
             $table->string('name');
             $table->string('description');
             $table->decimal('precio',8,2);
+            $table->string('download_url')->nullable()->after('user_id');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

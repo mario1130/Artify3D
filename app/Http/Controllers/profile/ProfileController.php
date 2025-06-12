@@ -6,6 +6,7 @@ namespace App\Http\Controllers\profile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -13,20 +14,32 @@ class ProfileController extends Controller
     return view('profile.profile');
     }
 
-    public function update(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-        ]);
+public function update(Request $request)
+{
+    $user = auth()->user();
 
-        $user = Auth::user();
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->save();
+    $request->validate([
+        'name' => 'required|string|max:255',
+        // solo valida la contraseña si se intenta cambiar
+        'old_password' => 'nullable|string',
+        'new_password' => 'nullable|string|min:8|confirmed',
+    ]);
 
-        return redirect()->route('profile.index')->with('success', 'Perfil actualizado correctamente.');
+    // Actualiza el nombre siempre
+    $user->name = $request->name;
+
+    // Solo cambia la contraseña si se ha puesto una nueva
+    if ($request->filled('new_password')) {
+        if (!Hash::check($request->old_password, $user->password)) {
+            return back()->withErrors(['old_password' => 'La contraseña actual no es correcta.']);
+        }
+        $user->password = bcrypt($request->new_password);
     }
+
+    $user->save();
+
+    return back()->with('success', 'Datos actualizados correctamente.');
+}
 
 
 public function updateProfileImage(Request $request)

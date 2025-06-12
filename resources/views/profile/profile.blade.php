@@ -396,7 +396,7 @@ hr {
     </div>
     <div class="info-text">
       <span>{{ auth()->user()->name }}</span>
-      <span style="margin-left:8px; color:#00c853; font-weight:bold;">Nivel {{ $nivel }}</span>
+      <span style="color:#00c853; font-weight:bold;">Nivel {{ $nivel }}</span>
       <span>{{ auth()->user()->email }}</span>
     </div>
   </div>
@@ -410,7 +410,7 @@ hr {
 </div>
 
 <div class="nivel">
-  <span style="min-width:80px;">{{ $currentLevelName }}</span>
+  <span>{{ $currentLevelName }}</span>
   <div class="barra-nivel">
     <div class="barra-nivel-progreso" style="width:{{ $porcentaje }}%">
       <span style="color:white; font-size:0.9em; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:100%; text-align:center;">
@@ -418,7 +418,7 @@ hr {
       </span>
     </div>
   </div>
-  <span style="min-width:80px;">{{ $nextLevelName }}</span>
+  <span>{{ $nextLevelName }}</span>
 </div>
 
 <hr>
@@ -429,14 +429,6 @@ hr {
   @method('PUT')
   <label for="nick">Nick</label>
   <input type="text" id="nick" name="name" value="{{ auth()->user()->name }}">
-
-  <label for="fecha">Fecha de Nacimiento</label>
-  <select id="fecha" name="birth_year">
-    <option value="">Selecciona...</option>
-    @for($year = date('Y')-80; $year <= date('Y')-10; $year++)
-      <option value="{{ $year }}" {{ (auth()->user()->birth_year ?? '') == $year ? 'selected' : '' }}>{{ $year }}</option>
-    @endfor
-  </select>
 
   <h2>Contraseña</h2>
   <div class="password-section">

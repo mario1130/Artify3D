@@ -8,6 +8,7 @@ use App\Models\ProductPhoto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use App\Models\ProductView;
 
 class My_productsController extends Controller
 {
@@ -19,8 +20,12 @@ class My_productsController extends Controller
 
     }
     public function All_product_show($id){
-    $product = Product::findOrFail($id);
-    return view('products.show_product', compact('product'));
+        $product = Product::findOrFail($id);
+        $hasPurchased = false;
+        if (auth()->check()) {
+            $hasPurchased = $product->hasBeenPurchasedBy(auth()->id());
+        }
+        return view('products.show_product', compact('product', 'hasPurchased'));
     }
 
     public function add_show(){
@@ -66,6 +71,7 @@ class My_productsController extends Controller
     $product->precio = $request->precio;
     $product->category_id = $request->category_id;
     $product->user_id = auth()->id();
+    $product->download_url = $request->download_url;
     $product->save();
 
     // Guardar la foto principal
@@ -123,6 +129,7 @@ public function update(Request $request, $id)
     $product->description = $validatedData['description'];
     $product->precio = $validatedData['precio'];
     $product->category_id = $validatedData['category_id'];
+    $product->download_url = $request->download_url;
     $product->save();
 
     // Manejar la imagen principal

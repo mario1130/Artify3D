@@ -16,7 +16,7 @@
         }, 3000);
     </script>
 @endif
-    @include('layouts.carousel')
-    @include('layouts.principal') 
+    {{-- @include('layouts.carousel') --}}
+    @include('principal.principal') 
 @endsection
 

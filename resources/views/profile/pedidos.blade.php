@@ -86,7 +86,6 @@ h1 {
     padding: 4px 12px;
     border-radius: 6px;
     font-size: 0.95rem;
-    margin-left: 10px;
 }
 .modal-devolucion {
     display: none;
@@ -135,48 +134,52 @@ h1 {
 
     @forelse($orders as $order)
         @foreach($order->items as $item)
-        <section class="pedido">
-            <p class="fecha">Comprado el {{ $order->created_at->format('d \d\e F Y') }}</p>
-            <div class="pedido-contenido">
-                <div class="imagen">
-                    {{-- Si tienes imagen: <img src="{{ $item->product_image }}" alt="Producto"> --}}
-                </div>
-                <div class="detalles">
-                    <p class="titulo">{{ $item->product_name }}</p>
-                    <p class="precio">{{ number_format($item->product_price, 2) }}€</p>
-                    <div class="acciones">
-                        @php
-                            $devolucion = \App\Models\Returns::where('order_item_id', $item->id)->first();
-                            $diasDesdeCompra = \Carbon\Carbon::parse($order->created_at)->diffInDays(now());
-                            $diasRestantes = 5 - $diasDesdeCompra;
-                        @endphp
-                        @if($devolucion)
-                            <span class="badge">{{ ucfirst($devolucion->status) }}</span>
-                        @elseif($diasDesdeCompra <= 5)
-                            <button type="button" onclick="openReturnModal({{ $item->id }})">Devolver</button>
-                            <span class="badge" style="background:#444;">
-                                Te quedan {{ $diasRestantes }} día{{ $diasRestantes == 1 ? '' : 's' }} para devolver
-                            </span>
-                            <!-- Modal para devolución -->
-                            <div class="modal-devolucion" id="modal-devolucion-{{ $item->id }}">
-                                <div class="modal-content">
-                                    <button class="close-btn" onclick="closeReturnModal({{ $item->id }})">&times;</button>
-                                    <h3>Solicitar devolución</h3>
-                                    <form method="POST" action="{{ route('returns.store') }}">
-                                        @csrf
-                                        <input type="hidden" name="order_item_id" value="{{ $item->id }}">
-                                        <textarea name="reason" placeholder="Motivo de la devolución" style="width:100%;margin-bottom:12px;"></textarea>
-                                        <button type="submit" style="background:#22c55e;color:#fff;border:none;padding:8px 18px;border-radius:5px;cursor:pointer;">Confirmar devolución</button>
-                                    </form>
+            @php
+                $devolucion = \App\Models\Returns::where('order_item_id', $item->id)->first();
+                // Mostrar si NO hay devolución, o si la devolución está RECHAZADA
+                $mostrar = !$devolucion || ($devolucion && $devolucion->status === 'rechazada');
+                $diasDesdeCompra = \Carbon\Carbon::parse($order->created_at)->diffInDays(now());
+                $diasRestantes = 5 - $diasDesdeCompra;
+            @endphp
+            @if($mostrar)
+            <section class="pedido">
+                <p class="fecha">Comprado el {{ $order->created_at->format('d \d\e F Y') }}</p>
+                <div class="pedido-contenido">
+                    <div class="imagen">
+                        {{-- Si tienes imagen: <img src="{{ $item->product_image }}" alt="Producto"> --}}
+                    </div>
+                    <div class="detalles">
+                        <p class="titulo">{{ $item->product_name }}</p>
+                        <p class="precio">{{ number_format($item->product_price, 2) }}€</p>
+                        <div class="acciones">
+                            @if($devolucion && $devolucion->status === 'rechazada')
+                                <span class="badge" style="background:#e11d48;">Rechazada</span>
+                            @elseif(!$devolucion && $diasRestantes > 0)
+                                <button type="button" onclick="openReturnModal({{ $item->id }})">Devolver</button>
+                                <span class="badge" style="background:#444;">
+                                    Te quedan {{ $diasRestantes }} día{{ $diasRestantes == 1 ? '' : 's' }} para devolver
+                                </span>
+                                <!-- Modal para devolución -->
+                                <div class="modal-devolucion" id="modal-devolucion-{{ $item->id }}">
+                                    <div class="modal-content">
+                                        <button class="close-btn" onclick="closeReturnModal({{ $item->id }})">&times;</button>
+                                        <h3>Solicitar devolución</h3>
+                                        <form method="POST" action="{{ route('returns.store') }}">
+                                            @csrf
+                                            <input type="hidden" name="order_item_id" value="{{ $item->id }}">
+                                            <textarea name="reason" placeholder="Motivo de la devolución" style="width:100%;margin-bottom:12px;"></textarea>
+                                            <button type="submit" style="background:#22c55e;color:#fff;border:none;padding:8px 18px;border-radius:5px;cursor:pointer;">Confirmar devolución</button>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
-                        @else
-                            <span class="badge" style="background:#888;">Fuera de plazo</span>
-                        @endif
+                            @elseif(!$devolucion && $diasRestantes <= 0)
+                                <button type="button" style="background:#e74c3c;color:#fff;border:none;padding:8px 18px;border-radius:5px;cursor:default;font-size: unset;" disabled>Comprado</button>
+                            @endif
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            @endif
         @endforeach
     @empty
         <p style="color:#fff;">No tienes pedidos aún.</p>

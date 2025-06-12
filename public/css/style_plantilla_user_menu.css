@@ -505,10 +505,10 @@ input:where([type='submit']) {
 
 
   /* Notificaciones */
-  .user-link {
-    position: relative;
-    display: inline-block;
-}
+    .user-link {
+        position: relative;
+        display: inline-block;
+    }
 
     .notification-bell {
         position: relative;

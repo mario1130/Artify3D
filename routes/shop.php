@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\shop\ShoppingcartController;
 use App\Http\Controllers\shop\PagoController;
 use App\Http\Controllers\shop\ResumenController;
+use App\Http\Controllers\shop\FacturaController;
 
 
 //Shoppingcart
@@ -20,3 +21,5 @@ Route::post('/pago/confirmar', [PagoController::class, 'confirmar'])->middleware
 
 Route::get('/resumen', [ResumenController::class, 'index'])->name('resumen');
 Route::post('/finalizar', [ResumenController::class, 'finalizar'])->name('finalizar.compra');
+
+Route::get('/factura/{order}', [FacturaController::class, 'descargar'])->name('factura.descargar');

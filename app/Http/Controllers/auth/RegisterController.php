@@ -11,7 +11,7 @@ class RegisterController extends Controller
 {
     //Registrarse de Session
     public function show(){
-        return view('register');
+        return view('auth.register');
 
     }
 

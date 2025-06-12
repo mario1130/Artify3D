@@ -59,7 +59,7 @@
 
     .active-step span {
       background: #000000;
-      border-color: #888;
+      border-color: #22c55e;
       color: #fff;
     }
     .active-step div {

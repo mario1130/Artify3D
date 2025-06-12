@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//Añadir las routas de los controladores que vamos a utilizar
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\profile\ProfileController;
 use App\Http\Controllers\SearchController;
@@ -22,7 +21,9 @@ use Illuminate\Support\Facades\Mail;
 */
 
 // Main route
-Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/', [HomeController::class, 'index'])
+    ->middleware(['blocked'])
+    ->name('index');
 
 
 //Rutas de la aplicacion
@@ -38,10 +39,28 @@ require __DIR__ . '/shop.php';
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 
+//terminos
+
+Route::view('/info-contacto', 'info_contc')->name('info_contc');
+Route::view('/policy', 'policy')->name('policy');
+Route::view('/terms', 'terms')->name('terms');
+
+
 //Error
 Route::fallback(function () {
-    return view('error.404', ['user' => auth()->user()]); // Carga la vista resources/views/404.blade.php
+    return view('errors.404', ['user' => auth()->user()]); 
 });
 
+Route::get('/error/403', function () {
+    return response()->view('error.403', [], 403);
+})->name('error.403');
+
+Route::get('/error/419', function () {
+    return response()->view('error.419', [], 419);
+})->name('error.419');
+
+Route::get('/error/500', function () {
+    return response()->view('error.500', [], 500);
+})->name('error.500');
 
 

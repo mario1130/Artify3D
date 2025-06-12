@@ -70,6 +70,7 @@ img {
     max-width: 30px;
     height: auto;
     vertical-align: middle;
+    overflow: hidden;
 }
 
 .cabecera2 .shopping {
@@ -246,14 +247,100 @@ img {
     transform: translateX(-50%);
 }
 
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        /* background-color: rgba(0, 0, 0, 0.5); */
-        display: none;
-        /* Oculto inicialmente */
-        z-index: 1500;
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    display: none;
+    /* Oculto inicialmente */
+    z-index: 1500;
+}
+
+/* Para los iconos de los menús laterales */
+.side-menu img,
+.side-menu-right img {
+    width: 32px;
+    height: 32px;
+        aspect-ratio: 1/1;         /* Fuerza relación 1:1 */
+    object-fit: cover; 
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+
+.side-menu a,
+.side-menu-right a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;;
+    padding: 8px 0;
+}
+
+.side-menu img:hover,
+.side-menu-right img:hover {
+    background: #e0e7ff;
+    box-shadow: 0 2px 8px #6366f133;
+}
+
+.admin-notification-popup {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    width: 340px;
+    background: #fff;
+    color: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px #0002;
+    z-index: 3000;
+    padding: 0;
+    font-size: 1em;
+}
+.admin-notification-popup .popup-header {
+    padding: 12px 18px;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    background: #f3f4f6;
+}
+.admin-notification-popup .popup-body {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 12px 18px;
+}
+.admin-notification-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    transition: opacity 0.2s;
+}
+.admin-notification-item.read {
+    opacity: 0.5;
+}
+.admin-notification-item .acciones a {
+    color: #6366f1;
+    font-size: 0.95em;
+    margin-right: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.admin-notification-item .acciones a:last-child {
+    color: #e11d48;
+}
+.notification-count {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #e11d48;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+    .user-avatar {
+        border-radius: 50%; 
+        border: 2px solid #00000085; 
+        object-fit: cover; 
     }

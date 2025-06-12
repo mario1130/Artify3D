@@ -31,6 +31,10 @@ class ShoppingcartController extends Controller
             'product_price' => $productPrice,
             'quantity' => 1,
         ]);
+        // Si viene de "Comprar", redirige a la cesta
+        if ($request->has('go_to_cart')) {
+            return redirect()->route('shoppingcart')->with('success', 'Producto añadido a la cesta.');
+        }
 
         return redirect()->back()->with('success', 'Producto añadido al carrito.');
     }

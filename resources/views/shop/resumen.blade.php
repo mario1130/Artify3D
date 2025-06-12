@@ -195,7 +195,7 @@
             </div>
           </div>
         @endforeach
-        <button class="download-btn">Descargar Factura</button>
+        <button class="download-btn" onclick="window.location='{{ route('factura.descargar', $order->id) }}'">Descargar Factura</button>
       @else
         <p>No hay productos en tu compra.</p>
       @endif

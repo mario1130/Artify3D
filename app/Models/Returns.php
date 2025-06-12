@@ -16,6 +16,14 @@ class Returns extends Model
 
     public function orderItem()
     {
-        return $this->belongsTo(OrderItem::class);
+        return $this->belongsTo(Order_items::class);
+    }
+    public function pedido()
+    {
+        return $this->orderItem();
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

@@ -44,7 +44,7 @@ body {
 }
 .divider {
     position: absolute;
-    top: 14rem;;
+    top: 16rem;;
     bottom: 20%;
     left: 50%;
     width: 2px;
@@ -287,3 +287,4 @@ form p a {
     align-items: center;
 }
 }
+

@@ -1,24 +1,27 @@
 <?php
 
 namespace App\Http\Controllers\profile;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Product;
 use App\Notifications\ProductCommented;
 use Illuminate\Support\Facades\Notification;
+use App\Models\AdminNotification; 
 
 class CommentController extends Controller
 {
 
-public function comments()
-{
-    // Obtener los productos con el conteo de comentarios y ordenarlos de más a menos comentarios
-    $products = Product::withCount('comments')->orderBy('comments_count', 'desc')->paginate(8);
+    public function comments()
+    {
+        $products = Product::where('user_id', auth()->id())
+            ->withCount('comments')
+            ->orderBy('comments_count', 'desc')
+            ->paginate(8);
 
-    // Pasar los productos a la vista
-    return view('profile.comentarios', compact('products'));
-}
+        return view('profile.comentarios', compact('products'));
+    }
 
     public function destroy($id)
     {
@@ -33,7 +36,7 @@ public function comments()
         return redirect()->back()->with('error', 'No tienes permiso para eliminar este comentario.');
     }
 
-        public function store(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
             'product_id' => 'required|exists:products,id',
@@ -70,5 +73,23 @@ public function comments()
 
         return redirect()->back()->with('success', 'Comentario añadido correctamente.');
     }
+    public function report($id, Request $request)
+    {
+        \App\Models\CommentReport::create([
+            'comment_id' => $id,
+            'user_id' => auth()->id(),
+            'reason' => $request->input('reason', 'Sin motivo'),
+        ]);
 
+        // Crear notificación para admin
+        AdminNotification::create([
+            'title' => 'Denuncia de comentario',
+            'message' => 'Un usuario ha denunciado un comentario. Revisa la sección de denuncias.',
+            'admin_id' => 1, // O null si es global
+            'read_at' => null,
+            'type' => 'comment_report', // Solo si tienes este campo en la tabla
+        ]);
+
+        return back()->with('success', 'Comentario denunciado.');
+    }
 }

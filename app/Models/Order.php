@@ -15,11 +15,16 @@ class Order extends Model
         'card_expiry',
         'card_cvc',
         'card_name',
+        'status',
         'total',
     ];
 
     public function items()
     {
         return $this->hasMany(Order_items::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

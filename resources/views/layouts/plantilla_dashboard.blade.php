@@ -8,6 +8,8 @@
     <link rel="icon" href="{{ asset('img/favicon_artify.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style_plantilla_dashboard.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/style_formularios.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/style_tablas.css') }}?v={{ time() }}">
 
 </head>
 <body class="@yield('body-class', 'default-body')">

@@ -1,0 +1,171 @@
+    .container {
+        max-width: 95%;
+        width: 100%;
+        background-color: white;
+        box-sizing: border-box;
+        margin: 40px auto;
+        margin-bottom: 0px;
+        height: 69vh;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .title {
+        font-size: 1.8em;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: left;
+        margin-left: 4rem;
+        font-weight: bold;
+    }
+
+    .top-bar {
+        display: flex;
+        background-color: #ffffff;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 2rem 4rem 2rem 4rem;
+        margin-top: 3rem;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 30px;
+    }
+    .top-bar h1 {
+        font-size: 1.8em;
+        color: #333;
+        margin: 0;
+        font-weight: normal;
+    }
+    .help-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        font-size: 0.9em;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+    .help-button:hover {
+        background-color: #45a049;
+    }
+    .form-card {
+        background-color: #fff;
+        /* border-radius: 8px; */
+        /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
+        padding: 30px;
+        /* height: 75vh; */
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        justify-content: center;
+    }
+    .form-card h2 {
+        font-size: 1.5em;
+        color: #333;
+        margin: 0 0 25px 0;
+        font-weight: normal;
+        text-align: center;
+    }
+    .form-fields-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 1 1 auto;
+        margin-top: 4rem;
+
+    }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+    .form-group label {
+        width: 150px;
+        min-width: 100px;
+        font-size: 1em;
+        color: #555;
+        margin-right: 20px;
+        text-align: right;
+        font-weight: bold;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group select {
+        flex-grow: 1;
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        font-size: 1em;
+        outline: none;
+        max-width: 740px; 
+    }
+
+    .form-group input[type="text"]::placeholder,
+    .form-group input[type="email"]::placeholder {
+        color: #aaa;
+    }
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        margin-top: auto;
+    }
+    .action-button {
+        padding: 10px 25px;
+        border: none;
+        font-size: 1em;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .action-button.save {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .action-button.save:hover {
+        background-color: #45a049;
+    }
+    .action-button.cancel {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .action-button.cancel:hover {
+        background-color: #45a049;
+    }
+    /* Tablet */
+    @media (max-width: 1100px) {
+        .container { padding: 20px; }
+        .top-bar { padding: 1.5rem 1.5rem 1.5rem 1.5rem; }
+        .form-group, .form-actions { max-width: 100%; }
+    }
+    /* Móvil */
+    @media (max-width: 768px) {
+        .container { padding: 0 5px; }
+        .top-bar { flex-direction: column; align-items: flex-start; padding: 15px; margin-bottom: 20px; gap: 1rem;}
+        .top-bar h1 { margin-bottom: 15px; }
+        .form-card { padding: 10px; }
+        .form-fields-center { align-items: stretch; }
+        .form-group { flex-direction: column; align-items: flex-start; margin-bottom: 15px; }
+        .form-group label { width: 100%; text-align: left; margin-right: 0; margin-bottom: 8px; }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group select { width: 100%; }
+        .form-actions { justify-content: center; gap: 10px; }
+        .action-button { width: 100%; max-width: 200px; }
+        .title { margin-left: 0; text-align: center; }
+    }
+    /* Móvil pequeño */
+    @media (max-width: 500px) {
+        .form-card { padding: 5px; }
+        .form-group { margin-bottom: 10px; }
+        .action-button { padding: 8px 10px; font-size: 0.95em; }
+        .top-bar { padding: 10px; }
+    }.action-button { width: 100%; max-width: 200px; }
+    
