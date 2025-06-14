@@ -2,7 +2,7 @@
 
     <nav class="cabecera">
         <ul>
-            <a class="logo" href="{{ route('index') }}"><img src="{{ asset('img/Logo.png') }}" alt=""></a>
+            <a class="logo" href="{{ route('index') }}"><img src="{{ asset('img/Logo.png') }}" alt="Logo"></a>
             <a href="{{ route('index') }}">Inicio</a>
             <a href="#" id="categoriesLink">Categorías</a>
 

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://your-logo-url.com/logo.png" alt="Artify3D Logo" width="180" />
+  <img src="public/img/Logo.png" alt="Artify3D Logo" width="180" />
 </p>
 
 <h1 align="center">Artify3D</h1>
@@ -105,5 +105,5 @@ Distribuido bajo la licencia [MIT](LICENSE).
 Escríbenos a [contacto@artify3d.com](mailto:contacto@artify3d.com) o abre un issue.
 
 <p align="center">
-  <img src="https://your-logo-url.com/footer.png" width="90" alt="Artify3D" />
+  <img src="public/img/Logo.png" width="90" alt="Artify3D" />
 </p>

@@ -73,7 +73,7 @@
     
     <div class="container">
         <div class="logo">
-            <a href="/"><img src="img/Logo.png" alt="Logo"></a> <!-- El logo sigue encima del 404 -->
+            <a href="/"><img src="{{ asset('img/Logo.png') }}" alt="Logo"></a> <!-- El logo sigue encima del 404 -->
         </div>
         <h1><p>404</p></h1> <!-- El 404 ahora tiene sombra -->
         <h4>PAGE NOT FOUND</h4>

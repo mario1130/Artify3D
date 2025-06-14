@@ -70,7 +70,7 @@
         </div>
 
         <div class="logo">
-            <a href="/"><img src="img/Logo.png" alt="Logo"></a>
+            <a href="/"><img src="{{ asset('img/Logo.png') }}" alt="Logo"></a>
         </div>
         <div class="divider"></div>
 
