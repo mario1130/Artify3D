@@ -70,11 +70,13 @@
 
 
 
+
 <!-- Menú lateral derecho -->
-<div class="side-menu-right" id="sideMenuright">
+<div class="side-menu-right" id="sideMenurightUser" data-logged-in="{{ auth()->check() ? 'true' : 'false' }}">
+    <button class="close-btn-right" id="closeMenurightUser">&times;</button>
     <ul>
         <a class="menu-title">Mi Cuenta</a>
-        <li><a href="{{ route('profile.index') }}" id="userLink">Mis Datos</a></li>
+        <li><a href="{{ route('profile.index') }}">Mis Datos</a></li>
         <li><a href="{{ route('comments.index') }}">Comentarios</a></li>
         <li><a href="{{ route('wishlist.groups') }}">Lista de Deseos</a></li>
         <li>
@@ -105,8 +107,6 @@
         <li><a href="{{ route('pedidoscancelados.index') }}">Pedidos Cancelados</a></li>
         <li><a href="{{ route('purchasehistory.index') }}">Historial de Compras</a></li>
     </ul>
-
-    <!-- Iniciar sesión -->
     <div class="menu-session">
         <hr class="separator2">
         <form action="{{ route('logout') }}" method="POST" style="display: inline;">
@@ -138,4 +138,4 @@
 <div class="overlay" id="menuOverlay"></div>
 <div class="overlayup" id="menuOverlayup"></div>
 
-<script src="{{ asset('js/menu_lateral_izquierdo.js') }}"></script>
+<script src="{{ asset('js/menu_lateral.js') }}"></script>

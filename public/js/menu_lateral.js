@@ -6,97 +6,134 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoriesLink = document.getElementById('categoriesLink');
     const closeMenuButton = document.getElementById('closeMenu');
 
-    categoriesLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        sideMenu.style.left = '0';
-        overlay.style.display = 'block';
-    });
+    if (categoriesLink && sideMenu && overlay) {
+        categoriesLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            sideMenu.style.right = '0';
+            overlay.style.display = 'block';
+        });
+    }
 
-    closeMenuButton.addEventListener('click', () => {
-        sideMenu.style.left = '-550px';
-        overlay.style.display = 'none';
-    });
+    if (closeMenuButton && sideMenu && overlay) {
+        closeMenuButton.addEventListener('click', () => {
+            sideMenu.style.right = '-550px';
+            overlay.style.display = 'none';
+        });
+    }
 
-    overlay.addEventListener('click', () => {
-        sideMenu.style.left = '-550px';
-        overlay.style.display = 'none';
-    });
-
-    // Menú lateral derecho
+    // Menú lateral derecho general
     const sideMenuright = document.getElementById('sideMenuright');
-    const userLink = document.getElementById('userLink');
     const closeMenurightButton = document.getElementById('closeMenuright');
 
-    // Obtener si el usuario está autenticado
-    const isLoggedIn = sideMenuright.getAttribute('data-logged-in') === 'true';
+    // Menú lateral derecho usuario (solo móvil)
+    const sideMenurightUser = document.getElementById('sideMenurightUser');
+    const closeMenurightUserButton = document.getElementById('closeMenurightUser');
 
-    // Referencias al modal
+    // Avatar
+    const userLink = document.getElementById('userLink');
+
+    // Modal de login
     const loginModal = document.getElementById('loginModal');
     const goToLoginButton = document.getElementById('goToLogin');
     const closeModalButton = document.getElementById('closeModal');
 
-    // 🔹 Asegurar que el modal esté oculto al iniciar la página
-    loginModal.style.display = 'none';
+    // Asegura que el modal esté oculto al iniciar
+    if (loginModal) loginModal.style.display = 'none';
 
-    // Mostrar menú lateral derecho o el popup si no está autenticado
-    userLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        
-        if (!isLoggedIn) {
-            // Si no está autenticado, mostrar el popup
-            loginModal.style.display = 'flex';
-        } else {
-            // Si está autenticado, abrir el menú derecho
-            sideMenuright.style.right = '0';
-            overlay.style.display = 'block';
-        }
-    });
+    // Abrir menú derecho o modal según autenticación y dispositivo
+    if (userLink) {
+        userLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            // Si existe el menú de usuario y estamos en móvil
+            if (sideMenurightUser && window.innerWidth <= 810) {
+                sideMenurightUser.style.right = '0';
+                overlay.style.display = 'block';
+            }
+            // Si existe el menú general
+            else if (sideMenuright) {
+                const isLoggedIn = sideMenuright.getAttribute('data-logged-in') === 'true';
+                if (!isLoggedIn && loginModal) {
+                    loginModal.style.display = 'flex';
+                } else {
+                    sideMenuright.style.right = '0';
+                    overlay.style.display = 'block';
+                }
+            }
+        });
+    }
 
-    // Cerrar menú lateral derecho
-    closeMenurightButton.addEventListener('click', () => {
-        sideMenuright.style.right = '-550px';
-        overlay.style.display = 'none';
-    });
+    // Cerrar menú lateral derecho usuario (solo móvil)
+    if (sideMenurightUser && closeMenurightUserButton && overlay) {
+        closeMenurightUserButton.addEventListener('click', () => {
+            sideMenurightUser.style.right = '-550px';
+            overlay.style.display = 'none';
+        });
+    }
 
-    overlay.addEventListener('click', () => {
-        sideMenuright.style.right = '-550px';
-        overlay.style.display = 'none';
-    });
+    // Cerrar menú lateral derecho general
+    if (sideMenuright && closeMenurightButton && overlay) {
+        closeMenurightButton.addEventListener('click', () => {
+            sideMenuright.style.right = '-550px';
+            overlay.style.display = 'none';
+        });
+    }
+
+    // Overlay cierra ambos menús y el modal
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            if (sideMenu) sideMenu.style.right = '-550px';
+            if (sideMenuright) sideMenuright.style.right = '-550px';
+            if (sideMenurightUser) sideMenurightUser.style.right = '-550px';
+            overlay.style.display = 'none';
+            if (loginModal) loginModal.style.display = 'none';
+        });
+    }
 
     // Menú up
     const sideMenuup = document.getElementById('sideMenuup');
     const searchLink = document.getElementById('searchLink');
     const closeMenuupButton = document.getElementById('closeMenuup');
 
-    searchLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        sideMenuup.classList.add('open');
-        overlayup.style.display = 'block';
-    });
+    if (searchLink && sideMenuup && overlayup) {
+        searchLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            sideMenuup.classList.add('open');
+            overlayup.style.display = 'block';
+        });
+    }
 
-    closeMenuupButton.addEventListener('click', () => {
-        sideMenuup.classList.remove('open');
-        overlayup.style.display = 'none';
-    });
+    if (closeMenuupButton && sideMenuup && overlayup) {
+        closeMenuupButton.addEventListener('click', () => {
+            sideMenuup.classList.remove('open');
+            overlayup.style.display = 'none';
+        });
+    }
 
-    overlayup.addEventListener('click', () => {
-        sideMenuup.classList.remove('open');
-        overlayup.style.display = 'none';
-    });
+    if (overlayup && sideMenuup) {
+        overlayup.addEventListener('click', () => {
+            sideMenuup.classList.remove('open');
+            overlayup.style.display = 'none';
+        });
+    }
 
-    // Eventos del modal
-    goToLoginButton.addEventListener('click', () => {
-        window.location.href = '/login'; // Redirige a la página de login
-    });
+    // Eventos del modal login
+    if (goToLoginButton) {
+        goToLoginButton.addEventListener('click', () => {
+            window.location.href = '/login';
+        });
+    }
 
-    closeModalButton.addEventListener('click', () => {
-        loginModal.style.display = 'none'; // Cierra el modal
-    });
+    if (closeModalButton) {
+        closeModalButton.addEventListener('click', () => {
+            if (loginModal) loginModal.style.display = 'none';
+        });
+    }
 
-    // Cierra el modal si se hace clic fuera de la caja de contenido
-    loginModal.addEventListener('click', (event) => {
-        if (event.target === loginModal) {
-            loginModal.style.display = 'none';
-        }
-    });
+    if (loginModal) {
+        loginModal.addEventListener('click', (event) => {
+            if (event.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
+    }
 });

@@ -4,22 +4,22 @@
 
 @section('context')
     <style>
+        .main-content {
+            width: 58%;
+            max-width: 867px;
+            margin: 0 auto 40px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
         .header {
             width: 100%;
-            max-width: 900px;
-            margin: 40px auto 0 auto;
             text-align: left;
-        }
-
-        .header h1 {
+            font-size: 2em;
+            margin: 5rem 0 30px 0;
             color: #4CAF50;
             text-decoration: underline;
-            font-size: 1.8em;
-            margin: 0;
-            padding-left: 20px;
         }
-
-
 
         h2 {
             font-size: 2.2em;
@@ -43,24 +43,13 @@
             text-align: left;
         }
 
-        .icon-box {
+        .icon-box, .icon-people {
             font-size: 3em;
             color: #f0f0f0;
             border: 2px solid #f0f0f0;
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 10px;
-            display: inline-block;
-            line-height: 1;
-        }
-
-        .icon-people {
-            font-size: 3em;
-            color: #f0f0f0;
-            margin-bottom: 10px;
-            border: 2px solid #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
             display: inline-block;
             line-height: 1;
         }
@@ -100,6 +89,7 @@
             justify-content: center;
             gap: 30px;
             flex-wrap: wrap;
+            width: 100%;
         }
 
         .list-card {
@@ -169,27 +159,63 @@
             flex-wrap: wrap;
         }
 
+        @media (max-width: 810px) {
+            .main-content {
+                width: 100%;
+                max-width: 505px;
+            }
+            .features {
+                gap: 30px;
+            }
+            .list-items {
+                gap: 18px;
+            }
+        }
+
         @media (max-width: 768px) {
             .features {
                 flex-direction: column;
                 align-items: center;
                 gap: 30px;
             }
-
             .list-items {
                 flex-direction: column;
                 align-items: center;
+                width: 100%;
             }
-
-            .header h1 {
+            .header {
                 padding-left: 0;
                 text-align: center;
+                font-size: 1.3em;
+                margin-top: 2.5rem;
+            }
+            .list-card {
+                width: 90vw;
+                max-width: 320px;
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                font-size: 1.1em;
+            }
+            h2 {
+                font-size: 1.1em;
+            }
+            .list-card {
+                width: 90vw;
+                max-width: 250px;
+                height: 90px;
+            }
+            .list-name {
+                font-size: 1em;
             }
         }
     </style>
 
-
     <div class="main-content">
+        <h1 class="header">Mis Listas de Deseos</h1>
         <h2>Listas</h2>
 
         <div class="features">
@@ -206,13 +232,11 @@
         </div>
 
         <div class="list-button">
-            <!-- Botón para crear lista, abre el formulario -->
             <button class="create-list-button"
                 onclick="document.getElementById('create-list-form').style.display='block';this.style.display='none';">
                 Crear una lista
             </button>
         </div>
-        <!-- Formulario para crear lista -->
         <div id="create-list-form" style="display:none; margin-bottom:40px;">
             <form action="{{ route('wishlist_group.store') }}" method="POST"
                 style="display:flex; gap:10px; justify-content:center; align-items:center;">

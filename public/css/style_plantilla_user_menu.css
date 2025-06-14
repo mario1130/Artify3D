@@ -30,24 +30,17 @@ header a {
     margin: 0 1rem;
 }
 
-@media (max-width: 480px) {
-    header {
-        flex-wrap: wrap; /* Permite que los elementos se adapten */
-        justify-content: center;
-        flex-direction: column; /* Cambia la distribución vertical */
-        align-items: center; /* Centra el contenido en móviles */
-    }
-}
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*cabecera*/
 
 .logo img {
-    max-width: 70px;
+    max-width: 50px;
     height: auto;
     vertical-align: middle;
     margin-right: 20px;
+    padding: 1rem 0rem;
 }
 
 .cabecera2 .img {
@@ -63,29 +56,36 @@ header a {
 }
 
 .cabecera {
-    margin-right: auto;
-    justify-content: flex-start;
     display: flex;
-    /* Alinea los íconos a la derecha */
+    flex-direction: row;
     align-items: center;
-    /* Asegura que los íconos estén a la derecha */
-    flex: 1;
+    flex-wrap: nowrap;
     gap: 1rem;
+    margin-right: auto;
+    flex: 1;
+}
+
+.cabecera ul,
+.cabecera li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .cabecera2 img {
-    max-width: 30px; /* Tamaño reducido para las imágenes en cabecera2 */
+    max-width: 30px;
     height: auto;
     vertical-align: middle;
 }
 
 .cabecera a {
     color: #fff;
-    /* Color del texto */
     text-decoration: underline;
-    /* Esto subraya el texto */
     margin-left: 0.2rem;
-    /* Espacio entre los enlaces */
 }
 
 .cabecera2 {
@@ -236,6 +236,39 @@ header a {
     display: flex;
     flex-direction: column;
     border-left: 1px solid #444;
+    transition: right 0.3s ease;
+}
+
+.close-btn-right {
+    display: none;
+}
+
+/* Solo en móvil: el menú es oculto y se despliega */
+@media (max-width: 810px) {
+    .side-menu-right {
+        right: -550px; /* Oculto por defecto */
+        top: 0;
+        height: 100%;
+        width: 85vw;
+        max-width: 350px;
+        z-index: 2000;
+        border-left: 1px solid #444;
+    }
+    .side-menu-right.open {
+        right: 0; /* Desplegado */
+    }
+    .close-btn-right {
+        display: block;
+        position: absolute;
+        top: 29px;
+        right: 20px;
+        font-size: 2rem;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 2100;
+    }
 }
 
 /* Elementos dentro del menú lateral derecho */
@@ -325,7 +358,7 @@ input:where([type="submit"]) {
     left: 0px;
     /* Oculto inicialmente */
     width: 100%;
-    height: 90px;
+    height: 44px;
     background-color: #000000;
     overflow-y: auto;
     transition: top 0.8s ease;
@@ -482,4 +515,51 @@ input:where([type="submit"]) {
 .main-content {
     margin-left: 15rem;
     margin-right: 30rem;
+}
+
+/* Responsive: todo en una línea y oculta "Inicio" en móvil */
+@media (max-width: 810px) {
+    header {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0.5rem;
+    }
+    .cabecera {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 0.7rem;
+    }
+    .cabecera ul,
+    .cabecera li {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    .cabecera a:nth-child(2) {
+        display: none !important; /* Oculta "Inicio" */
+    }
+    .logo img {
+        max-width: 38px;
+        margin-right: 0px;
+        padding: 0.5rem 0;
+    }
+    .cabecera2 {
+        gap: 0.1rem;
+        flex: none;
+    }
+    .cabecera2 img {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.5rem 0.5rem;
+    }
+    .logo img {
+        max-width: 38px;
+    }
 }

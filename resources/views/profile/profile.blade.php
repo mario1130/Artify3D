@@ -330,7 +330,7 @@
 
         @media (max-width: 500px) {
             .space {
-                margin-left: 0;
+                margin-left: 0.5rem;
                 margin-right: 0;
                 padding: 0 2px;
             }

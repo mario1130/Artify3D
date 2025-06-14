@@ -661,6 +661,11 @@ footer a {
     .header-nav a {
         font-size: 1em;
     }
+    header a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
 }
 
 @media (max-width: 700px) {

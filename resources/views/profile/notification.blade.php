@@ -4,8 +4,15 @@
 
 @section('context')
     <style>
-        h1,
-        h2 {
+        .main-content {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 40px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1, h2 {
             text-align: center;
             margin-top: 20px;
         }
@@ -33,6 +40,13 @@
             align-items: center;
             margin-bottom: 20px;
             transition: opacity 0.2s;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            box-shadow: 0 2px 8px #0002;
+            box-sizing: border-box;
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
         }
 
         .notificacion.leida {
@@ -47,16 +61,23 @@
             margin-right: 15px;
             flex-shrink: 0;
             background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .notificacion .contenido {
             display: flex;
             flex-direction: column;
+            flex-grow: 1;
+            min-width: 150px;
+            text-align: left;
         }
 
         .contenido p {
             margin: 0;
             font-size: 0.95em;
+            color: #f0f0f0;
         }
 
         .contenido span {
@@ -79,6 +100,57 @@
             font-size: 0.85em;
             margin-right: 10px;
             text-decoration: underline;
+        }
+
+        @media (max-width: 810px) {
+            .main-content {
+                width: 100%;
+                max-width: 505px;
+            }
+            .seccion {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .notificacion {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                max-width: 100%;
+                padding: 15px 8px;
+            }
+            .notificacion .imagen {
+                margin-right: 0;
+                margin-bottom: 10px;
+                width: 90vw;
+                max-width: 320px;
+                height: 30vw;
+                max-height: 120px;
+                align-self: center;
+                display: none;
+            }
+            .notificacion .contenido {
+                margin-right: 0;
+                margin-bottom: 10px;
+                text-align: center;
+                min-width: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.1em;
+            }
+            .notificacion .imagen {
+                width: 90vw;
+                max-width: 250px;
+                height: 28vw;
+                max-height: 90px;
+            }
+            .contenido p {
+                font-size: 1em;
+            }
         }
     </style>
 

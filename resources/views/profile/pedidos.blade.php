@@ -4,101 +4,166 @@
 
 @section('context')
     <style>
-        main {
-            max-width: 900px;
-            margin: 40px auto 60px auto;
-            padding: 0 16px;
+        .main-content {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 40px auto;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
-        h1 {
-            color: #fff;
-            font-size: 2rem;
-            margin-bottom: 2rem;
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .header {
+            text-align: left;
+            font-size: 2em;
+            margin: 5rem 0 30px 0;
+            color: #f0f0f0;
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 25px;
+            color: #f0f0f0;
+            margin-left: 12rem;
+        }
+
+        .order-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: stretch;
+            width: 100%;
         }
 
         .pedido {
             background: #181818;
             border: 1px solid #333;
             border-radius: 10px;
-            margin-bottom: 2rem;
-            padding: 20px 24px;
             box-shadow: 0 2px 8px #0002;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+            padding: 20px;
+            margin-bottom: 0;
+            transition: box-shadow 0.2s;
+        }
+
+        .pedido:hover {
+            box-shadow: 0 0 0 2px #22c55e;
+        }
+
+        .pedido:last-child {
+            border-bottom: none;
         }
 
         .pedido .fecha {
             color: #aaa;
             font-size: 0.95rem;
             margin-bottom: 10px;
+            width: 100%;
         }
 
         .pedido-contenido {
             display: flex;
             align-items: flex-start;
             gap: 24px;
+            width: 100%;
         }
 
         .imagen {
-            width: 90px;
-            height: 70px;
+            width: 100px;
+            height: 80px;
             background: #333;
             border-radius: 8px;
             flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
         .imagen img {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             border-radius: 8px;
         }
 
         .detalles {
             flex: 1;
+            min-width: 150px;
+            text-align: left;
         }
 
         .titulo {
             color: #fff;
-            font-size: 1.1rem;
-            margin-bottom: 6px;
+            font-size: 1em;
+            margin: 0 0 5px 0;
+            line-height: 1.4;
+            min-height: 2.5em;
         }
 
         .precio {
             color: #22c55e;
             font-weight: bold;
-            margin-bottom: 12px;
+            margin: 0 0 10px 0;
+            font-size: 0.95em;
         }
 
-        .acciones button {
-            background: #222;
-            color: #fff;
-            border: 1px solid #444;
-            border-radius: 5px;
-            padding: 6px 14px;
-            margin-right: 10px;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
+        .acciones {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
         }
 
-        .acciones button.comentar {
+        .devolver-btn {
             background: #22c55e;
             color: #fff;
             border: none;
+            border-radius: 5px;
+            padding: 7px 18px;
+            font-size: 0.98em;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .devolver-btn:hover {
+            background-color: #15803d;
         }
 
-        .acciones button:hover {
-            background: #22c55e;
+        .comprado-btn {
+            background: #e74c3c;
             color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 7px 18px;
+            font-size: 0.98em;
+            cursor: default;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .badge {
             display: inline-block;
-            background: #22c55e;
+            background: #444;
             color: #fff;
             padding: 4px 12px;
             border-radius: 6px;
             font-size: 0.95rem;
+        }
+        .badge-rechazada {
+            background: #e11d48 !important;
         }
 
         .modal-devolucion {
@@ -135,21 +200,114 @@
             cursor: pointer;
         }
 
-        @media (max-width: 700px) {
+        .pagination {
+            margin-top: 0px;
+            margin-bottom: 2rem;
+            justify-content: flex-start;
+            display: flex;
+        }
+
+        .pagination a,
+        .pagination span {
+            padding: 0px 0px;
+            border-radius: 0px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination .current-page {
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 20px;
+            cursor: default;
+        }
+        .pagination a,
+        .pagination span:not(.current-page) {
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+            gap: 10px;
+        }
+
+        .pagination a:hover {
+            background-color: #155d1f54;
+        }
+
+        @media (max-width: 810px) {
+            .main-content {
+                width: 100%;
+                max-width: 505px;
+            }
+            .order-list {
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pedido {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                max-width: 100%;
+                padding: 15px 8px;
+            }
             .pedido-contenido {
                 flex-direction: column;
                 gap: 10px;
-            }
-
-            .imagen {
                 width: 100%;
-                height: 120px;
+            }
+            .imagen {
+                margin-right: 0;
+                margin-bottom: 10px;
+                width: 90vw;
+                max-width: 320px;
+                height: 30vw;
+                max-height: 120px;
+                align-self: center;
+            }
+            .detalles {
+                margin-right: 0;
+                margin-bottom: 10px;
+                text-align: center;
+                min-width: 0;
+            }
+            .acciones {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                font-size: 1.3em;
+                margin-top: 2.5rem;
+            }
+            .section-title {
+                font-size: 1.1em;
+            }
+            .imagen {
+                width: 90vw;
+                max-width: 250px;
+                height: 28vw;
+                max-height: 90px;
+            }
+            .titulo {
+                font-size: 1em;
+            }
+            .precio {
+                font-size: 0.95em;
             }
         }
     </style>
+
     <div class="main-content">
-        <main>
-            <h1>Mis Pedidos</h1>
+        <div class="title-container">
+            <h1 class="header">Pedidos</h1>
+        </div>
+        <div class="order-list">
             @php
                 $orders = \App\Models\Order::where('user_id', auth()->id())
                     ->latest()
@@ -163,7 +321,6 @@
                         $mostrar = !$devolucion || ($devolucion && $devolucion->status === 'rechazada');
                         $diasDesdeCompra = \Carbon\Carbon::parse($order->created_at)->diffInDays(now());
                         $diasRestantes = 5 - $diasDesdeCompra;
-                        // Buscar el producto y su imagen principal
                         $product = \App\Models\Product::find($item->product_id);
                         $photoUrl =
                             $product && $product->mainPhoto
@@ -171,24 +328,24 @@
                                 : asset('img/Default_product.png');
                     @endphp
                     @if ($mostrar)
-                        <section class="pedido">
-                            <p class="fecha">Comprado el {{ $order->created_at->format('d \d\e F Y') }}</p>
+                        <div class="pedido">
                             <div class="pedido-contenido">
                                 <div class="imagen">
                                     <img src="{{ $photoUrl }}" alt="{{ $product->name ?? 'Sin nombre' }}">
                                 </div>
                                 <div class="detalles">
+                                    <p class="fecha">Comprado el {{ $order->created_at->format('d \d\e F Y') }}</p>
                                     <p class="titulo">{{ $item->product_name }}</p>
                                     <p class="precio">{{ number_format($item->product_price, 2) }}€</p>
                                     <div class="acciones">
                                         @if ($devolucion && $devolucion->status === 'rechazada')
-                                            <span class="badge" style="background:#e11d48;">Rechazada</span>
+                                            <span class="badge badge-rechazada">Rechazada</span>
                                         @elseif(!$devolucion && $diasRestantes > 0)
                                             <button type="button"
+                                                class="devolver-btn"
                                                 onclick="openReturnModal({{ $item->id }})">Devolver</button>
-                                            <span class="badge" style="background:#444;">
-                                                Te quedan {{ $diasRestantes }} día{{ $diasRestantes == 1 ? '' : 's' }} para
-                                                devolver
+                                            <span class="badge">
+                                                Te quedan {{ $diasRestantes }} día{{ $diasRestantes == 1 ? '' : 's' }} para devolver
                                             </span>
                                             <!-- Modal para devolución -->
                                             <div class="modal-devolucion" id="modal-devolucion-{{ $item->id }}">
@@ -209,19 +366,21 @@
                                             </div>
                                         @elseif(!$devolucion && $diasRestantes <= 0)
                                             <button type="button"
-                                                style="background:#e74c3c;color:#fff;border:none;padding:8px 18px;border-radius:5px;cursor:default;font-size: unset;"
+                                                class="comprado-btn"
                                                 disabled>Comprado</button>
                                         @endif
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </div>
                     @endif
                 @endforeach
             @empty
                 <p style="color:#fff;">No tienes pedidos aún.</p>
             @endforelse
-        </main>
+        </div>
+        <div class="pagination">
+        </div>
     </div>
     <script>
         function openReturnModal(id) {
