@@ -103,7 +103,7 @@ img {
     height: calc(100% - 4rem);
     margin-top: 4rem;
     background-color: #454545;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 .menu-title {
@@ -264,8 +264,8 @@ img {
 .side-menu-right img {
     width: 32px;
     height: 32px;
-        aspect-ratio: 1/1;         /* Fuerza relación 1:1 */
-    object-fit: cover; 
+    aspect-ratio: 1/1; /* Fuerza relación 1:1 */
+    object-fit: cover;
     display: block;
     margin: 0 auto;
     border-radius: 8px;
@@ -276,7 +276,7 @@ img {
 .side-menu-right a {
     display: flex;
     align-items: center;
-    justify-content: flex-start;;
+    justify-content: flex-start;
     padding: 8px 0;
 }
 
@@ -339,8 +339,8 @@ img {
     font-size: 0.85em;
     font-weight: bold;
 }
-    .user-avatar {
-        border-radius: 50%; 
-        border: 2px solid #00000085; 
-        object-fit: cover; 
-    }
+.user-avatar {
+    border-radius: 50%;
+    border: 2px solid #00000085;
+    object-fit: cover;
+}

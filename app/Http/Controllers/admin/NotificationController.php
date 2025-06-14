@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Notifications\GlobalNotification;
 use App\Models\User;
-use App\Models\AdminLog; // Añadido
+use App\Models\AdminLog; 
 
 
 class NotificationController extends Controller
@@ -37,7 +37,7 @@ class NotificationController extends Controller
 
         AdminNotification::create($data);
 
-        $users = User::where('role', 'user')->get(); // o simplemente User::all() si no tienes roles
+        $users = User::where('role', 'user')->get(); // User::all() si no tienes roles
         foreach ($users as $user) {
             $user->notify(new GlobalNotification($data['title'], $data['message']));
         }

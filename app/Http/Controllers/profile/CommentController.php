@@ -87,7 +87,7 @@ class CommentController extends Controller
             'message' => 'Un usuario ha denunciado un comentario. Revisa la sección de denuncias.',
             'admin_id' => 1, // O null si es global
             'read_at' => null,
-            'type' => 'comment_report', // Solo si tienes este campo en la tabla
+            'type' => 'comment_report', 
         ]);
 
         return back()->with('success', 'Comentario denunciado.');

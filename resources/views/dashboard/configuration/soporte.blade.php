@@ -30,8 +30,8 @@
             margin-top: 10px;
         }
     </style>
-    <div class="top-bar">
-        <h1 style="font-weight:bold;">Contactar con Soporte</h1>
+    <div class="top-bar" style="">
+        <h1 style="font-weight:bold; ">Contactar con Soporte</h1>
     </div>
 
     <h2 class="title">Enviar mensaje al soporte</h2>

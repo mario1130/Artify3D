@@ -25,7 +25,7 @@ class ShoppingcartController extends Controller
 
         // Guardar el producto en la tabla del carrito
         ShoppingCart::create([
-            'user_id' => auth()->id(), // Si tienes autenticación, guarda el ID del usuario
+            'user_id' => auth()->id(), 
             'product_id' => $productId,
             'product_name' => $productName,
             'product_price' => $productPrice,
@@ -42,14 +42,14 @@ class ShoppingcartController extends Controller
     public function empty()
     {
         // Elimina todos los productos del carrito del usuario autenticado
-        \App\Models\ShoppingCart::where('user_id', auth()->id())->delete();
+        ShoppingCart::where('user_id', auth()->id())->delete();
         return redirect()->back()->with('success', 'Carrito vaciado correctamente.');
     }
 
     public function remove($id)
     {
         // Elimina un producto específico del carrito del usuario autenticado
-        $item = \App\Models\ShoppingCart::where('user_id', auth()->id())->where('id', $id)->first();
+        $item = ShoppingCart::where('user_id', auth()->id())->where('id', $id)->first();
         if ($item) {
             $item->delete();
         }

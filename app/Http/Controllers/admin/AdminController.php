@@ -7,9 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Models\AdminLog;
 use App\Models\User;
 use App\Models\Visit;
-use App\Models\Returns; // Modelo para devoluciones
-use App\Models\CommentReport; // Modelo para denuncias de comentarios
-use App\Models\AdminNotification; // Modelo para notificaciones de administrador
+use App\Models\Returns; 
+use App\Models\CommentReport;
+use App\Models\AdminNotification;
 
 class AdminController extends Controller
 {

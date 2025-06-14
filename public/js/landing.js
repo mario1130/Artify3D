@@ -49,6 +49,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".carousel-outer {\n  width: 100%;\n  m
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Particles.css":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Particles.css ***!
+  \*********************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".particles-container {\n  position: absolute;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  pointer-events: none;\n  z-index: 0;\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/ScrollFloat.css":
 /*!***********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/ScrollFloat.css ***!
@@ -10058,6 +10082,35 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const useIsomorphicLayoutEffect = _is_browser_mjs__WEBPACK_IMPORTED_MODULE_1__.isBrowser ? react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect : react__WEBPACK_IMPORTED_MODULE_0__.useEffect;
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/framer-motion/dist/es/utils/use-motion-value-event.mjs":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/framer-motion/dist/es/utils/use-motion-value-event.mjs ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useMotionValueEvent: () => (/* binding */ useMotionValueEvent)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+function useMotionValueEvent(value, event, callback) {
+    /**
+     * useInsertionEffect will create subscriptions before any other
+     * effects will run. Effects run upwards through the tree so it
+     * can be that binding a useLayoutEffect higher up the tree can
+     * miss changes from lower down the tree.
+     */
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useInsertionEffect)(() => value.on(event, callback), [value, event, callback]);
+}
 
 
 
@@ -26528,6 +26581,161 @@ function warnOnce(condition, message, element) {
 }
 
 
+
+
+/***/ }),
+
+/***/ "./node_modules/ogl/src/core/Camera.js":
+/*!*********************************************!*\
+  !*** ./node_modules/ogl/src/core/Camera.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Camera: () => (/* binding */ Camera)
+/* harmony export */ });
+/* harmony import */ var _Transform_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Transform.js */ "./node_modules/ogl/src/core/Transform.js");
+/* harmony import */ var _math_Mat4_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../math/Mat4.js */ "./node_modules/ogl/src/math/Mat4.js");
+/* harmony import */ var _math_Vec3_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../math/Vec3.js */ "./node_modules/ogl/src/math/Vec3.js");
+
+
+
+
+const tempMat4 = /* @__PURE__ */ new _math_Mat4_js__WEBPACK_IMPORTED_MODULE_0__.Mat4();
+const tempVec3a = /* @__PURE__ */ new _math_Vec3_js__WEBPACK_IMPORTED_MODULE_1__.Vec3();
+const tempVec3b = /* @__PURE__ */ new _math_Vec3_js__WEBPACK_IMPORTED_MODULE_1__.Vec3();
+
+class Camera extends _Transform_js__WEBPACK_IMPORTED_MODULE_2__.Transform {
+    constructor(gl, { near = 0.1, far = 100, fov = 45, aspect = 1, left, right, bottom, top, zoom = 1 } = {}) {
+        super();
+
+        Object.assign(this, { near, far, fov, aspect, left, right, bottom, top, zoom });
+
+        this.projectionMatrix = new _math_Mat4_js__WEBPACK_IMPORTED_MODULE_0__.Mat4();
+        this.viewMatrix = new _math_Mat4_js__WEBPACK_IMPORTED_MODULE_0__.Mat4();
+        this.projectionViewMatrix = new _math_Mat4_js__WEBPACK_IMPORTED_MODULE_0__.Mat4();
+        this.worldPosition = new _math_Vec3_js__WEBPACK_IMPORTED_MODULE_1__.Vec3();
+
+        // Use orthographic if left/right set, else default to perspective camera
+        this.type = left || right ? 'orthographic' : 'perspective';
+
+        if (this.type === 'orthographic') this.orthographic();
+        else this.perspective();
+    }
+
+    perspective({ near = this.near, far = this.far, fov = this.fov, aspect = this.aspect } = {}) {
+        Object.assign(this, { near, far, fov, aspect });
+        this.projectionMatrix.fromPerspective({ fov: fov * (Math.PI / 180), aspect, near, far });
+        this.type = 'perspective';
+        return this;
+    }
+
+    orthographic({
+        near = this.near,
+        far = this.far,
+        left = this.left || -1,
+        right = this.right || 1,
+        bottom = this.bottom || -1,
+        top = this.top || 1,
+        zoom = this.zoom,
+    } = {}) {
+        Object.assign(this, { near, far, left, right, bottom, top, zoom });
+        left /= zoom;
+        right /= zoom;
+        bottom /= zoom;
+        top /= zoom;
+        this.projectionMatrix.fromOrthogonal({ left, right, bottom, top, near, far });
+        this.type = 'orthographic';
+        return this;
+    }
+
+    updateMatrixWorld() {
+        super.updateMatrixWorld();
+        this.viewMatrix.inverse(this.worldMatrix);
+        this.worldMatrix.getTranslation(this.worldPosition);
+
+        // used for sorting
+        this.projectionViewMatrix.multiply(this.projectionMatrix, this.viewMatrix);
+        return this;
+    }
+
+    updateProjectionMatrix() {
+        if (this.type === 'perspective') {
+            return this.perspective();
+        } else {
+            return this.orthographic();
+        }
+    }
+
+    lookAt(target) {
+        super.lookAt(target, true);
+        return this;
+    }
+
+    // Project 3D coordinate to 2D point
+    project(v) {
+        v.applyMatrix4(this.viewMatrix);
+        v.applyMatrix4(this.projectionMatrix);
+        return this;
+    }
+
+    // Unproject 2D point to 3D coordinate
+    unproject(v) {
+        v.applyMatrix4(tempMat4.inverse(this.projectionMatrix));
+        v.applyMatrix4(this.worldMatrix);
+        return this;
+    }
+
+    updateFrustum() {
+        if (!this.frustum) {
+            this.frustum = [new _math_Vec3_js__WEBPACK_IMPORTED_MODULE_1__.Vec3(), new _math_Vec3_js__WEBPACK_IMPORTED_MODULE_1__.Vec3(), new _math_Vec3_js__WEBPACK_IMPORTED_MODULE_1__.Vec3(), new _math_Vec3_js__WEBPACK_IMPORTED_MODULE_1__.Vec3(), new _math_Vec3_js__WEBPACK_IMPORTED_MODULE_1__.Vec3(), new _math_Vec3_js__WEBPACK_IMPORTED_MODULE_1__.Vec3()];
+        }
+
+        const m = this.projectionViewMatrix;
+        this.frustum[0].set(m[3] - m[0], m[7] - m[4], m[11] - m[8]).constant = m[15] - m[12]; // -x
+        this.frustum[1].set(m[3] + m[0], m[7] + m[4], m[11] + m[8]).constant = m[15] + m[12]; // +x
+        this.frustum[2].set(m[3] + m[1], m[7] + m[5], m[11] + m[9]).constant = m[15] + m[13]; // +y
+        this.frustum[3].set(m[3] - m[1], m[7] - m[5], m[11] - m[9]).constant = m[15] - m[13]; // -y
+        this.frustum[4].set(m[3] - m[2], m[7] - m[6], m[11] - m[10]).constant = m[15] - m[14]; // +z (far)
+        this.frustum[5].set(m[3] + m[2], m[7] + m[6], m[11] + m[10]).constant = m[15] + m[14]; // -z (near)
+
+        for (let i = 0; i < 6; i++) {
+            const invLen = 1.0 / this.frustum[i].distance();
+            this.frustum[i].multiply(invLen);
+            this.frustum[i].constant *= invLen;
+        }
+    }
+
+    frustumIntersectsMesh(node, worldMatrix = node.worldMatrix) {
+        // If no position attribute, treat as frustumCulled false
+        if (!node.geometry.attributes.position) return true;
+
+        if (!node.geometry.bounds || node.geometry.bounds.radius === Infinity) node.geometry.computeBoundingSphere();
+
+        if (!node.geometry.bounds) return true;
+
+        const center = tempVec3a;
+        center.copy(node.geometry.bounds.center);
+        center.applyMatrix4(worldMatrix);
+
+        const radius = node.geometry.bounds.radius * worldMatrix.getMaxScaleOnAxis();
+
+        return this.frustumIntersectsSphere(center, radius);
+    }
+
+    frustumIntersectsSphere(center, radius) {
+        const normal = tempVec3b;
+
+        for (let i = 0; i < 6; i++) {
+            const plane = this.frustum[i];
+            const distance = normal.copy(plane).dot(center) + plane.constant;
+            if (distance < -radius) return false;
+        }
+        return true;
+    }
+}
 
 
 /***/ }),
@@ -59787,7 +59995,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var images = ["/img/carousel1.jpg", "/img/carousel2.jpg", "/img/carousel3.jpg", "/img/carousel4.jpg", "/img/carousel5.jpg"];
+var images = ["/img/carousel/1.jpg", "/img/carousel/2.jpg", "/img/carousel/3.jpg", "/img/carousel/4.jpg", "/img/carousel/5.jpg"];
 function ImageCarousel() {
   var controls = (0,framer_motion__WEBPACK_IMPORTED_MODULE_3__.useAnimation)();
   var carouselRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
@@ -59843,6 +60051,252 @@ function ImageCarousel() {
     })
   });
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/Particles.css":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Particles.css ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Particles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Particles.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Particles.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Particles_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Particles_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/components/Particles.jsx":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Particles.jsx ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var ogl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ogl */ "./node_modules/ogl/src/core/Renderer.js");
+/* harmony import */ var ogl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ogl */ "./node_modules/ogl/src/core/Camera.js");
+/* harmony import */ var ogl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ogl */ "./node_modules/ogl/src/core/Geometry.js");
+/* harmony import */ var ogl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ogl */ "./node_modules/ogl/src/core/Program.js");
+/* harmony import */ var ogl__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ogl */ "./node_modules/ogl/src/core/Mesh.js");
+/* harmony import */ var _Particles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Particles.css */ "./resources/js/components/Particles.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var defaultColors = ["#ffffff", "#ffffff", "#ffffff"];
+var hexToRgb = function hexToRgb(hex) {
+  hex = hex.replace(/^#/, "");
+  if (hex.length === 3) {
+    hex = hex.split("").map(function (c) {
+      return c + c;
+    }).join("");
+  }
+  var _int = parseInt(hex, 16);
+  var r = (_int >> 16 & 255) / 255;
+  var g = (_int >> 8 & 255) / 255;
+  var b = (_int & 255) / 255;
+  return [r, g, b];
+};
+var vertex = /* glsl */"\n  attribute vec3 position;\n  attribute vec4 random;\n  attribute vec3 color;\n  \n  uniform mat4 modelMatrix;\n  uniform mat4 viewMatrix;\n  uniform mat4 projectionMatrix;\n  uniform float uTime;\n  uniform float uSpread;\n  uniform float uBaseSize;\n  uniform float uSizeRandomness;\n  \n  varying vec4 vRandom;\n  varying vec3 vColor;\n  \n  void main() {\n    vRandom = random;\n    vColor = color;\n    \n    vec3 pos = position * uSpread;\n    pos.z *= 10.0;\n    \n    vec4 mPos = modelMatrix * vec4(pos, 1.0);\n    float t = uTime;\n    mPos.x += sin(t * random.z + 6.28 * random.w) * mix(0.1, 1.5, random.x);\n    mPos.y += sin(t * random.y + 6.28 * random.x) * mix(0.1, 1.5, random.w);\n    mPos.z += sin(t * random.w + 6.28 * random.y) * mix(0.1, 1.5, random.z);\n    \n    vec4 mvPos = viewMatrix * mPos;\n    gl_PointSize = (uBaseSize * (1.0 + uSizeRandomness * (random.x - 0.5))) / length(mvPos.xyz);\n    gl_Position = projectionMatrix * mvPos;\n  }\n";
+var fragment = /* glsl */"\n  precision highp float;\n  \n  uniform float uTime;\n  uniform float uAlphaParticles;\n  varying vec4 vRandom;\n  varying vec3 vColor;\n  \n  void main() {\n    vec2 uv = gl_PointCoord.xy;\n    float d = length(uv - vec2(0.5));\n    \n    if(uAlphaParticles < 0.5) {\n      if(d > 0.5) {\n        discard;\n      }\n      gl_FragColor = vec4(vColor + 0.2 * sin(uv.yxx + uTime + vRandom.y * 6.28), 1.0);\n    } else {\n      float circle = smoothstep(0.5, 0.4, d) * 0.8;\n      gl_FragColor = vec4(vColor + 0.2 * sin(uv.yxx + uTime + vRandom.y * 6.28), circle);\n    }\n  }\n";
+var Particles = function Particles(_ref) {
+  var _ref$particleCount = _ref.particleCount,
+    particleCount = _ref$particleCount === void 0 ? 200 : _ref$particleCount,
+    _ref$particleSpread = _ref.particleSpread,
+    particleSpread = _ref$particleSpread === void 0 ? 10 : _ref$particleSpread,
+    _ref$speed = _ref.speed,
+    speed = _ref$speed === void 0 ? 0.1 : _ref$speed,
+    particleColors = _ref.particleColors,
+    _ref$moveParticlesOnH = _ref.moveParticlesOnHover,
+    moveParticlesOnHover = _ref$moveParticlesOnH === void 0 ? false : _ref$moveParticlesOnH,
+    _ref$particleHoverFac = _ref.particleHoverFactor,
+    particleHoverFactor = _ref$particleHoverFac === void 0 ? 1 : _ref$particleHoverFac,
+    _ref$alphaParticles = _ref.alphaParticles,
+    alphaParticles = _ref$alphaParticles === void 0 ? false : _ref$alphaParticles,
+    _ref$particleBaseSize = _ref.particleBaseSize,
+    particleBaseSize = _ref$particleBaseSize === void 0 ? 100 : _ref$particleBaseSize,
+    _ref$sizeRandomness = _ref.sizeRandomness,
+    sizeRandomness = _ref$sizeRandomness === void 0 ? 1 : _ref$sizeRandomness,
+    _ref$cameraDistance = _ref.cameraDistance,
+    cameraDistance = _ref$cameraDistance === void 0 ? 20 : _ref$cameraDistance,
+    _ref$disableRotation = _ref.disableRotation,
+    disableRotation = _ref$disableRotation === void 0 ? false : _ref$disableRotation,
+    className = _ref.className;
+  var containerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var mouseRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)({
+    x: 0,
+    y: 0
+  });
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var container = containerRef.current;
+    if (!container) return;
+    var renderer = new ogl__WEBPACK_IMPORTED_MODULE_3__.Renderer({
+      depth: false,
+      alpha: true
+    });
+    var gl = renderer.gl;
+    container.appendChild(gl.canvas);
+    gl.clearColor(0, 0, 0, 0);
+    var camera = new ogl__WEBPACK_IMPORTED_MODULE_4__.Camera(gl, {
+      fov: 15
+    });
+    camera.position.set(0, 0, cameraDistance);
+    var resize = function resize() {
+      var width = container.clientWidth;
+      var height = container.clientHeight;
+      renderer.setSize(width, height);
+      camera.perspective({
+        aspect: gl.canvas.width / gl.canvas.height
+      });
+    };
+    window.addEventListener("resize", resize, false);
+    resize();
+    var handleMouseMove = function handleMouseMove(e) {
+      var rect = container.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width * 2 - 1;
+      var y = -((e.clientY - rect.top) / rect.height * 2 - 1);
+      mouseRef.current = {
+        x: x,
+        y: y
+      };
+    };
+    if (moveParticlesOnHover) {
+      container.addEventListener("mousemove", handleMouseMove);
+    }
+    var count = particleCount;
+    var positions = new Float32Array(count * 3);
+    var randoms = new Float32Array(count * 4);
+    var colors = new Float32Array(count * 3);
+    var palette = particleColors && particleColors.length > 0 ? particleColors : defaultColors;
+    for (var i = 0; i < count; i++) {
+      var x = void 0,
+        y = void 0,
+        z = void 0,
+        len = void 0;
+      do {
+        x = Math.random() * 2 - 1;
+        y = Math.random() * 2 - 1;
+        z = Math.random() * 2 - 1;
+        len = x * x + y * y + z * z;
+      } while (len > 1 || len === 0);
+      var r = Math.cbrt(Math.random());
+      positions.set([x * r, y * r, z * r], i * 3);
+      randoms.set([Math.random(), Math.random(), Math.random(), Math.random()], i * 4);
+      var col = hexToRgb(palette[Math.floor(Math.random() * palette.length)]);
+      colors.set(col, i * 3);
+    }
+    var geometry = new ogl__WEBPACK_IMPORTED_MODULE_5__.Geometry(gl, {
+      position: {
+        size: 3,
+        data: positions
+      },
+      random: {
+        size: 4,
+        data: randoms
+      },
+      color: {
+        size: 3,
+        data: colors
+      }
+    });
+    var program = new ogl__WEBPACK_IMPORTED_MODULE_6__.Program(gl, {
+      vertex: vertex,
+      fragment: fragment,
+      uniforms: {
+        uTime: {
+          value: 0
+        },
+        uSpread: {
+          value: particleSpread
+        },
+        uBaseSize: {
+          value: particleBaseSize
+        },
+        uSizeRandomness: {
+          value: sizeRandomness
+        },
+        uAlphaParticles: {
+          value: alphaParticles ? 1 : 0
+        }
+      },
+      transparent: true,
+      depthTest: false
+    });
+    var particles = new ogl__WEBPACK_IMPORTED_MODULE_7__.Mesh(gl, {
+      mode: gl.POINTS,
+      geometry: geometry,
+      program: program
+    });
+    var animationFrameId;
+    var lastTime = performance.now();
+    var elapsed = 0;
+    var _update = function update(t) {
+      animationFrameId = requestAnimationFrame(_update);
+      var delta = t - lastTime;
+      lastTime = t;
+      elapsed += delta * speed;
+      program.uniforms.uTime.value = elapsed * 0.001;
+      if (moveParticlesOnHover) {
+        particles.position.x = -mouseRef.current.x * particleHoverFactor;
+        particles.position.y = -mouseRef.current.y * particleHoverFactor;
+      } else {
+        particles.position.x = 0;
+        particles.position.y = 0;
+      }
+      if (!disableRotation) {
+        particles.rotation.x = Math.sin(elapsed * 0.0002) * 0.1;
+        particles.rotation.y = Math.cos(elapsed * 0.0005) * 0.15;
+        particles.rotation.z += 0.01 * speed;
+      }
+      renderer.render({
+        scene: particles,
+        camera: camera
+      });
+    };
+    animationFrameId = requestAnimationFrame(_update);
+    return function () {
+      window.removeEventListener("resize", resize);
+      if (moveParticlesOnHover) {
+        container.removeEventListener("mousemove", handleMouseMove);
+      }
+      cancelAnimationFrame(animationFrameId);
+      if (container.contains(gl.canvas)) {
+        container.removeChild(gl.canvas);
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [particleCount, particleSpread, speed, moveParticlesOnHover, particleHoverFactor, alphaParticles, particleBaseSize, sizeRandomness, cameraDistance, disableRotation]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    ref: containerRef,
+    className: "particles-container ".concat(className)
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Particles);
 
 /***/ }),
 
@@ -59984,12 +60438,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ScrollFloat__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/ScrollFloat */ "./resources/js/components/ScrollFloat.jsx");
 /* harmony import */ var _components_ImageCarousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/ImageCarousel */ "./resources/js/components/ImageCarousel.jsx");
 /* harmony import */ var _components_Aurora__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Aurora */ "./resources/js/components/Aurora.jsx");
-/* harmony import */ var _components_ScrollFloat_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ScrollFloat.css */ "./resources/js/components/ScrollFloat.css");
-/* harmony import */ var _components_ImageCarousel_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/ImageCarousel.css */ "./resources/js/components/ImageCarousel.css");
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/value/use-scroll.mjs");
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/value/use-transform.mjs");
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_Particles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Particles */ "./resources/js/components/Particles.jsx");
+/* harmony import */ var _components_ScrollFloat_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/ScrollFloat.css */ "./resources/js/components/ScrollFloat.css");
+/* harmony import */ var _components_ImageCarousel_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ImageCarousel.css */ "./resources/js/components/ImageCarousel.css");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/value/use-scroll.mjs");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/value/use-transform.mjs");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/utils/use-motion-value-event.mjs");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -60032,161 +60495,571 @@ var fadeUp = {
   }
 };
 function LandingArtify3D() {
-  var _useScroll = (0,framer_motion__WEBPACK_IMPORTED_MODULE_7__.useScroll)(),
+  var _useScroll = (0,framer_motion__WEBPACK_IMPORTED_MODULE_8__.useScroll)(),
     scrollY = _useScroll.scrollY;
   // Animación del hero
-  var scale = (0,framer_motion__WEBPACK_IMPORTED_MODULE_8__.useTransform)(scrollY, [0, 220], [1, 0.45]);
-  var x = (0,framer_motion__WEBPACK_IMPORTED_MODULE_8__.useTransform)(scrollY, [0, 220], [0, 30]);
-  var y = (0,framer_motion__WEBPACK_IMPORTED_MODULE_8__.useTransform)(scrollY, [0, 220], [0, -30]);
+  var scale = (0,framer_motion__WEBPACK_IMPORTED_MODULE_9__.useTransform)(scrollY, [0, 220], [1, 0.45]);
+  var x = (0,framer_motion__WEBPACK_IMPORTED_MODULE_9__.useTransform)(scrollY, [0, 220], [0, 30]);
+  var y = (0,framer_motion__WEBPACK_IMPORTED_MODULE_9__.useTransform)(scrollY, [0, 220], [0, -30]);
   // Visibilidad del sticky header
-  var stickyBg = (0,framer_motion__WEBPACK_IMPORTED_MODULE_8__.useTransform)(scrollY, [0, 220], ["rgba(16,16,16,0)", "rgba(16,16,16,0.97)"]);
-  var showSticky = (0,framer_motion__WEBPACK_IMPORTED_MODULE_8__.useTransform)(scrollY, [180, 220], [0, 1]);
+  var stickyBg = (0,framer_motion__WEBPACK_IMPORTED_MODULE_9__.useTransform)(scrollY, [0, 220], ["rgba(16,16,16,0)", "rgba(16,16,16,0.97)"]);
+  var showSticky = (0,framer_motion__WEBPACK_IMPORTED_MODULE_9__.useTransform)(scrollY, [180, 220], [0, 1]);
   // Visibilidad del hero (desaparece cuando sticky aparece)
-  var showHero = (0,framer_motion__WEBPACK_IMPORTED_MODULE_8__.useTransform)(scrollY, [170, 200], [1, 0]);
+  var showHero = (0,framer_motion__WEBPACK_IMPORTED_MODULE_9__.useTransform)(scrollY, [170, 200], [1, 0]);
+
+  // Mostrar/ocultar triángulo según scroll
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState2 = _slicedToArray(_useState, 2),
+    showTriangle = _useState2[0],
+    setShowTriangle = _useState2[1];
+  (0,framer_motion__WEBPACK_IMPORTED_MODULE_10__.useMotionValueEvent)(scrollY, "change", function (latest) {
+    setShowTriangle(latest < 40);
+  });
 
   // Scroll suave al siguiente bloque (ScrollFloat)
   var scrollToNext = function scrollToNext() {
     var next = document.getElementById("scrollfloat-section");
     if (next) {
-      next.scrollIntoView({
+      var _y = next.getBoundingClientRect().top + window.scrollY - 150;
+      window.scrollTo({
+        top: _y,
         behavior: "smooth"
       });
     }
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-    style: {
-      background: "#101010",
-      color: "#f0f0f0",
-      minHeight: "100vh",
-      position: "relative",
-      overflow: "hidden"
-    },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+
+  // Estado para mostrar/ocultar partículas
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState4 = _slicedToArray(_useState3, 2),
+    showParticles = _useState4[0],
+    setShowParticles = _useState4[1];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("style", {
+      children: "\n          .hero-flex {\n            width: 100%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n          }\n          .hero-left {\n            flex: 1;\n            display: flex;\n            flex-direction: column;\n            align-items: flex-start;\n            justify-content: center;\n            padding-left: 8vw;\n            min-width: 0;\n          }\n          .hero-img {\n            width: 80%;\n            max-width: 480px;\n            border-radius: 18px;\n            object-fit: cover;\n          }\n          .triangle-btn {\n            cursor: pointer;\n            background: rgba(24,24,24,0.92);\n            border-radius: 50%;\n            width: 54px;\n            height: 54px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            transition: width 0.2s, height 0.2s;\n          }\n          @media (max-width: 900px) {\n            .hero-flex {\n              flex-direction: column !important;\n              padding-left: 0 !important;\n            }\n            .hero-left {\n              align-items: center !important;\n              padding-left: 0 !important;\n              width: 100% !important;\n            }\n            .hero-img {\n              width: 90% !important;\n              max-width: 320px !important;\n              margin-top: 32px !important;\n            }\n          }\n          @media (max-width: 600px) {\n            .hero-left h1 {\n              font-size: 2.2rem !important;\n            }\n            .hero-left {\n              padding: 0 8vw !important;\n            }\n            .triangle-btn {\n              width: 44px !important;\n              height: 44px !important;\n            }\n          }\n        "
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       style: {
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "80vh",
-        zIndex: 0,
-        pointerEvents: "none"
+        background: "#101010",
+        color: "#f0f0f0",
+        minHeight: "100vh",
+        position: "relative",
+        overflow: "hidden"
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Aurora__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        colorStops: ["#5227FF", "#7cff67", "#5227FF"],
-        amplitude: 1.0,
-        blend: 0.5
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.div, {
-      style: {
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        zIndex: 20,
-        pointerEvents: "none",
-        background: stickyBg,
-        height: 90,
-        display: "flex",
-        alignItems: "center",
-        paddingLeft: 32,
-        paddingTop: 10,
-        gap: 18,
-        opacity: showSticky
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         style: {
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: 0,
+          pointerEvents: "none"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Aurora__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          colorStops: ["#5227FF", "#7cff67", "#5227FF"],
+          amplitude: 1.0,
+          blend: 0.5
+        })
+      }), showParticles && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        style: {
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: 0,
+          pointerEvents: "none"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Particles__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          particleCount: 400,
+          particleSpread: 10,
+          speed: 0.1,
+          particleColors: ["#ffffff"],
+          alphaParticles: true,
+          particleBaseSize: 100,
+          sizeRandomness: 1,
+          cameraDistance: 10,
+          disableRotation: false,
+          className: ""
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.div, {
+        style: {
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          zIndex: 20,
+          pointerEvents: "none",
+          background: stickyBg,
+          height: 90,
           display: "flex",
           alignItems: "center",
-          gap: 16
+          paddingLeft: 32,
+          paddingTop: 10,
+          gap: 18,
+          opacity: showSticky
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           style: {
-            fontSize: "2.1rem",
-            fontWeight: 700,
-            color: "#fff",
-            letterSpacing: "-2px",
-            marginRight: 10,
-            pointerEvents: "auto"
+            display: "flex",
+            alignItems: "center",
+            gap: 16
           },
-          children: "Artify3D"
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            style: {
+              fontSize: "2.1rem",
+              fontWeight: 700,
+              color: "#fff",
+              letterSpacing: "-2px",
+              marginRight: 10,
+              pointerEvents: "auto"
+            },
+            children: "Artify3D"
+          })
         })
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.section, {
-      style: {
-        minHeight: "80vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "0 0 60px 0",
-        gap: 0,
-        opacity: showHero,
-        pointerEvents: showHero,
-        position: "relative",
-        zIndex: 1
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.div, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.section, {
         style: {
-          flex: 1,
+          minHeight: "100vh",
           display: "flex",
           flexDirection: "column",
-          alignItems: "flex-start",
+          alignItems: "center",
           justifyContent: "center",
-          paddingLeft: "8vw",
-          minWidth: 0,
+          padding: "0 0 60px 0",
+          gap: 0,
+          opacity: showHero,
+          pointerEvents: showHero,
+          position: "relative",
+          zIndex: 1,
           scale: scale,
-          x: x,
           y: y,
-          originX: 0,
           originY: 0
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.h1, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "hero-flex",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.div, {
+            className: "hero-left",
+            style: {
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              paddingLeft: "8vw",
+              minWidth: 0,
+              scale: scale,
+              x: x,
+              y: y,
+              originX: 0,
+              originY: 0
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.h1, {
+              initial: {
+                opacity: 0,
+                x: -60
+              },
+              animate: {
+                opacity: 1,
+                x: 0
+              },
+              transition: {
+                duration: 1
+              },
+              style: {
+                fontSize: "5vw",
+                fontWeight: 800,
+                marginBottom: 18,
+                letterSpacing: "-2px",
+                color: "#fff",
+                lineHeight: 1.1,
+                whiteSpace: "pre-line"
+              },
+              children: "Artify3D"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.div, {
+              initial: {
+                opacity: 0,
+                x: -60
+              },
+              animate: {
+                opacity: 1,
+                x: 0
+              },
+              transition: {
+                duration: 1,
+                delay: 0.2
+              },
+              style: {
+                fontSize: "1.5rem",
+                color: "#bdbdbd",
+                marginBottom: 38,
+                fontWeight: 400,
+                maxWidth: 420
+              },
+              children: ["La tienda oficial.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("br", {}), "Modelos 3D, gadgets y tecnolog\xEDa para creadores y entusiastas."]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              style: {
+                display: "flex",
+                gap: 12
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.a, {
+                href: "/search",
+                whileHover: {
+                  scale: 1.06,
+                  background: "linear-gradient(90deg, #388e3c 60%, #4caf50 100%)"
+                },
+                style: {
+                  background: "linear-gradient(90deg, #4caf50 60%, #388e3c 100%)",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: 8,
+                  padding: "18px 44px",
+                  fontSize: "1.15rem",
+                  fontWeight: 600,
+                  letterSpacing: "1px",
+                  cursor: "pointer",
+                  boxShadow: "0 2px 16px #4caf5055",
+                  textDecoration: "none",
+                  marginBottom: 24,
+                  display: "inline-block",
+                  transition: "background 0.2s, transform 0.2s"
+                },
+                children: "Explorar Productos"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                style: {
+                  background: "#232323",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: 8,
+                  padding: "18px 24px",
+                  fontSize: "1.05rem",
+                  fontWeight: 500,
+                  cursor: "pointer",
+                  marginBottom: 24,
+                  transition: "background 0.2s"
+                },
+                onClick: function onClick() {
+                  return setShowParticles(function (v) {
+                    return !v;
+                  });
+                },
+                children: showParticles ? "Ocultar partículas" : "Mostrar partículas"
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            style: {
+              flex: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              minWidth: 0
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.img, {
+              className: "hero-img",
+              initial: {
+                opacity: 0,
+                x: 60,
+                y: 60
+              },
+              animate: {
+                opacity: 1,
+                x: 0,
+                y: 0
+              },
+              transition: {
+                duration: 1
+              },
+              src: "/img/Logo.png",
+              alt: "Hero Artify3D",
+              style: {
+                width: "80%",
+                maxWidth: 480,
+                borderRadius: "18px",
+                objectFit: "cover"
+              }
+            })
+          })]
+        })
+      }), showTriangle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        style: {
+          position: "fixed",
+          left: 0,
+          bottom: 0,
+          width: "100vw",
+          display: "flex",
+          justifyContent: "center",
+          zIndex: 50,
+          pointerEvents: "none"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.div, {
+          className: "triangle-btn",
           initial: {
             opacity: 0,
-            x: -60
+            y: 20
           },
           animate: {
             opacity: 1,
-            x: 0
+            y: 0
+          },
+          exit: {
+            opacity: 0,
+            y: 20
           },
           transition: {
-            duration: 1
+            delay: 0.1,
+            duration: 0.5,
+            type: "spring"
           },
           style: {
-            fontSize: "5vw",
-            fontWeight: 800,
-            marginBottom: 18,
-            letterSpacing: "-2px",
+            pointerEvents: "auto",
+            margin: "16px 0"
+          },
+          onClick: scrollToNext,
+          title: "Bajar",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.svg, {
+            width: "32",
+            height: "32",
+            viewBox: "0 0 32 32",
+            fill: "none",
+            xmlns: "http://www.w3.org/2000/svg",
+            initial: {
+              y: 0
+            },
+            animate: {
+              y: [0, 10, 0]
+            },
+            transition: {
+              repeat: Infinity,
+              duration: 1.6,
+              ease: "easeInOut"
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("polygon", {
+              points: "16,24 6,12 26,12",
+              fill: "#4caf50"
+            })
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        id: "scrollfloat-section",
+        style: {
+          display: "flex",
+          justifyContent: "center",
+          margin: "40px 0"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_ScrollFloat__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          children: "Dale vida a tus ideas en 3D con Artify3D"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_ImageCarousel__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.section, {
+        initial: "hidden",
+        whileInView: "show",
+        variants: {
+          hidden: {},
+          show: {
+            transition: {
+              staggerChildren: 0.18
+            }
+          }
+        },
+        style: {
+          maxWidth: 900,
+          margin: "0 auto 60px auto",
+          padding: "0 20px"
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.h2, {
+          variants: fadeUp,
+          style: {
+            fontSize: "2rem",
+            fontWeight: 700,
+            marginBottom: 32,
             color: "#fff",
-            lineHeight: 1.1,
-            whiteSpace: "pre-line"
+            textAlign: "center"
           },
-          children: "Artify3D"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.div, {
+          children: "Lo que dicen nuestros clientes"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          style: {
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 32,
+            justifyContent: "center"
+          },
+          children: [{
+            name: "Ana Torres",
+            avatar: "/img/caras/1.jpg",
+            text: "¡Los modelos 3D son de altísima calidad y el soporte es excelente!"
+          }, {
+            name: "Carlos Méndez",
+            avatar: "/img/caras/2.jpg",
+            text: "El envío fue rapidísimo y el gadget Maker superó mis expectativas."
+          }, {
+            name: "Lucía Fernández",
+            avatar: "/img/caras/3.jpg",
+            text: "El curso de Blender me ayudó a empezar en el mundo 3D. ¡Gracias Artify3D!"
+          }].map(function (t, i) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.div, {
+              variants: fadeUp,
+              whileHover: {
+                scale: 1.04,
+                boxShadow: "0 4px 32px #4caf5040",
+                borderColor: "#4caf50"
+              },
+              style: {
+                background: "#181818",
+                borderRadius: 14,
+                boxShadow: "0 2px 16px #0003",
+                padding: "28px 22px",
+                minWidth: 260,
+                maxWidth: 320,
+                flex: "1 1 260px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                border: "1px solid #232323",
+                transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s"
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.img, {
+                src: t.avatar,
+                alt: t.name,
+                initial: {
+                  opacity: 0,
+                  scale: 0.8
+                },
+                whileInView: {
+                  opacity: 1,
+                  scale: 1
+                },
+                transition: {
+                  duration: 0.6,
+                  delay: 0.2 + i * 0.1,
+                  type: "spring"
+                },
+                style: {
+                  width: 64,
+                  height: 64,
+                  borderRadius: "50%",
+                  marginBottom: 14,
+                  objectFit: "cover",
+                  border: "2px solid #4caf50",
+                  background: "#222",
+                  overflow: "hidden"
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.div, {
+                initial: {
+                  opacity: 0,
+                  y: 20
+                },
+                whileInView: {
+                  opacity: 1,
+                  y: 0
+                },
+                transition: {
+                  duration: 0.5,
+                  delay: 0.3 + i * 0.1
+                },
+                style: {
+                  color: "#fff",
+                  fontWeight: 600,
+                  marginBottom: 8
+                },
+                children: t.name
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.div, {
+                initial: {
+                  opacity: 0,
+                  y: 20
+                },
+                whileInView: {
+                  opacity: 1,
+                  y: 0
+                },
+                transition: {
+                  duration: 0.5,
+                  delay: 0.4 + i * 0.1
+                },
+                style: {
+                  color: "#bdbdbd",
+                  fontSize: "1.05rem",
+                  textAlign: "center"
+                },
+                children: t.text
+              })]
+            }, i);
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.section, {
+        initial: {
+          opacity: 0,
+          y: 60
+        },
+        whileInView: {
+          opacity: 1,
+          y: 0
+        },
+        transition: {
+          duration: 0.8,
+          type: "spring"
+        },
+        style: {
+          maxWidth: 700,
+          margin: "0 auto 60px auto",
+          padding: "40px 24px",
+          background: "linear-gradient(90deg, #232323 60%, #2e7d32 100%)",
+          borderRadius: 18,
+          textAlign: "center"
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.h2, {
           initial: {
             opacity: 0,
-            x: -60
+            y: 30
           },
-          animate: {
+          whileInView: {
             opacity: 1,
-            x: 0
+            y: 0
           },
           transition: {
-            duration: 1,
-            delay: 0.2
+            duration: 0.7,
+            type: "spring"
           },
           style: {
-            fontSize: "1.5rem",
-            color: "#bdbdbd",
-            marginBottom: 38,
-            fontWeight: 400,
-            maxWidth: 420
+            color: "#fff",
+            fontSize: "2rem",
+            fontWeight: 700,
+            marginBottom: 18
           },
-          children: ["La tienda oficial.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), "Modelos 3D, gadgets y tecnolog\xEDa para creadores y entusiastas."]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.a, {
+          children: "\xBFListo para llevar tus ideas al siguiente nivel?"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.p, {
+          initial: {
+            opacity: 0,
+            y: 30
+          },
+          whileInView: {
+            opacity: 1,
+            y: 0
+          },
+          transition: {
+            duration: 0.7,
+            delay: 0.2,
+            type: "spring"
+          },
+          style: {
+            color: "#bdbdbd",
+            fontSize: "1.15rem",
+            marginBottom: 28
+          },
+          children: "\xDAnete a la comunidad de creadores y accede a recursos exclusivos, soporte y mucho m\xE1s."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.a, {
           href: "/search",
           whileHover: {
-            scale: 1.06,
+            scale: 1.07,
             background: "linear-gradient(90deg, #388e3c 60%, #4caf50 100%)"
+          },
+          initial: {
+            opacity: 0,
+            y: 30
+          },
+          whileInView: {
+            opacity: 1,
+            y: 0
+          },
+          transition: {
+            duration: 0.7,
+            delay: 0.4,
+            type: "spring"
           },
           style: {
             background: "linear-gradient(90deg, #4caf50 60%, #388e3c 100%)",
@@ -60200,473 +61073,141 @@ function LandingArtify3D() {
             cursor: "pointer",
             boxShadow: "0 2px 16px #4caf5055",
             textDecoration: "none",
-            marginBottom: 24,
             display: "inline-block",
             transition: "background 0.2s, transform 0.2s"
           },
           children: "Explorar Productos"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        style: {
-          flex: 1,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          minWidth: 0
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.section, {
+        initial: "hidden",
+        whileInView: "show",
+        variants: {
+          hidden: {},
+          show: {
+            transition: {
+              staggerChildren: 0.12
+            }
+          }
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.img, {
-          initial: {
-            opacity: 0,
-            x: 60
-          },
-          animate: {
-            opacity: 1,
-            x: 0
-          },
-          transition: {
-            duration: 1
-          },
-          src: "/img/hero_3d.png",
-          alt: "Hero Artify3D",
+        style: {
+          maxWidth: 1100,
+          margin: "0 auto 60px auto",
+          padding: "0 20px"
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.h2, {
+          variants: fadeUp,
           style: {
-            width: "80%",
-            maxWidth: 480,
-            borderRadius: "18px",
-            boxShadow: "0 8px 48px #000a",
-            objectFit: "cover",
-            background: "#222"
-          }
-        })
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-      style: {
-        display: "flex",
-        justifyContent: "center",
-        margin: "-36px 0 12px 0",
-        position: "relative",
-        zIndex: 12
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.div, {
-        initial: {
-          opacity: 0,
-          y: -10
-        },
-        animate: {
-          opacity: 1,
-          y: 0
-        },
-        transition: {
-          delay: 0.3,
-          duration: 0.7,
-          type: "spring"
-        },
-        style: {
-          cursor: "pointer",
-          background: "rgba(24,24,24,0.92)",
-          borderRadius: "50%",
-          boxShadow: "0 2px 16px #0008",
-          width: 54,
-          height: 54,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
-        },
-        onClick: scrollToNext,
-        title: "Bajar",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.svg, {
-          width: "32",
-          height: "32",
-          viewBox: "0 0 32 32",
-          fill: "none",
-          xmlns: "http://www.w3.org/2000/svg",
-          initial: {
-            y: 0
+            marginTop: "11rem",
+            fontSize: "2.1rem",
+            fontWeight: 700,
+            marginBottom: 32,
+            color: "#fff",
+            textAlign: "center"
           },
-          animate: {
-            y: [0, 10, 0]
+          children: "Productos destacados"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          style: {
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 32,
+            justifyContent: "center"
           },
-          transition: {
-            repeat: Infinity,
-            duration: 1.6,
-            ease: "easeInOut"
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("polygon", {
-            points: "16,24 6,12 26,12",
-            fill: "#4caf50"
+          children: products.map(function (p, i) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.div, {
+              variants: fadeUp,
+              whileHover: {
+                scale: 1.04,
+                boxShadow: "0 4px 32px #4caf5040",
+                borderColor: "#4caf50"
+              },
+              style: {
+                background: "#181818",
+                borderRadius: 14,
+                boxShadow: "0 2px 16px #0003",
+                padding: "24px 18px",
+                minWidth: 220,
+                maxWidth: 260,
+                flex: "1 1 220px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                border: "1px solid #232323",
+                transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s"
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                src: p.img,
+                alt: p.name,
+                style: {
+                  width: "100%",
+                  height: 120,
+                  objectFit: "contain",
+                  marginBottom: 18,
+                  borderRadius: 8,
+                  background: "#222"
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                style: {
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  marginBottom: 8
+                },
+                children: p.name
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                style: {
+                  color: "#4caf50",
+                  fontWeight: 700,
+                  fontSize: "1.05rem"
+                },
+                children: p.price
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+                href: "/search",
+                style: {
+                  marginTop: 14,
+                  background: "#4caf50",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: 6,
+                  padding: "8px 20px",
+                  fontSize: "1em",
+                  fontWeight: 500,
+                  textDecoration: "none",
+                  transition: "background 0.2s",
+                  display: "inline-block"
+                },
+                children: "Ver m\xE1s"
+              })]
+            }, i);
           })
-        })
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-      id: "scrollfloat-section",
-      style: {
-        display: "flex",
-        justifyContent: "center",
-        margin: "40px 0"
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_ScrollFloat__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        children: "Dale vida a tus ideas en 3D con Artify3D"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_ImageCarousel__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.section, {
-      initial: "hidden",
-      whileInView: "show",
-      variants: {
-        hidden: {},
-        show: {
-          transition: {
-            staggerChildren: 0.18
-          }
-        }
-      },
-      style: {
-        maxWidth: 900,
-        margin: "0 auto 60px auto",
-        padding: "0 20px"
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.h2, {
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.section, {
+        initial: "hidden",
+        whileInView: "show",
         variants: fadeUp,
         style: {
-          fontSize: "2rem",
-          fontWeight: 700,
-          marginBottom: 32,
-          color: "#fff",
+          maxWidth: 900,
+          margin: "0 auto 60px auto",
+          padding: "0 20px",
           textAlign: "center"
         },
-        children: "Lo que dicen nuestros clientes"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        style: {
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 32,
-          justifyContent: "center"
-        },
-        children: [{
-          name: "Ana Torres",
-          avatar: "/img/avatar1.png",
-          text: "¡Los modelos 3D son de altísima calidad y el soporte es excelente!"
-        }, {
-          name: "Carlos Méndez",
-          avatar: "/img/avatar2.png",
-          text: "El envío fue rapidísimo y el gadget Maker superó mis expectativas."
-        }, {
-          name: "Lucía Fernández",
-          avatar: "/img/avatar3.png",
-          text: "El curso de Blender me ayudó a empezar en el mundo 3D. ¡Gracias Artify3D!"
-        }].map(function (t, i) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.div, {
-            variants: fadeUp,
-            whileHover: {
-              scale: 1.04,
-              boxShadow: "0 4px 32px #4caf5040",
-              borderColor: "#4caf50"
-            },
-            style: {
-              background: "#181818",
-              borderRadius: 14,
-              boxShadow: "0 2px 16px #0003",
-              padding: "28px 22px",
-              minWidth: 260,
-              maxWidth: 320,
-              flex: "1 1 260px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              border: "1px solid #232323",
-              transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s"
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.img, {
-              src: t.avatar,
-              alt: t.name,
-              initial: {
-                opacity: 0,
-                scale: 0.8
-              },
-              whileInView: {
-                opacity: 1,
-                scale: 1
-              },
-              transition: {
-                duration: 0.6,
-                delay: 0.2 + i * 0.1,
-                type: "spring"
-              },
-              style: {
-                width: 64,
-                height: 64,
-                borderRadius: "50%",
-                marginBottom: 14,
-                objectFit: "cover",
-                border: "2px solid #4caf50",
-                background: "#222"
-              }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.div, {
-              initial: {
-                opacity: 0,
-                y: 20
-              },
-              whileInView: {
-                opacity: 1,
-                y: 0
-              },
-              transition: {
-                duration: 0.5,
-                delay: 0.3 + i * 0.1
-              },
-              style: {
-                color: "#fff",
-                fontWeight: 600,
-                marginBottom: 8
-              },
-              children: t.name
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.div, {
-              initial: {
-                opacity: 0,
-                y: 20
-              },
-              whileInView: {
-                opacity: 1,
-                y: 0
-              },
-              transition: {
-                duration: 0.5,
-                delay: 0.4 + i * 0.1
-              },
-              style: {
-                color: "#bdbdbd",
-                fontSize: "1.05rem",
-                textAlign: "center"
-              },
-              children: t.text
-            })]
-          }, i);
-        })
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.section, {
-      initial: {
-        opacity: 0,
-        y: 60
-      },
-      whileInView: {
-        opacity: 1,
-        y: 0
-      },
-      transition: {
-        duration: 0.8,
-        type: "spring"
-      },
-      style: {
-        maxWidth: 700,
-        margin: "0 auto 60px auto",
-        padding: "40px 24px",
-        background: "linear-gradient(90deg, #232323 60%, #2e7d32 100%)",
-        borderRadius: 18,
-        boxShadow: "0 4px 32px #4caf5040",
-        textAlign: "center"
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.h2, {
-        initial: {
-          opacity: 0,
-          y: 30
-        },
-        whileInView: {
-          opacity: 1,
-          y: 0
-        },
-        transition: {
-          duration: 0.7,
-          type: "spring"
-        },
-        style: {
-          color: "#fff",
-          fontSize: "2rem",
-          fontWeight: 700,
-          marginBottom: 18
-        },
-        children: "\xBFListo para llevar tus ideas al siguiente nivel?"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.p, {
-        initial: {
-          opacity: 0,
-          y: 30
-        },
-        whileInView: {
-          opacity: 1,
-          y: 0
-        },
-        transition: {
-          duration: 0.7,
-          delay: 0.2,
-          type: "spring"
-        },
-        style: {
-          color: "#bdbdbd",
-          fontSize: "1.15rem",
-          marginBottom: 28
-        },
-        children: "\xDAnete a la comunidad de creadores y accede a recursos exclusivos, soporte y mucho m\xE1s."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.a, {
-        href: "/search",
-        whileHover: {
-          scale: 1.07,
-          background: "linear-gradient(90deg, #388e3c 60%, #4caf50 100%)"
-        },
-        initial: {
-          opacity: 0,
-          y: 30
-        },
-        whileInView: {
-          opacity: 1,
-          y: 0
-        },
-        transition: {
-          duration: 0.7,
-          delay: 0.4,
-          type: "spring"
-        },
-        style: {
-          background: "linear-gradient(90deg, #4caf50 60%, #388e3c 100%)",
-          color: "#fff",
-          border: "none",
-          borderRadius: 8,
-          padding: "18px 44px",
-          fontSize: "1.15rem",
-          fontWeight: 600,
-          letterSpacing: "1px",
-          cursor: "pointer",
-          boxShadow: "0 2px 16px #4caf5055",
-          textDecoration: "none",
-          display: "inline-block",
-          transition: "background 0.2s, transform 0.2s"
-        },
-        children: "Explorar Productos"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.section, {
-      initial: "hidden",
-      whileInView: "show",
-      variants: {
-        hidden: {},
-        show: {
-          transition: {
-            staggerChildren: 0.12
-          }
-        }
-      },
-      style: {
-        maxWidth: 1100,
-        margin: "0 auto 60px auto",
-        padding: "0 20px"
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.h2, {
-        variants: fadeUp,
-        style: {
-          marginTop: "11rem",
-          fontSize: "2.1rem",
-          fontWeight: 700,
-          marginBottom: 32,
-          color: "#fff",
-          textAlign: "center"
-        },
-        children: "Productos destacados"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        style: {
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 32,
-          justifyContent: "center"
-        },
-        children: products.map(function (p, i) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.div, {
-            variants: fadeUp,
-            whileHover: {
-              scale: 1.04,
-              boxShadow: "0 4px 32px #4caf5040",
-              borderColor: "#4caf50"
-            },
-            style: {
-              background: "#181818",
-              borderRadius: 14,
-              boxShadow: "0 2px 16px #0003",
-              padding: "24px 18px",
-              minWidth: 220,
-              maxWidth: 260,
-              flex: "1 1 220px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              border: "1px solid #232323",
-              transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s"
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-              src: p.img,
-              alt: p.name,
-              style: {
-                width: "100%",
-                height: 120,
-                objectFit: "contain",
-                marginBottom: 18,
-                borderRadius: 8,
-                background: "#222"
-              }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-              style: {
-                fontWeight: 600,
-                fontSize: "1.1rem",
-                marginBottom: 8
-              },
-              children: p.name
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-              style: {
-                color: "#4caf50",
-                fontWeight: 700,
-                fontSize: "1.05rem"
-              },
-              children: p.price
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
-              href: "/search",
-              style: {
-                marginTop: 14,
-                background: "#4caf50",
-                color: "#fff",
-                border: "none",
-                borderRadius: 6,
-                padding: "8px 20px",
-                fontSize: "1em",
-                fontWeight: 500,
-                textDecoration: "none",
-                transition: "background 0.2s",
-                display: "inline-block"
-              },
-              children: "Ver m\xE1s"
-            })]
-          }, i);
-        })
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.section, {
-      initial: "hidden",
-      whileInView: "show",
-      variants: fadeUp,
-      style: {
-        maxWidth: 900,
-        margin: "0 auto 60px auto",
-        padding: "0 20px",
-        textAlign: "center"
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.h2, {
-        variants: fadeUp,
-        style: {
-          fontSize: "2.1rem",
-          fontWeight: 700,
-          marginBottom: 18,
-          color: "#fff"
-        },
-        children: "\xBFQu\xE9 es Artify3D?"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.p, {
-        variants: fadeUp,
-        style: {
-          fontSize: "1.15rem",
-          color: "#bdbdbd",
-          marginBottom: 0,
-          lineHeight: 1.7
-        },
-        children: "Artify3D es la tienda oficial de Artify3D, donde encontrar\xE1s modelos 3D, gadgets y recursos para creadores digitales. Nuestra misi\xF3n es acercar la tecnolog\xEDa y el dise\xF1o 3D a todos los entusiastas y profesionales, con productos seleccionados y soporte directo."
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.h2, {
+          variants: fadeUp,
+          style: {
+            fontSize: "2.1rem",
+            fontWeight: 700,
+            marginBottom: 18,
+            color: "#fff"
+          },
+          children: "\xBFQu\xE9 es Artify3D?"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_11__.motion.p, {
+          variants: fadeUp,
+          style: {
+            fontSize: "1.15rem",
+            color: "#bdbdbd",
+            marginBottom: 0,
+            lineHeight: 1.7
+          },
+          children: "Artify3D es la tienda oficial de Artify3D, donde encontrar\xE1s modelos 3D, gadgets y recursos para creadores digitales. Nuestra misi\xF3n es acercar la tecnolog\xEDa y el dise\xF1o 3D a todos los entusiastas y profesionales, con productos seleccionados y soporte directo."
+        })]
       })]
     })]
   });

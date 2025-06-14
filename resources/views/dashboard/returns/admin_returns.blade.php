@@ -1,4 +1,3 @@
-
 @extends('layouts.plantilla_dashboard')
 
 @section('context')
@@ -15,7 +14,8 @@
         </div>
         <div class="search-bar">
             <form action="" method="GET" style="display:flex;gap:8px;">
-                <input type="text" name="search" placeholder="Buscar por ID, usuario, email o estado..." value="{{ request('search') }}">
+                <input type="text" name="search" placeholder="Buscar por ID, usuario, email o estado..."
+                    value="{{ request('search') }}">
                 <button type="submit">Buscar</button>
             </form>
         </div>
@@ -61,7 +61,8 @@
                         <td>
                             <div class="user-table-actions">
                                 @if ($return->status === 'pendiente')
-                                    <button type="button" class="icon-btn" onclick="openReturnPopup({{ $return->id }})" title="Gestionar devolución">
+                                    <button type="button" class="icon-btn" onclick="openReturnPopup({{ $return->id }})"
+                                        title="Gestionar devolución">
                                         <span class="material-icons">autorenew</span>
                                     </button>
                                 @endif
@@ -106,6 +107,7 @@
             document.getElementById('accept-return-form').action = '/admin/returns/' + returnId + '/accept';
             document.getElementById('reject-return-form').action = '/admin/returns/' + returnId + '/reject';
         }
+
         function closeReturnPopup() {
             document.getElementById('return-popup').style.display = 'none';
         }

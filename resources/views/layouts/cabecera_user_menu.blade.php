@@ -1,18 +1,19 @@
 <header>
 
     <nav class="cabecera">
-    <ul>
-        <a class="logo" href="{{ route('index') }}"><img src="{{ asset('img/Logo.png') }}" alt=""></a>
-        <a href="{{ route('index') }}">Inicio</a>
-        <a href="#" id="categoriesLink">Categorías</a>
-    
-    </ul>
+        <ul>
+            <a class="logo" href="{{ route('index') }}"><img src="{{ asset('img/Logo.png') }}" alt=""></a>
+            <a href="{{ route('index') }}">Inicio</a>
+            <a href="#" id="categoriesLink">Categorías</a>
+
+        </ul>
     </nav>
 
     <div class="cabecera2">
         <a href="#" id="searchLink"><img src="{{ asset('img/lupa.png') }}" alt="lupa"></a>
-        <a href="{{ route('shoppingcart') }}"><img class="shopping" src="{{ asset('img/shopping.png') }}" alt="shopping"></a>
-    
+        <a href="{{ route('shoppingcart') }}"><img class="shopping" src="{{ asset('img/shopping.png') }}"
+                alt="shopping"></a>
+
         @auth
             @if (Auth::user()->avatar)
                 <a href="#" id="userLink" class="user-link">
@@ -26,7 +27,9 @@
                 </a>
             @else
                 <a href="#" id="userLink" class="user-link">
-                    <img class="user-avatar" src="data:image/png;base64,{{ \App\Helpers\ImageHelper::generateInitialAvatar(Auth::user()->name) }}" alt="user">
+                    <img class="user-avatar"
+                        src="data:image/png;base64,{{ \App\Helpers\ImageHelper::generateInitialAvatar(Auth::user()->name) }}"
+                        alt="user">
                     @if (auth()->user()->unreadNotifications->count() > 0)
                         <div class="notification-bell">
                             <i class="fa fa-bell"></i>
@@ -49,19 +52,20 @@
     <button class="close-btn" id="closeMenu">&times;</button>
 
 
-        <hr class="separator">
-        <ul>
-            <a class="menu-title">Categorías</a>
-            @foreach ($categories as $category)
-            <li><a href="{{ route('products.byCategory', $category->slug) }}">{{ $category->name }}</a></li>            @endforeach
-        </ul>
-        <hr class="separator2">
-        <ul>
-            <a class="menu-title">Trending</a>
-            <li><a href="#">Populars</a></li>
-            <li><a href="#">Best Rated</a></li>
-        </ul>
-       
+    <hr class="separator">
+    <ul>
+        <a class="menu-title">Categorías</a>
+        @foreach ($categories as $category)
+            <li><a href="{{ route('products.byCategory', $category->slug) }}">{{ $category->name }}</a></li>
+        @endforeach
+    </ul>
+    <hr class="separator2">
+    <ul>
+        <a class="menu-title">Trending</a>
+        <li><a href="{{ route('populars.populars') }}">Populars</a></li>
+        <li><a href="{{ route('products.bestrated') }}">Best Rated</a></li>
+    </ul>
+
 </div>
 
 
@@ -76,8 +80,9 @@
         <li>
             <a href="{{ route('notifications.index') }}" style="position:relative;">
                 Notificaciones
-                @if(auth()->check() && auth()->user()->unreadNotifications->count() > 0)
-                    <span style="
+                @if (auth()->check() && auth()->user()->unreadNotifications->count() > 0)
+                    <span
+                        style="
                         display:inline-block;
                         position:absolute;
                         top: 8px;
@@ -114,12 +119,13 @@
 
 <!-- Menú up -->
 <div class="side-menu-up" id="sideMenuup">
-    
+
     <div class="search">
         <form action="{{ route('search') }}" method="GET">
             <input type="text" name="query" id="searchInput" placeholder="Búsqueda" />
-            <button type="submit" class="search-button" id="searchButton"><img src="img/lupa.png" alt="lupa"></button> 
-            
+            <button type="submit" class="search-button" id="searchButton"><img src="{{ asset('img/lupa.png') }}"
+                    alt="lupa"></button>
+
         </form>
         <button class="close-btn-up" id="closeMenuup">&times;</button>
     </div>

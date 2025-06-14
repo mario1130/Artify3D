@@ -38,10 +38,12 @@
                         <td>{{ $category->slug }}</td>
                         <td>
                             <div class="user-table-actions">
-                                <a href="{{ route('admin.categories.edit', $category->id) }}" class="icon-btn" title="Editar">
+                                <a href="{{ route('admin.categories.edit', $category->id) }}" class="icon-btn"
+                                    title="Editar">
                                     <span class="material-icons">edit</span>
                                 </a>
-                                <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" style="display:inline;">
+                                <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST"
+                                    style="display:inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="icon-btn" title="Eliminar"

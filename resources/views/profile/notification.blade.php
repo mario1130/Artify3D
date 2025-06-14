@@ -82,6 +82,7 @@
         }
     </style>
 
+<div class="main-content">
     <h2>Mis Notificaciones</h2>
 
     <div class="seccion">
@@ -153,4 +154,5 @@
             @endforelse
         </div>
     </div>
+</div>
 @endsection

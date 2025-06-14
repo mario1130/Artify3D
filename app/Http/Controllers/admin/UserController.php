@@ -6,7 +6,7 @@ use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\AdminLog; // Añadido
+use App\Models\AdminLog;
 
 
 class UserController extends Controller

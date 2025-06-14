@@ -14,9 +14,11 @@ class ResumenController extends Controller
 {
         public function index()
         {
-        $categories = Category::all();
-        $order = Order::where('user_id', auth()->id())->latest()->first();
-        return view('shop.resumen', compact('categories', 'order'));
+                $categories = Category::all();
+                $order = Order::where('user_id', auth()->id())->latest()->first();
+                $products = $order ? $order->products : collect(); 
+
+                return view('shop.resumen', compact('categories', 'order', 'products'));
         }
         public function finalizar()
         {

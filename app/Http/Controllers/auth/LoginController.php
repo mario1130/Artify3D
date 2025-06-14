@@ -28,7 +28,7 @@ public function login(Request $request)
     if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
         $user = Auth::user();
 
-        // Bloqueo: si está bloqueado, cerrar sesión y mostrar error
+        // si está bloqueado, cerrar sesión y mostrar error
         if ($user->bloqueado) {
             Auth::logout();
             return redirect()->route('login.show')->with('error', 'Tu cuenta está bloqueada.');

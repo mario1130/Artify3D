@@ -19,9 +19,7 @@
     border-radius: 10px;
     width: 100vh;
     max-width: 800px;
-
 }
-
 
 .form-section {
     grid-column: 2 / 3;
@@ -40,8 +38,6 @@ label {
     margin-bottom: 5px;
     font-size: 14px;
 }
-
-
 
 select {
     background-color: #2e2e2e;
@@ -68,11 +64,8 @@ option {
     color: #ffffff;
 }
 
-
-
-
-
-input, textarea {
+input,
+textarea {
     background-color: #2e2e2e;
     color: #000000;
     border: 1px solid #444;
@@ -140,12 +133,6 @@ button {
     background-color: #00cc00;
 }
 
-
-
-
-
-
-
 .upload-section {
     display: flex;
     flex-direction: column;
@@ -196,27 +183,25 @@ button {
     font-size: 16px;
 }
 
-
 .upload-buttons button:hover {
     background-color: #3e3e3e;
 }
 
 #mainImagePreview {
     width: 150px;
-    height: auto; 
-    object-fit: cover; 
-    border-radius: 10px; 
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 .secondary-photo img {
-    width: 50px; 
-    height: 50px; 
-    object-fit: cover; 
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
     border-radius: 5px;
     cursor: pointer;
 }
-
 
 /* Botón de eliminar imagen */
 .delete-button {

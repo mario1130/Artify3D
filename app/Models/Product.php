@@ -26,7 +26,7 @@ class Product extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id'); // Asegúrate de que 'user_id' sea la columna correcta
+        return $this->belongsTo(User::class, 'user_id'); 
     }
     public function photos()
     {

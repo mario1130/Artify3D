@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\User;
-use App\Models\AdminLog; // Añadido
+use App\Models\AdminLog; 
 
 class OrderController extends Controller
 {

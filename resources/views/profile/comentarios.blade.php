@@ -11,15 +11,7 @@
             color: #f0f0f0;
             width: 100%;
             max-width: 900px;
-            margin-left: 6rem;
             margin-top: 5rem;
-        }
-
-        .main-content {
-            width: 100%;
-            max-width: 900px;
-            text-align: center;
-            margin: 0 auto;
         }
 
         .section-title {
@@ -43,8 +35,8 @@
             border-bottom: 1px solid #333333;
             flex-wrap: wrap;
             padding: 20px;
-            width: 100%;
-            max-width: 700px;
+            width: 35vw;
+            max-width: 50vw;
         }
 
         .product-item:last-child {
@@ -116,6 +108,13 @@
             background-color: #45a049;
         }
 
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
         @media (max-width: 768px) {
             .product-item {
                 flex-direction: column;
@@ -145,8 +144,10 @@
 
 
     <div class="main-content">
+        <div class="title-container">
         <h1 class="header">Comentarios</h1>
         <h2 class="section-title">Productos</h2>
+        </div>
         <div class="product-list">
             @forelse ($products as $product)
                 <div class="product-item">

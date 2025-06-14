@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +11,18 @@
     <link rel="stylesheet" href="{{ asset('css/style_plantilla.css') }}?v={{ time() }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
+
 <body class="@yield('body-class', 'default-body')">
 
 
     @include('layouts.cabecera')
-    
+
     <main>
         @yield('context')
     </main>
 
-    
+
 
 </body>
+
 </html>

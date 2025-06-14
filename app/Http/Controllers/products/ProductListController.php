@@ -20,7 +20,7 @@ public function populars()
             'products.description',
             'products.category_id',
             'products.user_id',
-            // add any other columns you need to display
+            
         ])
         ->leftJoin('product_views', function($join) use ($start, $end) {
             $join->on('products.id', '=', 'product_views.product_id')
@@ -35,7 +35,7 @@ public function populars()
             'products.description',
             'products.category_id',
             'products.user_id',
-            // add any other columns you selected above
+            
         ])
         ->orderByDesc('views_count')
         ->orderBy('products.name')

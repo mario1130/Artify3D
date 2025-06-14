@@ -29,7 +29,7 @@ class GlobalNotification extends Notification
             'title' => $this->title,
             'message' => $this->message,
             'type' => 'global',
-            'url' => null, // Puedes poner una URL si quieres
+            'url' => null, 
         ];
     }
 }

@@ -3,277 +3,301 @@
 @section('title', 'Shopping cart')
 
 @section('context')
-<style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0e0e0e;
-      color: white;
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0e0e0e;
+            color: white;
+        }
 
-    .steps {
-        display: flex;
-        justify-content: center;
-        margin-top: 0;
-        position: static;
-        top: 88px;
-        left: 0;
-        background: #0e0e0e;
-        z-index: 999;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #444;
-    }
+        .steps {
+            display: flex;
+            justify-content: center;
+            margin-top: 0;
+            position: static;
+            top: 88px;
+            left: 0;
+            background: #0e0e0e;
+            z-index: 999;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
 
-    .step {
-      margin: 0 40px;
-      text-align: center;
-      position: relative;
-    }
+        .step {
+            margin: 0 40px;
+            text-align: center;
+            position: relative;
+        }
 
-    .step::after {
-      content: '';
-      position: absolute;
-      right: -90px;
-      top: 20%;
-      width: 100px;
-      height: 2px;
-      background-color: gray;
-    }
+        .step::after {
+            content: '';
+            position: absolute;
+            right: -90px;
+            top: 20%;
+            width: 100px;
+            height: 2px;
+            background-color: gray;
+        }
 
-    .step:last-child::after {
-      display: none;
-    }
+        .step:last-child::after {
+            display: none;
+        }
 
-    .step span {
-      display: inline-block;
-      border: 2px solid white;
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      line-height: 20px;
-      text-align: center;
-      margin-bottom: 5px;
-      background: #444;    
-    }
+        .step span {
+            display: inline-block;
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            line-height: 20px;
+            text-align: center;
+            margin-bottom: 5px;
+            background: #444;
+        }
 
-    .active-step span {
-      background: #000000;
-      border-color: #22c55e;
-      color: #fff;
-    }
-    .active-step div {
-        color: #ffffff;
-    }
+        .active-step span {
+            background: #000000;
+            border-color: #22c55e;
+            color: #fff;
+        }
 
-    .container-outer {
-      max-width: 1100px;
-      margin: 0 auto 5rem auto;
-      padding: 0 16px;
-    }
+        .active-step div {
+            color: #ffffff;
+        }
 
-    .left-title {
-      text-align: left;
-      margin-top: 3rem;
-      margin-bottom: 0.5rem;
-      font-size: 2rem;
-    }
-    .left-subtitle {
-      text-align: left;
-      margin-top: 1.5rem;
-      margin-bottom: 2rem;
-      color: #bbb;
-    }
+        .container-outer {
+            max-width: 1100px;
+            margin: 0 auto 5rem auto;
+            padding: 0 16px;
+        }
 
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 7rem;
-      margin: 0 auto 5rem auto;
-      max-width: 1100px;
-    }
+        .left-title {
+            text-align: left;
+            margin-top: 3rem;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
 
-    .cart-box {
-      width: 65%;
-      min-width: 350px;
-      max-width: 700px;
-    }
+        .left-subtitle {
+            text-align: left;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            color: #bbb;
+        }
 
-    .summary-box {
-      width: 30%;
-      min-width: 250px;
-      max-width: 350px;
-      margin-right: 0;
-      background-color: #141414;
-      border: 1px solid #444;
-      padding: 20px;
-      height: fit-content;
-    }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 7rem;
+            margin: 0 auto 5rem auto;
+            max-width: 1100px;
+        }
 
-    .cart-item {
-      display: flex;
-      background-color: #141414;
-      border: 1px solid #444;
-      padding: 20px;
-      margin-top: 10px;
-      align-items: center;
-      justify-content: space-between;
-    }
+        .cart-box {
+            width: 65%;
+            min-width: 350px;
+            max-width: 700px;
+        }
 
-    .cart-left {
-      display: flex;
-      align-items: center;
-    }
+        .summary-box {
+            width: 30%;
+            min-width: 250px;
+            max-width: 350px;
+            margin-right: 0;
+            background-color: #141414;
+            border: 1px solid #444;
+            padding: 20px;
+            height: fit-content;
+        }
 
-    .product-image {
-      width: 80px;
-      height: 60px;
-      background-color: #333;
-      margin-right: 20px;
-    }
+        .cart-item {
+            display: flex;
+            background-color: #141414;
+            border: 1px solid #444;
+            padding: 20px;
+            margin-top: 10px;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    .product-info p {
-      margin: 4px 0;
-    }
+        .cart-left {
+            display: flex;
+            align-items: center;
+        }
 
-    .price {
-      color: #22c55e;
-    }
+        .product-image {
+            width: 80px;
+            height: 60px;
+            background-color: #333;
+            margin-right: 20px;
+        }
 
-    .trash-icon {
-      font-size: 18px;
-      cursor: pointer;
-    }
+        .product-info p {
+            margin: 4px 0;
+        }
 
-    .cart-buttons {
-      margin-top: 20px;
-      display: flex;
-      justify-content: space-between;
-    }
+        .price {
+            color: #22c55e;
+        }
 
-    .cart-buttons button {
-      background-color: transparent;
-      color: white;
-      border: 1px solid #999;
-      padding: 8px 14px;
-      cursor: pointer;
-    }
+        .trash-icon {
+            font-size: 18px;
+            cursor: pointer;
+        }
 
-    .summary-box h3 {
-      margin-top: 0;
-    }
+        .cart-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
 
-    .summary-line {
-      display: flex;
-      justify-content: space-between;
-      margin: 10px 0;
-    }
+        .cart-buttons button {
+            background-color: transparent;
+            color: white;
+            border: 1px solid #999;
+            padding: 8px 14px;
+            cursor: pointer;
+        }
 
-    .checkout-btn {
-      background-color: #22c55e;
-      color: white;
-      border: none;
-      width: 100%;
-      padding: 10px;
-      margin-top: 20px;
-      cursor: pointer;
-    }
+        .summary-box h3 {
+            margin-top: 0;
+        }
 
-    small {
-      color: #bbb;
-    }
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
 
-    @media (max-width: 700px) {
-      .container-outer {
-        max-width: 98vw;
-        padding: 0 8px;
-      }
-      .container {
-        flex-direction: column;
-        gap: 1rem;
-        max-width: 100vw;
-      }
-      .left-title {
-        font-size: 1.3rem;
-        margin-top: 2rem;
-      }
-      .cart-box, .summary-box {
-        width: 100%;
-        min-width: unset;
-        max-width: unset;
-      }
-    }
-</style>
+        .checkout-btn {
+            background-color: #22c55e;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
 
-<div class="steps">
-    <div class="step active-step"><span>1</span><div>Mi Cesta</div></div>
-    <div class="step"><span>2</span><div>Método de pago</div></div>
-    <div class="step"><span>3</span><div>Resumen</div></div>
-</div>
+        small {
+            color: #bbb;
+        }
 
-@php
-    $cartItems = App\Models\ShoppingCart::where('user_id', auth()->id())->get();
-    $total = $cartItems->sum(function($item) { return $item->product_price * $item->quantity; });
-    $count = $cartItems->sum('quantity');
-@endphp
+        @media (max-width: 700px) {
+            .container-outer {
+                max-width: 98vw;
+                padding: 0 8px;
+            }
 
-<div class="container-outer">
-    <h2 class="left-title">Mi cesta</h2>
-    <p class="left-subtitle">{{ $count }} artículo{{ $count != 1 ? 's' : '' }}</p>
+            .container {
+                flex-direction: column;
+                gap: 1rem;
+                max-width: 100vw;
+            }
 
-    <div class="container">
-        <div class="cart-box">
-            @forelse ($cartItems as $item)
-            <div class="cart-item">
-                <div class="cart-left">
-                    <div class="product-image">
-                        {{-- Aquí puedes poner una imagen real si tienes $item->product_image --}}
-                    </div>
-                    <div class="product-info">
-                        <p><strong>{{ $item->product_name }}</strong></p>
-                        <p class="price">{{ $item->product_price }}€</p>
-                        <small>Cantidad: {{ $item->quantity }}</small>
-                    </div>
-                </div>
-                <form method="POST" action="{{ route('cart.remove', $item->id) }}">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="trash-icon" title="Eliminar">&#128465;</button>
-                </form>
-            </div>
-            @empty
-            <div class="cart-item">
-                <p>Tu carrito está vacío.</p>
-            </div>
-            @endforelse
+            .left-title {
+                font-size: 1.3rem;
+                margin-top: 2rem;
+            }
 
-            <div class="cart-buttons">
-                <form method="POST" action="{{ route('cart.empty') }}">
-                    @csrf
-                    <button type="submit">Vaciar Cesta</button>
-                </form>
-                <button onclick="window.location.href='/'">Seguir Comprando</button>
-            </div>
+            .cart-box,
+            .summary-box {
+                width: 100%;
+                min-width: unset;
+                max-width: unset;
+            }
+        }
+    </style>
+
+    <div class="steps">
+        <div class="step active-step"><span>1</span>
+            <div>Mi Cesta</div>
         </div>
-
-        <div class="summary-box">
-            <h3>Resumen</h3>
-            <div class="summary-line">
-                <span>Subtotal</span>
-                <span>{{ number_format($total, 2) }}€</span>
-            </div>
-            <div class="summary-line">
-                <span>IVA</span>
-                <span>Incluido</span>
-            </div>
-            <hr>
-            <div class="summary-line" style="font-weight: bold;">
-                <span>Total</span>
-                <span>{{ number_format($total, 2) }}€</span>
-            </div>
-            <button class="checkout-btn" onclick="window.location.href='{{ route('pago') }}'">Ir a pagar</button>
+        <div class="step"><span>2</span>
+            <div>Método de pago</div>
+        </div>
+        <div class="step"><span>3</span>
+            <div>Resumen</div>
         </div>
     </div>
-</div>
+
+    @php
+        $cartItems = App\Models\ShoppingCart::where('user_id', auth()->id())->get();
+        $total = $cartItems->sum(function ($item) {
+            return $item->product_price * $item->quantity;
+        });
+        $count = $cartItems->sum('quantity');
+    @endphp
+
+    <div class="container-outer">
+        <h2 class="left-title">Mi cesta</h2>
+        <p class="left-subtitle">{{ $count }} artículo{{ $count != 1 ? 's' : '' }}</p>
+
+        <div class="container">
+            <div class="cart-box">
+                @forelse ($cartItems as $item)
+                    @php
+                        $product = \App\Models\Product::find($item->product_id);
+                        $mainPhoto = $product && $product->mainPhoto ? $product->mainPhoto->photo_url : null;
+                    @endphp
+                    <div class="cart-item">
+                        <div class="cart-left">
+                            <div class="product-image" style="width:100px; height:80px; overflow:hidden; ">
+                                @if ($mainPhoto)
+                                    <img src="{{ asset($mainPhoto) }}" alt="{{ $product->name }}"
+                                        style="width:100%; height:100%; object-fit:cover;">
+                                @else
+                                    <img src="{{ asset('img/Default_product.png') }}" alt="Sin imagen"
+                                        style="width:100%; height:100%; object-fit:cover;">
+                                @endif
+                            </div>
+                            <div class="product-info">
+                                <p><strong>{{ $item->product_name }}</strong></p>
+                                <p class="price">{{ $item->product_price }}€</p>
+                                <small>Cantidad: {{ $item->quantity }}</small>
+                            </div>
+                        </div>
+                        <form method="POST" action="{{ route('cart.remove', $item->id) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="trash-icon" title="Eliminar">&#128465;</button>
+                        </form>
+                    </div>
+                @empty
+                    <div class="cart-item">
+                        <p>Tu carrito está vacío.</p>
+                    </div>
+                @endforelse
+
+                <div class="cart-buttons">
+                    <form method="POST" action="{{ route('cart.empty') }}">
+                        @csrf
+                        <button type="submit">Vaciar Cesta</button>
+                    </form>
+                    <button onclick="window.location.href='/'">Seguir Comprando</button>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <h3>Resumen</h3>
+                <div class="summary-line">
+                    <span>Subtotal</span>
+                    <span>{{ number_format($total, 2) }}€</span>
+                </div>
+                <div class="summary-line">
+                    <span>IVA</span>
+                    <span>Incluido</span>
+                </div>
+                <hr>
+                <div class="summary-line" style="font-weight: bold;">
+                    <span>Total</span>
+                    <span>{{ number_format($total, 2) }}€</span>
+                </div>
+                <button class="checkout-btn" onclick="window.location.href='{{ route('pago') }}'">Ir a pagar</button>
+            </div>
+        </div>
+    </div>
 @endsection

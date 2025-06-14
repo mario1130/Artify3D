@@ -1,6 +1,8 @@
 {
-    "/js/app.js": "/js/app.js?id=1ed444d6d8bc14dcd8310df55a210433",
-    "/js/carousel.js": "/js/carousel.js?id=63062de1e79a8a6382afe710df8d9870",
-    "/js/landing.js": "/js/landing.js?id=651473da4715df5079e09ddff074dd62",
+    "/js/app.js": "/js/app.js?id=756f2916e43c4b919d8faa81e18bdaee",
+    "/js/carousel.js": "/js/carousel.js?id=1fa93b70813fb8c954aa17e465fec307",
+    "/js/landing.js": "/js/landing.js?id=efe5555eae95283da137674520b91f59",
+    "/js/Aurora.js": "/js/Aurora.js?id=780761b7b17157ae9f6a6e8c9e39a1ae",
+    "/js/Particles.js": "/js/Particles.js?id=445bab0ab3afc648fa3970a6ef920061",
     "/css/app.css": "/css/app.css?id=16d2d1324aca25c0380b45fa3152a0d3"
 }

@@ -26,7 +26,8 @@ body {
     width: 80%;
     height: 80%;
 }
-.left-section, .right-section {
+.left-section,
+.right-section {
     flex: 1;
     padding: 40px;
     display: flex;
@@ -44,7 +45,7 @@ body {
 }
 .divider {
     position: absolute;
-    top: 16rem;;
+    top: 16rem;
     bottom: 20%;
     left: 50%;
     width: 2px;
@@ -97,13 +98,12 @@ form button {
     padding: 10px;
     font-size: 16px;
     color: #fff;
-    background-color: #1D7129;
+    background-color: #1d7129;
     border: 1px solid #fff;
     cursor: pointer;
 }
 
-
-.button-register{
+.button-register {
     padding: 10px;
     font-size: 16px;
     color: #fff;
@@ -118,7 +118,7 @@ form p {
     font-size: 14px;
 }
 form p a {
-    color: #1D7129;
+    color: #1d7129;
     text-decoration: none;
 }
 
@@ -131,7 +131,7 @@ form p a {
 }
 .second-line-with-text::before,
 .second-line-with-text::after {
-    content: '';
+    content: "";
     flex-grow: 1;
     border-top: 1px solid #333;
 }
@@ -156,7 +156,7 @@ form p a {
 
 .first-line-with-text::before,
 .first-line-with-text::after {
-    content: '';
+    content: "";
     flex-grow: 1;
     border-top: 1px solid #333;
 }
@@ -206,7 +206,6 @@ form p a {
     align-items: center;
     margin-bottom: 20px;
 } */
-
 }
 
 @media (max-width: 899px) {
@@ -240,18 +239,17 @@ form p a {
         font-size: 14px;
     }
     div.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0rem;
     }
     .divider {
-            display: none;
-        }
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
-    
     .right-section {
         text-align: center;
         padding: 15px;
@@ -260,9 +258,8 @@ form p a {
     .left-section {
         display: none;
     }
-    div .logo{
+    div .logo {
         margin-bottom: -3rem;
-
     }
     .logo img {
         max-width: 70px;
@@ -282,9 +279,8 @@ form p a {
         padding: 8px;
     }
     div.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
-}
-

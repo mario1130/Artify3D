@@ -1,5 +1,5 @@
 <div id="app"></div>
-    <script src="{{ mix('js/carousel.js') }}"></script>
+<script src="{{ mix('js/carousel.js') }}"></script>
 
 {{-- <div class="carousel">
     <img src="@yield('1')" alt="Carrusel Imagen 1" class="active">

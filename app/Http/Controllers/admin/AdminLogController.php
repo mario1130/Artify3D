@@ -18,7 +18,7 @@ public function index()
         AdminLog::whereNotIn('id', $idsToKeep)->delete();
     }
 
-    // Ahora carga los logs normalmente (paginados o como prefieras)
+ 
     $logs = AdminLog::orderBy('created_at', 'desc')->paginate(20);
 
     return view('dashboard.configuration.admin_log', compact('logs'));

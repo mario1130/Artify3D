@@ -27,7 +27,7 @@ class ProductCommented extends Notification
         return [
             'product_id' => $this->product->id,
             'message' => "Tu producto '{$this->product->name}' ha recibido 1 nuevo comentario.",
-            'comment_count' => 1, // Inicialmente 1 comentario
+            'comment_count' => 1, 
             'url' => config('app.url') . '/products/' . $this->product->id,
         ];
     }

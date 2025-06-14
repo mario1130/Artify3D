@@ -33,9 +33,9 @@ class ProductSold extends Notification
             'buyer_name' => $this->buyer->name,
             'message' => "¡Tu producto '{$this->product->name}' ha sido vendido a {$this->buyer->name}!",
             'type' => 'Venta',
-            // Lleva al producto vendido:
+            // Lleva al producto vendido
             'url' => config('app.url') . '/products/' . $this->product->id,
-            // Si prefieres que lleve al pedido, usa:
+            // Si prefieres que lleve al pedido
             // 'url' => config('app.url') . '/pedidos/' . $this->order->id,
         ];
     }

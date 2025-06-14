@@ -78,9 +78,9 @@ class My_productsController extends Controller
     if ($request->hasFile('main_image')) {
         $mainImagePath = $request->file('main_image')->store('products', 'public');
         ProductPhoto::create([
-            'product_id' => $product->id, // Relación con el producto
-            'photo_url' => 'storage/' . $mainImagePath, // Ruta de la imagen
-            'is_main' => true, // Indicador de foto principal
+            'product_id' => $product->id, 
+            'photo_url' => 'storage/' . $mainImagePath, 
+            'is_main' => true, 
         ]);
     }
 
@@ -91,8 +91,8 @@ class My_productsController extends Controller
             ProductPhoto::create([
                 'product_id' => $product->id,
                 'photo_url' => 'storage/' . $imagePath,
-                'is_main' => false, // Indicador de foto secundaria
-                'order' => $index, // Guardar la posición
+                'is_main' => false, 
+                'order' => $index, 
             ]);
         }
     }
@@ -177,7 +177,7 @@ if ($request->hasFile('secondary_images')) {
                     'product_id' => $product->id,
                     'photo_url' => 'storage/' . $imagePath,
                     'is_main' => false,
-                    'order' => $index, // Guardar la posición
+                    'order' => $index, 
                 ]);
             }
         }

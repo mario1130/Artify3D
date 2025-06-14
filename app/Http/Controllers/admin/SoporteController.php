@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
-use App\Models\AdminLog; // Añadido
+use App\Models\AdminLog; 
 
 class SoporteController extends Controller
 {

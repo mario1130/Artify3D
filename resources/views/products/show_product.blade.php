@@ -460,7 +460,7 @@
                 </div>
             </div>
         </div>
-        
+
         {{-- Popup para seleccionar o crear una lista de deseos --}}
         <div id="wishlist-popup">
             <form action="{{ route('wishlist.store') }}" method="POST">
@@ -486,14 +486,14 @@
         </div>
 
         <div class="url-section" style="margin-top:20px; text-align:left; width:100%;">
-        @if (isset($hasPurchased) && $hasPurchased && $product->download_url)
-            <div class="download-url-section" style="margin-top:18px;">
-                <strong>URL de descarga:</strong>
-                <span style="word-break:break-all; color:#4CAF50;">
-                    {{ $product->download_url }}
-                </span>
-            </div>
-        @endif
+            @if (isset($hasPurchased) && $hasPurchased && $product->download_url)
+                <div class="download-url-section" style="margin-top:18px;">
+                    <strong>URL de descarga:</strong>
+                    <span style="word-break:break-all; color:#4CAF50;">
+                        {{ $product->download_url }}
+                    </span>
+                </div>
+            @endif
         </div>
 
         <div class="comments-section">

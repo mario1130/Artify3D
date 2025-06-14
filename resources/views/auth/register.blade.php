@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +12,23 @@
         .error-message {
             color: red;
             font-size: 0.9em;
-            display: none; /* Ocultar inicialmente */
+            display: none;
+            /* Ocultar inicialmente */
         }
+
         .error-message.visible {
-            display: block; /* Mostrar cuando sea necesario */
+            display: block;
+            /* Mostrar cuando sea necesario */
         }
+
         button:disabled {
-            background-color: #ccc; /* Estilo para botón deshabilitado */
+            background-color: #ccc;
+            /* Estilo para botón deshabilitado */
             cursor: not-allowed;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="left-section">
@@ -45,11 +52,11 @@
         </div>
         <div class="divider"></div>
         <div class="right-section">
-            
-            <h1>Crear cuenta</h1>
-            <form action="{{route('register')}}" method="POST" onsubmit="return validateForm()">
 
-            
+            <h1>Crear cuenta</h1>
+            <form action="{{ route('register') }}" method="POST" onsubmit="return validateForm()">
+
+
                 @csrf
                 <label for="name">Nombre</label>
                 <input type="text" id="name" name="name" placeholder="Nombre" required>
@@ -58,7 +65,8 @@
                 <label for="password">Contraseña</label>
                 <input type="password" id="password" name="password" placeholder="Contraseña" required>
                 <label for="password_confirmation">Repetir Contraseña</label>
-                <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Repetir Contraseña" required> 
+                <input type="password" id="password_confirmation" name="password_confirmation"
+                    placeholder="Repetir Contraseña" required>
                 <div id="password-error" class="error-message">Las contraseñas no coinciden.</div>
                 <p id="password-length-error" class="error-message">La contraseña debe tener al menos 8 caracteres.</p>
 
@@ -66,18 +74,20 @@
 
                 <div class="checkbox-group">
                     <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
-                    <label for="privacy-policy">He leído y acepto la <a href="#">política de privacidad</a></label>
+                    <label for="privacy-policy">He leído y acepto la <a href="#">política de
+                            privacidad</a></label>
                 </div>
                 <div class="checkbox-group">
                     <input type="checkbox" id="offers">
                     <label for="offers">Recibir descuentos exclusivos, novedades y tendencias por e-mail.</label>
                 </div>
-               
-                
+
+
                 <button type="submit" id="register-button">Crear Cuenta</button>
 
-                <button class="button-register" type="button" onclick="window.location.href='{{ route('login') }}'">Iniciar Sesion</button>
-                
+                <button class="button-register" type="button"
+                    onclick="window.location.href='{{ route('login') }}'">Iniciar Sesion</button>
+
             </form>
         </div>
     </div>
@@ -85,4 +95,5 @@
     <script src="{{ asset('js/register.js') }}"></script>
 
 </body>
+
 </html>

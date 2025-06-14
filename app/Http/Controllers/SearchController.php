@@ -14,7 +14,7 @@ class SearchController extends Controller
         // Realiza la búsqueda en la base de datos
         $results = Product::where('name', 'LIKE', "%{$query}%")
             ->orWhere('description', 'LIKE', "%{$query}%")
-            ->get();
+            ->paginate(15);
 
         // Devuelve una vista con los resultados
         return view('search.search', compact('results', 'query'));

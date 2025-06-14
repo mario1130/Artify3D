@@ -30,7 +30,7 @@ class ReturnsController extends Controller
             'message' => 'Un usuario ha solicitado una devolución. Revisa la sección de devoluciones.',
             'admin_id' => 1, // O null si es global
             'read_at' => null,
-            'type' => 'return', // Solo si tienes este campo en la tabla
+            'type' => 'return', 
         ]);
 
         return back()->with('success', 'Solicitud de devolución enviada.');

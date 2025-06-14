@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Añadir Descripción</label>
-                    <textarea id="description" name="description" placeholder="Escribe"></textarea>
+                    <textarea id="description" style="color: white" name="description" placeholder="Escribe"></textarea>
                     <small class="error-message" style="color: red; display: none;">Este campo es obligatorio.</small>
                 </div>
                 <div class="form-group">

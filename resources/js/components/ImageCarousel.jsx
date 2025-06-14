@@ -3,11 +3,11 @@ import { motion, useAnimation } from "framer-motion";
 import "./ImageCarousel.css";
 
 const images = [
-  "/img/carousel1.jpg",
-  "/img/carousel2.jpg",
-  "/img/carousel3.jpg",
-  "/img/carousel4.jpg",
-  "/img/carousel5.jpg",
+  "/img/carousel/1.jpg",
+  "/img/carousel/2.jpg",
+  "/img/carousel/3.jpg",
+  "/img/carousel/4.jpg",
+  "/img/carousel/5.jpg",
 ];
 
 export default function ImageCarousel() {

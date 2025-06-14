@@ -39,11 +39,7 @@
             cursor: pointer;
         }
     </style>
-    @if (session('error'))
-        <div class="alert alert-danger">
-            <p>{{ session('error') }}</p>
-        </div>
-    @endif
+
 
     @if ($errors->any())
         <div class="blocked-popup">

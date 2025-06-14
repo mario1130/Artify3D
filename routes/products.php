@@ -25,10 +25,6 @@ Route::get('/products/{id}', [My_productsController::class, 'All_product_show'])
 Route::post('/products/{product}/rate', [ProductRatingController::class, 'store'])->name('products.rate')->middleware('auth');
 
 
-
-
-
-
 // Category routes
 Route::get('/categoria/{slug}', [ProductController::class, 'showByCategory'])->name('products.byCategory');
 

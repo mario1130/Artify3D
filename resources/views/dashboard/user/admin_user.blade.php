@@ -53,10 +53,12 @@
                                 <a href="{{ route('admin.users.edit', $user->id) }}" class="icon-btn" title="Editar">
                                     <span class="material-icons">edit</span>
                                 </a>
-                                <form action="{{ route('admin.users.toggle-block', $user->id) }}" method="POST" style="display:inline;">
+                                <form action="{{ route('admin.users.toggle-block', $user->id) }}" method="POST"
+                                    style="display:inline;">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="icon-btn" title="{{ $user->blocked ? 'Desbloquear' : 'Bloquear' }}">
+                                    <button type="submit" class="icon-btn"
+                                        title="{{ $user->blocked ? 'Desbloquear' : 'Bloquear' }}">
                                         <span class="material-icons">
                                             {{ $user->blocked ? 'lock_open' : 'block' }}
                                         </span>

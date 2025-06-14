@@ -15,7 +15,8 @@
         </div>
         <div class="search-bar">
             <form action="" method="GET" style="display:flex;gap:8px;">
-                <input type="text" name="search" placeholder="Buscar por ID, nombre o email..." value="{{ request('search') }}">
+                <input type="text" name="search" placeholder="Buscar por ID, nombre o email..."
+                    value="{{ request('search') }}">
                 <button type="submit">Buscar</button>
             </form>
         </div>

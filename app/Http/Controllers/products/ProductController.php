@@ -15,7 +15,7 @@ class ProductController extends Controller
         $category = Category::where('slug', $slug)->firstOrFail();
     
         // Obtener los productos de la categoría
-        $products = $category->products()->get(); // Asegúrate de usar el método ->get()
+        $products = $category->products()->paginate(12); 
     
 
         // Depuración

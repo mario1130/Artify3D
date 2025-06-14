@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\CommentReport;
 use App\Models\Comment;
-use App\Models\AdminLog; // Añadido
+use App\Models\AdminLog; 
 
 class CommentReportController extends Controller
 {
