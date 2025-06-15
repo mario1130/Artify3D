@@ -6,20 +6,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoriesLink = document.getElementById('categoriesLink');
     const closeMenuButton = document.getElementById('closeMenu');
 
-    if (categoriesLink && sideMenu && overlay) {
-        categoriesLink.addEventListener('click', (event) => {
-            event.preventDefault();
-            sideMenu.style.right = '0';
-            overlay.style.display = 'block';
-        });
-    }
+    categoriesLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        sideMenu.style.left = '0'; // Muestra el menú
+        overlay.style.display = 'block'; // Muestra el overlay
+    });
 
-    if (closeMenuButton && sideMenu && overlay) {
-        closeMenuButton.addEventListener('click', () => {
-            sideMenu.style.right = '-550px';
-            overlay.style.display = 'none';
-        });
-    }
+    closeMenuButton.addEventListener('click', () => {
+        sideMenu.style.left = '-550px'; // Oculta el menú
+        overlay.style.display = 'none'; // Oculta el overlay
+    });
+
+    overlay.addEventListener('click', () => {
+        sideMenu.style.left = '-550px'; // Oculta el menú
+        overlay.style.display = 'none'; // Oculta el overlay
+    });
+
 
     // Menú lateral derecho general
     const sideMenuright = document.getElementById('sideMenuright');
@@ -81,9 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Overlay cierra ambos menús y el modal
     if (overlay) {
         overlay.addEventListener('click', () => {
-            if (sideMenu) sideMenu.style.right = '-550px';
-            if (sideMenuright) sideMenuright.style.right = '-550px';
-            if (sideMenurightUser) sideMenurightUser.style.right = '-550px';
+            if (sideMenu && sideMenu.style.left === '0px') sideMenu.style.left = '-550px';
+            if (sideMenuright && sideMenuright.style.right === '0px') sideMenuright.style.right = '-550px';
+            if (sideMenurightUser && sideMenurightUser.style.right === '0px') sideMenurightUser.style.right = '-550px';
             overlay.style.display = 'none';
             if (loginModal) loginModal.style.display = 'none';
         });
