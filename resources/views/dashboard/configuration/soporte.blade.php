@@ -40,7 +40,7 @@
         <div class="form-card">
             @if (session('success'))
                 <div class="alert alert-success"
-                    style="color: #fff; background: #22c55e; padding: 10px 20px; border-radius: 6px; margin-bottom: 18px;">
+                    style="color: #fff; background: #1D7129; padding: 10px 20px; border-radius: 6px; margin-bottom: 18px;">
                     {{ session('success') }}
                 </div>
             @endif

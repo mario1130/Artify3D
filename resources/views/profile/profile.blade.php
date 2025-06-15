@@ -97,7 +97,7 @@
         }
 
         .btn-ver {
-            background-color: #2e7d32;
+            background-color: #1D7129;
             color: white;
             border: none;
             padding: 8px 15px;
@@ -426,7 +426,7 @@
                 </div>
                 <div class="info-text">
                     <span>{{ auth()->user()->name }}</span>
-                    <span style="color:#00c853; font-weight:bold;">Nivel {{ $nivel }}</span>
+                    <span style="color:#1D7129; font-weight:bold;">Nivel {{ $nivel }}</span>
                     <span>{{ auth()->user()->email }}</span>
                 </div>
             </div>

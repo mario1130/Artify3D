@@ -16,7 +16,7 @@
         line-height: 1.7;
     }
     .terms-container h1, .terms-container h2, .terms-container h3 {
-        color: #4CAF50;
+        color: #1D7129;
         margin-top: 1.5em;
         margin-bottom: 0.5em;
     }
@@ -74,7 +74,7 @@
 
     <h2>8. Protección de Datos</h2>
     <p>
-        El tratamiento de sus datos personales se rige por nuestra <a href="{{ route('policy') }}" style="color:#4CAF50;">Política de Privacidad</a>.
+        El tratamiento de sus datos personales se rige por nuestra <a href="{{ route('policy') }}" style="color:#1D7129;">Política de Privacidad</a>.
     </p>
 
     <h2>9. Ley Aplicable</h2>

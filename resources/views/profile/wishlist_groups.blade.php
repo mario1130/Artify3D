@@ -17,7 +17,7 @@
             text-align: left;
             font-size: 2em;
             margin: 5rem 0 30px 0;
-            color: #4CAF50;
+            color: #1D7129;
             text-decoration: underline;
         }
 
@@ -67,7 +67,7 @@
         }
 
         .create-list-button {
-            background-color: #4CAF50;
+            background-color: #1D7129;
             color: white;
             padding: 15px 30px;
             border: none;
@@ -81,7 +81,7 @@
         }
 
         .create-list-button:hover {
-            background-color: #45a049;
+            background-color: #17691f;
         }
 
         .list-items {
@@ -109,7 +109,7 @@
         }
 
         .list-card:hover {
-            box-shadow: 0 0 0 2px #4CAF50;
+            box-shadow: 0 0 0 2px #1D7129;
         }
 
         .list-name {

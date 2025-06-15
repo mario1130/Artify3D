@@ -114,7 +114,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".gallery-container {\n  position: relative;\n  height: 500px;\n  width: 100%;\n  overflow: hidden;\n}\n\n.gallery-gradient {\n  position: absolute;\n  top: 0;\n  height: 100%;\n  width: 48px;\n  z-index: 10;\n}\n\n.gallery-gradient-left {\n  left: 0;\n  /* background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, #060606 100%); */\n}\n\n.gallery-gradient-right {\n  right: 0;\n  /* background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #060606 100%); */\n}\n\n.gallery-content {\n  display: flex;\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n  perspective: 700px;\n  transform-style: preserve-3d;\n}\n\n.gallery-track {\n  display: flex;\n  height: auto;\n  min-height: 200px;\n  justify-content: center;\n  align-items: center;\n  cursor: grab;\n  transform-style: preserve-3d;\n  width: 100%;\n}\n\n.gallery-item {\n  position: absolute;\n  display: flex;\n  height: -moz-fit-content;\n  height: fit-content;\n  align-items: center;\n  justify-content: center;\n  padding: 8%;\n  backface-visibility: hidden;\n}\n\n.gallery-img {\n  pointer-events: none;\n  height: 120px;\n  width: 300px;\n  border-radius: 0px;\n  border: 1px solid #fff;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smoother transitions */\n}\n\n.gallery-item:hover .gallery-img {\n  transform: scale(1.10);\n  transition: 0.3s ease;\n}\n\n@media (max-width: 768px) {\n  .gallery-item {\n    padding: 6%;\n  }\n  .gallery-img {\n    height: 100px;\n    width: 220px;\n  }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".gallery-container {\n  position: relative;\n  height: 500px;\n  width: 100%;\n  overflow: hidden;\n}\n\n\n.gallery-gradient {\n  position: absolute;\n  top: 0;\n  height: 100%;\n  width: 48px;\n  z-index: 10;\n}\n\n.gallery-gradient-left {\n  left: 0;\n  /* background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, #060606 100%); */\n}\n\n.gallery-gradient-right {\n  right: 0;\n  /* background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #060606 100%); */\n}\n\n.gallery-content {\n  display: flex;\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n  perspective: 700px;\n  transform-style: preserve-3d;\n}\n\n.gallery-track {\n  display: flex;\n  height: auto;\n  min-height: 200px;\n  justify-content: center;\n  align-items: center;\n  cursor: grab;\n  transform-style: preserve-3d;\n  width: 100%;\n}\n\n.gallery-item {\n  position: absolute;\n  display: flex;\n  height: -moz-fit-content;\n  height: fit-content;\n  align-items: center;\n  justify-content: center;\n  padding: 8%;\n  backface-visibility: hidden;\n}\n\n.gallery-img {\n  pointer-events: none;\n  height: 120px;\n  width: 300px;\n  border-radius: 0px;\n  border: 1px solid #fff;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smoother transitions */\n}\n\n.gallery-item:hover .gallery-img {\n  transform: scale(1.10);\n  transition: 0.3s ease;\n}\n\n\n/* Tablet */\n@media (max-width: 1100px) {\n  .gallery-item {\n    padding: 6%;\n  }\n  .gallery-img {\n    height: 100px;\n    width: 120px;\n    max-width: 30%;\n  }\n}\n\n/* Móvil grande */\n@media (max-width: 768px) {\n  .gallery-item {\n    padding: 4%;\n  }\n  .gallery-img {\n    height: 70px;\n    width: 140px;\n  }\n  \n}\n\n/* Móvil pequeño */\n@media (max-width: 500px) {\n  .gallery-item {\n    padding: 2%;\n  }\n  .gallery-img {\n    height: 48px;\n    width: 90px;\n  }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -72193,7 +72193,7 @@ function ImageCarousel() {
           className: "carousel-img-wrap",
           whileHover: {
             scale: 1.04,
-            boxShadow: "0 4px 32px #4caf5040"
+            boxShadow: "0 4px 32px #1D712940"
           },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
             src: src,
@@ -73050,10 +73050,10 @@ function LandingArtify3D() {
                 href: "/search",
                 whileHover: {
                   scale: 1.06,
-                  background: "linear-gradient(90deg, #388e3c 60%, #4caf50 100%)"
+                  background: "linear-gradient(90deg, #1D7129 60%, #1D7129 100%)"
                 },
                 style: {
-                  background: "linear-gradient(90deg, #4caf50 60%, #388e3c 100%)",
+                  background: "linear-gradient(90deg, #1D7129 60%, #1D7129 100%)",
                   color: "#fff",
                   border: "none",
                   borderRadius: 8,
@@ -73062,7 +73062,7 @@ function LandingArtify3D() {
                   fontWeight: 600,
                   letterSpacing: "1px",
                   cursor: "pointer",
-                  boxShadow: "0 2px 16px #4caf5055",
+                  boxShadow: "0 2px 16px #1D712955",
                   textDecoration: "none",
                   marginBottom: 24,
                   display: "inline-block",
@@ -73179,7 +73179,7 @@ function LandingArtify3D() {
             },
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("polygon", {
               points: "16,24 6,12 26,12",
-              fill: "#4caf50"
+              fill: "#1D7129"
             })
           })
         })
@@ -73243,8 +73243,8 @@ function LandingArtify3D() {
               variants: fadeUp,
               whileHover: {
                 scale: 1.04,
-                boxShadow: "0 4px 32px #4caf5040",
-                borderColor: "#4caf50"
+                boxShadow: "0 4px 32px #1D712940",
+                borderColor: "#1D7129"
               },
               style: {
                 background: "#181818",
@@ -73282,7 +73282,7 @@ function LandingArtify3D() {
                   borderRadius: "50%",
                   marginBottom: 14,
                   objectFit: "cover",
-                  border: "2px solid #4caf50",
+                  border: "2px solid #1D7129",
                   background: "#222",
                   overflow: "hidden"
                 }
@@ -73345,7 +73345,7 @@ function LandingArtify3D() {
           maxWidth: 700,
           margin: "0 auto 60px auto",
           padding: "40px 24px",
-          background: "linear-gradient(90deg, #232323 60%, #2e7d32 100%)",
+          background: "linear-gradient(90deg, #232323 60%, #1D7129 100%)",
           borderRadius: 18,
           textAlign: "center"
         },
@@ -73393,7 +73393,7 @@ function LandingArtify3D() {
           href: "/search",
           whileHover: {
             scale: 1.07,
-            background: "linear-gradient(90deg, #388e3c 60%, #4caf50 100%)"
+            background: "linear-gradient(90deg, #1D7129 60%, #1D7129 100%)"
           },
           initial: {
             opacity: 0,
@@ -73409,7 +73409,7 @@ function LandingArtify3D() {
             type: "spring"
           },
           style: {
-            background: "linear-gradient(90deg, #4caf50 60%, #388e3c 100%)",
+            background: "linear-gradient(90deg, #1D7129 60%, #1D7129 100%)",
             color: "#fff",
             border: "none",
             borderRadius: 8,
@@ -73418,7 +73418,7 @@ function LandingArtify3D() {
             fontWeight: 600,
             letterSpacing: "1px",
             cursor: "pointer",
-            boxShadow: "0 2px 16px #4caf5055",
+            boxShadow: "0 2px 16px #1D712955",
             textDecoration: "none",
             display: "inline-block",
             transition: "background 0.2s, transform 0.2s"
@@ -73464,8 +73464,8 @@ function LandingArtify3D() {
               variants: fadeUp,
               whileHover: {
                 scale: 1.04,
-                boxShadow: "0 4px 32px #4caf5040",
-                borderColor: "#4caf50"
+                boxShadow: "0 4px 32px #1D712940",
+                borderColor: "#1D7129"
               },
               style: {
                 background: "#181818",
@@ -73501,7 +73501,7 @@ function LandingArtify3D() {
                 children: p.name
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                 style: {
-                  color: "#4caf50",
+                  color: "#1D7129",
                   fontWeight: 700,
                   fontSize: "1.05rem"
                 },
@@ -73510,7 +73510,7 @@ function LandingArtify3D() {
                 href: "/search",
                 style: {
                   marginTop: 14,
-                  background: "#4caf50",
+                  background: "#1D7129",
                   color: "#fff",
                   border: "none",
                   borderRadius: 6,

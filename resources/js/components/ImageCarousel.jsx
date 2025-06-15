@@ -50,7 +50,7 @@ export default function ImageCarousel() {
           <motion.div
             className="carousel-img-wrap"
             key={i}
-            whileHover={{ scale: 1.04, boxShadow: "0 4px 32px #4caf5040" }}
+            whileHover={{ scale: 1.04, boxShadow: "0 4px 32px #1D712940" }}
           >
             <img src={src} alt={`carousel-${i % images.length}`} className="carousel-img" />
           </motion.div>

@@ -87,19 +87,19 @@ form .checkbox-group {
     margin-bottom: 15px;
 }
 form .checkbox-group a {
-    color: #00a000;
+    color: #1D7129;
     text-decoration: none;
 }
 form button {
     padding: 10px;
     font-size: 16px;
     color: #fff;
-    background-color: #00a000;
+    background-color: #1D7129;
     border: none;
     cursor: pointer;
 }
 form button:hover {
-    background-color: #008000;
+    background-color: #1D7129;
 }
 .button-register {
     padding: 10px;

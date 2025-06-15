@@ -38,7 +38,7 @@
     font-weight: normal;
 }
 .help-button {
-    background-color: #4caf50;
+    background-color: #1D7129;
     color: white;
     padding: 8px 15px;
     border: none;
@@ -48,7 +48,7 @@
     transition: background-color 0.3s ease;
 }
 .help-button:hover {
-    background-color: #45a049;
+    background-color: #1D7129;
 }
 .form-card {
     background-color: #fff;
@@ -124,18 +124,18 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 .action-button.save {
-    background-color: #4caf50;
+    background-color: #1D7129;
     color: white;
 }
 .action-button.save:hover {
-    background-color: #45a049;
+    background-color: #1D7129;
 }
 .action-button.cancel {
-    background-color: #4caf50;
+    background-color: #1D7129;
     color: white;
 }
 .action-button.cancel:hover {
-    background-color: #45a049;
+    background-color: #1D7129;
 }
 
 

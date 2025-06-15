@@ -45,7 +45,7 @@
 }
 
 .grid-item:hover {
-    box-shadow: 0 0 0 2px #4caf50;
+    box-shadow: 0 0 0 2px #1D7129;
 }
 
 .image-placeholder,
@@ -74,7 +74,7 @@
 
 .product-price {
     font-size: 0.95em;
-    color: #4caf50;
+    color: #1D7129;
     margin: 0 15px 15px 15px;
     font-weight: bold;
 }
@@ -87,7 +87,7 @@
 
 .b-product,
 .product-actions a {
-    background-color: #4caf50;
+    background-color: #1D7129;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -102,7 +102,7 @@
 
 .b-product:hover,
 .product-actions a:hover {
-    background-color: #388e3c;
+    background-color: #1D7129;
 }
 
 .product-description {

@@ -34,7 +34,7 @@
     background: #f9f9f9;
 }
 .user-table input[type="checkbox"] {
-    accent-color: #4caf50;
+    accent-color: #1D7129;
     width: 16px;
     height: 16px;
 }
@@ -61,7 +61,7 @@
     padding: 4px;
 }
 .user-table-actions .icon-btn:hover {
-    color: #4caf50;
+    color: #1D7129;
 }
 .search-bar {
     display: flex;
@@ -78,7 +78,7 @@
 }
 .search-bar button {
     padding: 6px 16px;
-    background: #4caf50;
+    background: #1D7129;
     color: #fff;
     border: none;
     border-radius: 0px;
@@ -87,7 +87,7 @@
     transition: background 0.2s;
 }
 .search-bar button:hover {
-    background: #388e3c;
+    background: #1D7129;
 }
 
 .current-page {
@@ -102,7 +102,7 @@
 .relative.inline-flex.items-center.px-4.py-2.text-sm.font-medium.text-gray-700.bg-white.border.border-gray-300.leading-5 {
     background: #ffffff00 !important;
     color: #000000 !important;
-    border: 0px solid #4caf50 !important;
+    border: 0px solid #1D7129 !important;
     border-radius: 0px !important;
     min-width: 34px !important;
     padding: 3px 12px !important;

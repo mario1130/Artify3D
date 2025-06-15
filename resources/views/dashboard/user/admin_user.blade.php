@@ -45,7 +45,7 @@
                             @if ($user->blocked)
                                 <span style="color: red; font-weight: bold;">Sí</span>
                             @else
-                                <span style="color: green;">No</span>
+                                <span style="color: #1D7129;">No</span>
                             @endif
                         </td>
                         <td>

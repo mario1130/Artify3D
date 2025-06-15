@@ -45,7 +45,7 @@
         }
 
         .pedido:hover {
-            box-shadow: 0 0 0 2px #22c55e;
+            box-shadow: 0 0 0 2px #1D7129;
         }
 
         .pedido:last-child {
@@ -100,7 +100,7 @@
         }
 
         .precio {
-            color: #22c55e;
+            color: #1D7129;
             font-weight: bold;
             margin: 0 0 10px 0;
             font-size: 0.95em;
@@ -113,7 +113,7 @@
         }
 
         .seguir-btn {
-            background: #22c55e;
+            background: #1D7129;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -125,7 +125,7 @@
             display: inline-block;
         }
         .seguir-btn:hover {
-            background-color: #15803d;
+            background-color: #1D7129;
         }
 
         @media (max-width: 810px) {

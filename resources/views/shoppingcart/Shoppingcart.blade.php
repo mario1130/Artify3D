@@ -59,7 +59,7 @@
 
         .active-step span {
             background: #000000;
-            border-color: #22c55e;
+            border-color: #1D7129;
             color: #fff;
         }
 
@@ -140,7 +140,7 @@
         }
 
         .price {
-            color: #22c55e;
+            color: #1D7129;
         }
 
         .trash-icon {
@@ -173,7 +173,7 @@
         }
 
         .checkout-btn {
-            background-color: #22c55e;
+            background-color: #1D7129;
             color: white;
             border: none;
             width: 100%;

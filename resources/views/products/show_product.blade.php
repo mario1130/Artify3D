@@ -116,7 +116,7 @@
 
         .product-price {
             font-size: 1.8em;
-            color: #4CAF50;
+            color: #1D7129;
             font-weight: bold;
             margin-bottom: 20px;
             text-align: right;
@@ -131,7 +131,7 @@
         }
 
         .action-button {
-            background-color: #4CAF50;
+            background-color: #1D7129;
             color: white;
             padding: 12px 15px;
             border: none;
@@ -162,7 +162,7 @@
         .wishlist-button {
             background-color: #222;
             color: #fff;
-            border: 1px solid #4CAF50;
+            border: 1px solid #1D7129;
             border-radius: 5px;
             padding: 10px 15px;
             font-size: 1em;
@@ -174,13 +174,13 @@
         }
 
         .wishlist-button:hover {
-            background-color: #4CAF50;
+            background-color: #1D7129;
             color: #fff;
         }
 
         #wishlist-popup {
             background: #222;
-            border: 1px solid #4CAF50;
+            border: 1px solid #1D7129;
             border-radius: 8px;
             padding: 20px;
             position: fixed;
@@ -204,7 +204,7 @@
         }
 
         #wishlist-popup button {
-            background: #4CAF50;
+            background: #1D7129;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -237,7 +237,7 @@
         .comment-avatar {
             width: 40px;
             height: 40px;
-            background-color: #4CAF50;
+            background-color: #1D7129;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -425,7 +425,7 @@
                             @endfor
                         </span>
                         @if ($userRating)
-                            <small style="color:#4CAF50;">Has votado: {{ $userRating->stars }}/5</small>
+                            <small style="color:#1D7129;">Has votado: {{ $userRating->stars }}/5</small>
                         @endif
                     </form>
                 @endauth
@@ -489,7 +489,7 @@
             @if (isset($hasPurchased) && $hasPurchased && $product->download_url)
                 <div class="download-url-section" style="margin-top:18px;">
                     <strong>URL de descarga:</strong>
-                    <span style="word-break:break-all; color:#4CAF50;">
+                    <span style="word-break:break-all; color:#1D7129;">
                         {{ $product->download_url }}
                     </span>
                 </div>

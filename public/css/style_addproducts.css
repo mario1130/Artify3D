@@ -125,12 +125,12 @@ button {
 }
 
 .save-button {
-    background-color: #00ff00;
+    background-color: #1D7129;
     color: #000000;
 }
 
 .save-button:hover {
-    background-color: #00cc00;
+    background-color: #1D7129;
 }
 
 .upload-section {

@@ -76,7 +76,7 @@
 
         .wishlist-price {
             font-size: 0.9em;
-            color: #4CAF50;
+            color: #1D7129;
             margin: 0;
         }
 

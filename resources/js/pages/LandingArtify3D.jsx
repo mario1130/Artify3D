@@ -292,9 +292,9 @@ export default function LandingArtify3D() {
               <div style={{ display: "flex", gap: 12 }}>
                 <motion.a
                   href="/search"
-                  whileHover={{ scale: 1.06, background: "linear-gradient(90deg, #388e3c 60%, #4caf50 100%)" }}
+                  whileHover={{ scale: 1.06, background: "linear-gradient(90deg, #1D7129 60%, #1D7129 100%)" }}
                   style={{
-                    background: "linear-gradient(90deg, #4caf50 60%, #388e3c 100%)",
+                    background: "linear-gradient(90deg, #1D7129 60%, #1D7129 100%)",
                     color: "#fff",
                     border: "none",
                     borderRadius: 8,
@@ -303,7 +303,7 @@ export default function LandingArtify3D() {
                     fontWeight: 600,
                     letterSpacing: "1px",
                     cursor: "pointer",
-                    boxShadow: "0 2px 16px #4caf5055",
+                    boxShadow: "0 2px 16px #1D712955",
                     textDecoration: "none",
                     marginBottom: 24,
                     display: "inline-block",
@@ -396,7 +396,7 @@ export default function LandingArtify3D() {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
               >
-                <polygon points="16,24 6,12 26,12" fill="#4caf50" />
+                <polygon points="16,24 6,12 26,12" fill="#1D7129" />
               </motion.svg>
             </motion.div>
           </div>
@@ -468,8 +468,8 @@ export default function LandingArtify3D() {
                 variants={fadeUp}
                 whileHover={{
                   scale: 1.04,
-                  boxShadow: "0 4px 32px #4caf5040",
-                  borderColor: "#4caf50",
+                  boxShadow: "0 4px 32px #1D712940",
+                  borderColor: "#1D7129",
                 }}
                 style={{
                   background: "#181818",
@@ -498,7 +498,7 @@ export default function LandingArtify3D() {
                     borderRadius: "50%",
                     marginBottom: 14,
                     objectFit: "cover",
-                    border: "2px solid #4caf50",
+                    border: "2px solid #1D7129",
                     background: "#222",
                     overflow: "hidden",
                   }}
@@ -533,7 +533,7 @@ export default function LandingArtify3D() {
             maxWidth: 700,
             margin: "0 auto 60px auto",
             padding: "40px 24px",
-            background: "linear-gradient(90deg, #232323 60%, #2e7d32 100%)",
+            background: "linear-gradient(90deg, #232323 60%, #1D7129 100%)",
             borderRadius: 18,
             textAlign: "center",
           }}
@@ -556,12 +556,12 @@ export default function LandingArtify3D() {
           </motion.p>
           <motion.a
             href="/search"
-            whileHover={{ scale: 1.07, background: "linear-gradient(90deg, #388e3c 60%, #4caf50 100%)" }}
+            whileHover={{ scale: 1.07, background: "linear-gradient(90deg, #1D7129 60%, #1D7129 100%)" }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4, type: "spring" }}
             style={{
-              background: "linear-gradient(90deg, #4caf50 60%, #388e3c 100%)",
+              background: "linear-gradient(90deg, #1D7129 60%, #1D7129 100%)",
               color: "#fff",
               border: "none",
               borderRadius: 8,
@@ -570,7 +570,7 @@ export default function LandingArtify3D() {
               fontWeight: 600,
               letterSpacing: "1px",
               cursor: "pointer",
-              boxShadow: "0 2px 16px #4caf5055",
+              boxShadow: "0 2px 16px #1D712955",
               textDecoration: "none",
               display: "inline-block",
               transition: "background 0.2s, transform 0.2s",
@@ -621,8 +621,8 @@ export default function LandingArtify3D() {
                 variants={fadeUp}
                 whileHover={{
                   scale: 1.04,
-                  boxShadow: "0 4px 32px #4caf5040",
-                  borderColor: "#4caf50",
+                  boxShadow: "0 4px 32px #1D712940",
+                  borderColor: "#1D7129",
                 }}
                 style={{
                   background: "#181818",
@@ -652,12 +652,12 @@ export default function LandingArtify3D() {
                   }}
                 />
                 <div style={{ fontWeight: 600, fontSize: "1.1rem", marginBottom: 8 }}>{p.name}</div>
-                <div style={{ color: "#4caf50", fontWeight: 700, fontSize: "1.05rem" }}>{p.price}</div>
+                <div style={{ color: "#1D7129", fontWeight: 700, fontSize: "1.05rem" }}>{p.price}</div>
                 <a
                   href="/search"
                   style={{
                     marginTop: 14,
-                    background: "#4caf50",
+                    background: "#1D7129",
                     color: "#fff",
                     border: "none",
                     borderRadius: 6,

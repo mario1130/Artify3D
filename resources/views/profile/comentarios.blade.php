@@ -62,7 +62,7 @@
         }
 
         .product-item:hover {
-            box-shadow: 0 0 0 2px #4caf50;
+            box-shadow: 0 0 0 2px #1D7129;
         }
 
         .product-image-placeholder {
@@ -104,7 +104,7 @@
 
         .product-price {
             font-size: 0.95em;
-            color: #4caf50;
+            color: #1D7129;
             margin: 0;
             font-weight: bold;
         }
@@ -126,7 +126,7 @@
         }
 
         .view-comments-button {
-            background-color: #4caf50;
+            background-color: #1D7129;
             color: white;
             padding: 8px 15px;
             border: none;
@@ -140,7 +140,7 @@
         }
 
         .view-comments-button:hover {
-            background-color: #388e3c;
+            background-color: #17691f;
         }
 
         .pagination {

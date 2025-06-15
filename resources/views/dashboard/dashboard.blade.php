@@ -191,8 +191,8 @@
             'bar',
             'Devoluciones',
             returnsData,
-            '#22c55e',
-            '#15803d'
+            '#1D7129',
+            '#1D7129'
         );
         reportsChart = createChart(
             document.getElementById('reportsChart'),
@@ -221,8 +221,8 @@
                 chart = returnsChart;
                 label = 'Devoluciones';
                 data = returnsData;
-                color = '#22c55e';
-                border = '#15803d';
+                color = '#1D7129';
+                border = '#1D7129';
             } else {
                 chart = reportsChart;
                 label = 'Denuncias';

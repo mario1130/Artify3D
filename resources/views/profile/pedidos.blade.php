@@ -59,7 +59,7 @@
         }
 
         .pedido:hover {
-            box-shadow: 0 0 0 2px #22c55e;
+            box-shadow: 0 0 0 2px #1D7129;
         }
 
         .pedido:last-child {
@@ -114,7 +114,7 @@
         }
 
         .precio {
-            color: #22c55e;
+            color: #1D7129;
             font-weight: bold;
             margin: 0 0 10px 0;
             font-size: 0.95em;
@@ -127,7 +127,7 @@
         }
 
         .devolver-btn {
-            background: #22c55e;
+            background: #1D7129;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -139,7 +139,7 @@
             display: inline-block;
         }
         .devolver-btn:hover {
-            background-color: #15803d;
+            background-color: #1D7129;
         }
 
         .comprado-btn {
@@ -234,7 +234,7 @@
         }
 
         .pagination a:hover {
-            background-color: #155d1f54;
+            background-color: #155d1f54; /* Puedes dejarlo o cambiarlo a un tono relacionado si lo deseas */
         }
 
         @media (max-width: 810px) {
@@ -359,7 +359,7 @@
                                                             value="{{ $item->id }}">
                                                         <textarea name="reason" placeholder="Motivo de la devolución" style="width:100%;margin-bottom:12px;"></textarea>
                                                         <button type="submit"
-                                                            style="background:#22c55e;color:#fff;border:none;padding:8px 18px;border-radius:5px;cursor:pointer;">Confirmar
+                                                            style="background:#1D7129;color:#fff;border:none;padding:8px 18px;border-radius:5px;cursor:pointer;">Confirmar
                                                             devolución</button>
                                                     </form>
                                                 </div>

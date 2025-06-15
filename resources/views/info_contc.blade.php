@@ -18,13 +18,13 @@
 
         .contact-container h1,
         .contact-container h2 {
-            color: #4CAF50;
+            color: #1D7129;
             margin-top: 1.5em;
             margin-bottom: 0.5em;
         }
 
         .contact-container a {
-            color: #4CAF50;
+            color: #1D7129;
             text-decoration: underline;
             word-break: break-all;
         }

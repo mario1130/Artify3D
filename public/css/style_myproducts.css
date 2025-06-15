@@ -78,7 +78,7 @@ body {
     text-decoration: none;
     color: #fff;
     font-size: 14px;
-    background-color: #1d7129;
+    background-color: #1D7129;
     padding: 10px;
     text-align: center;
     display: block;
@@ -87,7 +87,7 @@ body {
 
 
 .add-product {
-    background-color: #1d7129;
+    background-color: #1D7129;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -103,7 +103,7 @@ body {
 }
 
 .add-product:hover {
-    background-color: #155d1f;
+    background-color: #1D7129;
 }
 
 .product-list {
@@ -147,13 +147,13 @@ body {
 
 .product-details .price {
     font-size: 16px;
-    color: #1d7129;
+    color: #1D7129;
     margin: 0 0 10px;
 }
 
 .edit-product {
     display: inline-block; /* Asegura que se comporte como un botón */
-    background-color: #1d7129;
+    background-color: #1D7129;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -165,7 +165,7 @@ body {
 }
 
 .edit-product:hover {
-    background-color: #155d1f;
+    background-color: #1D7129;
 }
 
 .delete-product {

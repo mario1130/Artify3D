@@ -50,7 +50,7 @@
                             @if ($return->status === 'pendiente')
                                 <span style="color: orange; font-weight: bold;">Pendiente</span>
                             @elseif ($return->status === 'aceptada')
-                                <span style="color: green; font-weight: bold;">Aceptada</span>
+                                <span style="color: #1D7129; font-weight: bold;">Aceptada</span>
                             @elseif ($return->status === 'rechazada')
                                 <span style="color: red; font-weight: bold;">Rechazada</span>
                             @else

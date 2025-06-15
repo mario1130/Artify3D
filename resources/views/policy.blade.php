@@ -19,7 +19,7 @@
         .policy-container h1,
         .policy-container h2,
         .policy-container h3 {
-            color: #4CAF50;
+            color: #1D7129;
             margin-top: 1.5em;
             margin-bottom: 0.5em;
         }

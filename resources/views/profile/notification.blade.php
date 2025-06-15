@@ -96,7 +96,7 @@
         }
 
         .acciones a {
-            color: #00c853;
+            color: #1D7129;
             font-size: 0.85em;
             margin-right: 10px;
             text-decoration: underline;

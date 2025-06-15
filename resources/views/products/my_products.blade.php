@@ -21,7 +21,7 @@
         }
 
         .add-product {
-            background-color: #4caf50;
+            background-color: #1D7129;
             color: white;
             padding: 12px 28px;
             border: none;
@@ -36,7 +36,7 @@
             text-decoration: none;
         }
         .add-product:hover {
-            background-color: #388e3c;
+            background-color: #1D7129;
         }
 
         .product-list {
@@ -63,7 +63,7 @@
         }
 
         .product-item:hover {
-            box-shadow: 0 0 0 2px #4caf50;
+            box-shadow: 0 0 0 2px #1D7129;
         }
 
         .product-image {
@@ -103,7 +103,7 @@
 
         .price {
             font-size: 0.95em;
-            color: #4caf50;
+            color: #1D7129;
             margin: 0 0 10px 0;
             font-weight: bold;
         }
@@ -116,7 +116,7 @@
 
         .edit-product-btn,
         .delete-product-btn {
-            background-color: #4caf50;
+            background-color: #1D7129;
             color: #fff;
             border: none;
             border-radius: 4px;
@@ -131,7 +131,7 @@
             background-color: #2196f3;
         }
         .edit-product-btn:hover {
-            background-color: #1769aa;
+            background-color: #17691f;
         }
         .delete-product-btn {
             background-color: #e53935;
